@@ -392,7 +392,7 @@
     .work-bg-2 { background: linear-gradient(135deg, #1a0a0a 0%, #3d0c0c 100%); }
     .work-bg-3 { background: linear-gradient(135deg, #0a1a0a 0%, #0c3d1a 100%); }
     .work-bg-4 { background: linear-gradient(135deg, #1a1a0a 0%, #3d3d0c 100%); }
-    .work-pattern {
+    .work-photo-overlay { position:absolute;inset:0;background:rgba(0,0,0,0.55);z-index:1; } .work-pattern {
       position: absolute; inset: 0;
       display: flex; align-items: center; justify-content: center;
       font-family: var(--font-display);
@@ -401,7 +401,7 @@
       letter-spacing: -5px;
       line-height: 1;
     }
-    .work-overlay {
+    .work-overlay { z-index:2; } .work-overlay-x {
       position: absolute; inset: 0;
       background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 60%);
       padding: 32px;
@@ -409,7 +409,7 @@
       transform: translateY(12px);
       transition: transform 0.4s ease;
     }
-    .work-item:hover .work-overlay { transform: translateY(0); }
+    .work-item:hover .work-overlay { z-index:2; } .work-overlay-x { transform: translateY(0); }
     .work-cat {
       font-family: var(--font-mono);
       font-size: 10px;
@@ -424,7 +424,7 @@
       letter-spacing: 1px;
       line-height: 1;
     }
-    .work-arrow {
+    .work-arrow { z-index:3; } .work-arrow-x {
       position: absolute; top: 24px; right: 24px;
       width: 40px; height: 40px;
       border: 1px solid rgba(255,255,255,0.2);
@@ -433,7 +433,7 @@
       transition: opacity 0.3s;
       font-size: 18px;
     }
-    .work-item:hover .work-arrow { opacity: 1; }
+    .work-item:hover .work-arrow { z-index:3; } .work-arrow-x { opacity: 1; }
 
     /* ── Stats ── */
     #stats {
@@ -814,8 +814,8 @@
   </div>
   <div class="work-grid reveal">
     <div class="work-item">
-      <div class="work-bg work-bg-1"></div>
-      <div class="work-pattern">NC</div>
+      <div class="work-bg work-bg-1" style="background-image:url('https://images.unsplash.com/photo-1634942537034-2531766767d1?w=900&q=80&fit=crop');background-size:cover;background-position:center;"></div>
+      <div class="work-photo-overlay"></div><div class="work-pattern">NC</div>
       <div class="work-arrow">↗</div>
       <div class="work-overlay">
         <div class="work-cat">Brand Identity · 2024</div>
@@ -823,8 +823,8 @@
       </div>
     </div>
     <div class="work-item">
-      <div class="work-bg work-bg-2"></div>
-      <div class="work-pattern">SM</div>
+      <div class="work-bg work-bg-2" style="background-image:url('https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=900&q=80&fit=crop');background-size:cover;background-position:center;"></div>
+      <div class="work-photo-overlay"></div><div class="work-pattern">SM</div>
       <div class="work-arrow">↗</div>
       <div class="work-overlay">
         <div class="work-cat">Social Media · 2024</div>
@@ -832,8 +832,8 @@
       </div>
     </div>
     <div class="work-item">
-      <div class="work-bg work-bg-3"></div>
-      <div class="work-pattern">CC</div>
+      <div class="work-bg work-bg-3" style="background-image:url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=900&q=80&fit=crop');background-size:cover;background-position:center;"></div>
+      <div class="work-photo-overlay"></div><div class="work-pattern">CC</div>
       <div class="work-arrow">↗</div>
       <div class="work-overlay">
         <div class="work-cat">Content Creation · 2025</div>
@@ -841,8 +841,8 @@
       </div>
     </div>
     <div class="work-item">
-      <div class="work-bg work-bg-4"></div>
-      <div class="work-pattern">CD</div>
+      <div class="work-bg work-bg-4" style="background-image:url('https://images.unsplash.com/photo-1561070791-2526d30994b5?w=900&q=80&fit=crop');background-size:cover;background-position:center;"></div>
+      <div class="work-photo-overlay"></div><div class="work-pattern">CD</div>
       <div class="work-arrow">↗</div>
       <div class="work-overlay">
         <div class="work-cat">Creative Design · 2025</div>
