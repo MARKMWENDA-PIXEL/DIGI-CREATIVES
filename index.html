@@ -401,7 +401,7 @@
       letter-spacing: -5px;
       line-height: 1;
     }
-    .work-overlay { z-index:2; } .work-overlay-xx {
+    .work-overlay {
       position: absolute; inset: 0;
       background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 60%);
       padding: 32px;
@@ -409,7 +409,7 @@
       transform: translateY(12px);
       transition: transform 0.4s ease;
     }
-    .work-item:hover .work-overlay { z-index:2; } .work-overlay-xx { transform: translateY(0); }
+    .work-item:hover .work-overlay { transform: translateY(0); }
     .work-cat {
       font-family: var(--font-mono);
       font-size: 10px;
@@ -424,7 +424,7 @@
       letter-spacing: 1px;
       line-height: 1;
     }
-    .work-arrow { z-index:3; } .work-arrow-xx {
+    .work-arrow {
       position: absolute; top: 24px; right: 24px;
       width: 40px; height: 40px;
       border: 1px solid rgba(255,255,255,0.2);
@@ -433,7 +433,7 @@
       transition: opacity 0.3s;
       font-size: 18px;
     }
-    .work-item:hover .work-arrow { z-index:3; } .work-arrow-xx { opacity: 1; }
+    .work-item:hover .work-arrow { opacity: 1; }
 
     /* ── Stats ── */
     #stats {
@@ -648,6 +648,255 @@
     .reveal-delay-2 { transition-delay: 0.2s; }
     .reveal-delay-3 { transition-delay: 0.3s; }
     .reveal-delay-4 { transition-delay: 0.4s; }
+  
+    /* ── Safaricom Green Pricing Section ── */
+    #pricing {
+      background: #080808;
+      padding: 120px 48px;
+      position: relative;
+      overflow: hidden;
+    }
+    #pricing .section-label { color: #00A651; }
+    #pricing .section-label::before { background: #00A651; }
+    .pricing-glow {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 700px; height: 500px;
+      background: radial-gradient(ellipse, rgba(0,166,81,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .pricing-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: end;
+      margin-bottom: 64px;
+    }
+    .pricing-intro p {
+      font-size: 17px;
+      color: var(--mid);
+      font-weight: 300;
+      line-height: 1.8;
+    }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: #1a1a1a;
+      border: 1px solid #1a1a1a;
+      position: relative;
+      z-index: 1;
+    }
+    .price-card {
+      background: #0d0d0d;
+      padding: 40px 32px;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s;
+    }
+    .price-card:hover { background: #111; }
+    .price-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: #00A651;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+    .price-card:hover::before { transform: scaleX(1); }
+    .price-card.featured {
+      background: #00A651;
+    }
+    .price-card.featured:hover { background: #009444; }
+    .price-card.featured::before { display: none; }
+    .price-num {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #333;
+      margin-bottom: 24px;
+    }
+    .price-card.featured .price-num { color: rgba(0,0,0,0.4); }
+    .price-icon {
+      width: 40px; height: 40px;
+      margin-bottom: 20px;
+    }
+    .price-name {
+      font-family: var(--font-display);
+      font-size: 28px;
+      letter-spacing: 1px;
+      color: var(--white);
+      margin-bottom: 8px;
+      line-height: 1;
+    }
+    .price-card.featured .price-name { color: #080808; }
+    .price-tag {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #00A651;
+      margin-bottom: 20px;
+    }
+    .price-card.featured .price-tag { color: rgba(0,0,0,0.55); }
+    .price-amount {
+      font-family: var(--font-display);
+      font-size: 48px;
+      letter-spacing: -1px;
+      color: #00A651;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .price-card.featured .price-amount { color: #080808; }
+    .price-period {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+    .price-card.featured .price-period { color: rgba(0,0,0,0.4); }
+    .price-divider {
+      height: 1px;
+      background: #1e1e1e;
+      margin-bottom: 24px;
+    }
+    .price-card.featured .price-divider { background: rgba(0,0,0,0.15); }
+    .price-desc {
+      font-size: 13px;
+      color: var(--mid);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+    .price-card.featured .price-desc { color: rgba(0,0,0,0.65); }
+    .price-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px; }
+    .price-features li {
+      font-size: 13px;
+      color: var(--mid);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      line-height: 1.5;
+    }
+    .price-card.featured .price-features li { color: rgba(0,0,0,0.65); }
+    .price-features li::before {
+      content: '✓';
+      color: #00A651;
+      font-size: 12px;
+      font-weight: 600;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .price-card.featured .price-features li::before { color: #080808; }
+    .price-btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 13px;
+      text-decoration: none;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+    .price-btn-outline {
+      background: transparent;
+      border: 1px solid #1e1e1e;
+      color: var(--mid);
+    }
+    .price-btn-outline:hover {
+      border-color: #00A651;
+      color: #00A651;
+    }
+    .price-btn-solid {
+      background: #080808;
+      color: #00A651;
+    }
+    .price-btn-solid:hover {
+      background: #f0ede8;
+      color: #080808;
+    }
+    .pricing-note {
+      margin-top: 40px;
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+    }
+    .pricing-note span { color: #00A651; }
+    /* Full retainer band */
+    .pricing-band {
+      margin-top: 2px;
+      background: #00A651;
+      padding: 40px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 1;
+    }
+    .band-left { flex: 1; }
+    .band-tag {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(0,0,0,0.4);
+      margin-bottom: 8px;
+    }
+    .band-title {
+      font-family: var(--font-display);
+      font-size: 40px;
+      letter-spacing: 2px;
+      color: #080808;
+      line-height: 1;
+    }
+    .band-desc {
+      font-size: 14px;
+      color: rgba(0,0,0,0.55);
+      margin-top: 8px;
+      max-width: 400px;
+      line-height: 1.6;
+    }
+    .band-right { text-align: right; }
+    .band-price {
+      font-family: var(--font-display);
+      font-size: 64px;
+      letter-spacing: -2px;
+      color: #080808;
+      line-height: 1;
+    }
+    .band-period {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      color: rgba(0,0,0,0.45);
+      margin-bottom: 16px;
+    }
+    .band-btn {
+      display: inline-block;
+      background: #080808;
+      color: #00A651;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 12px 24px;
+      text-decoration: none;
+      transition: background 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+    .band-btn:hover { background: #f0ede8; color: #080808; }
+
   </style>
 </head>
 <body>
@@ -663,6 +912,7 @@
     <li><a href="#services">Services</a></li>
     <li><a href="#work">Work</a></li>
     <li><a href="#process">Process</a></li>
+    <li><a href="#pricing">Pricing</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
@@ -813,57 +1063,42 @@
     <a href="#contact" class="btn-outline reveal reveal-delay-2">Start yours →</a>
   </div>
   <div class="work-grid reveal">
-
-    <div class="work-item work-item-wide">
-      <div class="work-bg" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&q=100&fit=crop&auto=format');background-size:cover;background-position:center;"></div>
-      <div class="work-overlay-dark"></div>
+    <div class="work-item">
+      <div class="work-bg work-bg-1"></div>
+      <div class="work-pattern">NC</div>
       <div class="work-arrow">↗</div>
       <div class="work-overlay">
         <div class="work-cat">Brand Identity · 2024</div>
         <div class="work-title">Kova Spirits — Complete rebrand for a premium craft gin label</div>
       </div>
     </div>
-
     <div class="work-item">
-      <div class="work-bg" style="background-image:url('https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=1600&q=100&fit=crop&auto=format');background-size:cover;background-position:center;"></div>
-      <div class="work-overlay-dark"></div>
+      <div class="work-bg work-bg-2"></div>
+      <div class="work-pattern">SM</div>
       <div class="work-arrow">↗</div>
       <div class="work-overlay">
         <div class="work-cat">Social Media · 2024</div>
-        <div class="work-title">Vertx Apparel — 0 to 120k in 6 months</div>
+        <div class="work-title">Vertx Apparel — 0 to 120k followers in 6 months</div>
       </div>
     </div>
-
     <div class="work-item">
-      <div class="work-bg" style="background-image:url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=1600&q=100&fit=crop&auto=format');background-size:cover;background-position:center;"></div>
-      <div class="work-overlay-dark"></div>
+      <div class="work-bg work-bg-3"></div>
+      <div class="work-pattern">CC</div>
       <div class="work-arrow">↗</div>
       <div class="work-overlay">
         <div class="work-cat">Content Creation · 2025</div>
         <div class="work-title">Sola Farms — Farm-to-table storytelling</div>
       </div>
     </div>
-
     <div class="work-item">
-      <div class="work-bg" style="background-image:url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&q=100&fit=crop&auto=format');background-size:cover;background-position:top;"></div>
-      <div class="work-overlay-dark"></div>
-      <div class="work-arrow">↗</div>
-      <div class="work-overlay">
-        <div class="work-cat">Lead Generation · 2025</div>
-        <div class="work-title">Meridian Tech — Product launch campaign</div>
-      </div>
-    </div>
-
-    <div class="work-item">
-      <div class="work-bg" style="background-image:url('https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?w=1600&q=100&fit=crop&auto=format');background-size:cover;background-position:center;"></div>
-      <div class="work-overlay-dark"></div>
+      <div class="work-bg work-bg-4"></div>
+      <div class="work-pattern">CD</div>
       <div class="work-arrow">↗</div>
       <div class="work-overlay">
         <div class="work-cat">Creative Design · 2025</div>
-        <div class="work-title">Coastal Retreats — Luxury travel brand identity</div>
+        <div class="work-title">Meridian Tech — Product launch campaign</div>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -918,6 +1153,144 @@
 </section>
 
 <!-- Contact -->
+
+<section id="pricing">
+  <div class="pricing-glow"></div>
+  <div class="pricing-intro">
+    <div>
+      <div class="section-label reveal">Rate Card</div>
+      <h2 class="section-title reveal reveal-delay-1">Transparent<br>Pricing</h2>
+    </div>
+    <p class="reveal reveal-delay-2">
+      No hidden fees. No surprises. Just clear, honest pricing built around the results you need. Every package is fully customisable — we work with your budget and your goals.
+    </p>
+  </div>
+
+  <div class="pricing-grid reveal">
+
+    <!-- Social Media -->
+    <div class="price-card">
+      <div class="price-num">01</div>
+      <svg class="price-icon" viewBox="0 0 40 40" fill="none">
+        <rect x="2" y="6" width="36" height="28" rx="4" stroke="#00A651" stroke-width="1.5"/>
+        <path d="M2 16h36" stroke="#00A651" stroke-width="1.5"/>
+        <circle cx="9" cy="11" r="2" fill="#00A651"/>
+        <circle cx="16" cy="11" r="2" fill="#00A651" opacity="0.4"/>
+        <path d="M10 26l5-5 3 3 5-6 5 5" stroke="#00A651" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div class="price-name">Social Media</div>
+      <div class="price-tag">Monthly Retainer</div>
+      <div class="price-amount">15K</div>
+      <div class="price-period">KES / month — starting from</div>
+      <div class="price-divider"></div>
+      <div class="price-desc">Full management of your social media presence across 2 platforms — strategy, content, posting and engagement.</div>
+      <ul class="price-features">
+        <li>2 platforms managed (Instagram, TikTok, LinkedIn or X)</li>
+        <li>12 posts per month</li>
+        <li>Caption writing and hashtag strategy</li>
+        <li>Community engagement and DM responses</li>
+        <li>Monthly performance report</li>
+        <li>Content calendar planning</li>
+      </ul>
+      <a href="#contact" class="price-btn price-btn-outline">Get started →</a>
+    </div>
+
+    <!-- Content Creation -->
+    <div class="price-card featured">
+      <div class="price-num">02 — Most Popular</div>
+      <svg class="price-icon" viewBox="0 0 40 40" fill="none">
+        <circle cx="20" cy="20" r="10" stroke="#080808" stroke-width="1.5"/>
+        <path d="M20 4v4M20 32v4M4 20h4M32 20h4" stroke="#080808" stroke-width="1.5" stroke-linecap="round"/>
+        <circle cx="20" cy="20" r="4" fill="#080808" opacity="0.4"/>
+      </svg>
+      <div class="price-name">Content Creation</div>
+      <div class="price-tag">Monthly Package</div>
+      <div class="price-amount">20K</div>
+      <div class="price-period">KES / month — starting from</div>
+      <div class="price-divider"></div>
+      <div class="price-desc">Professional photo, video and reel production delivered monthly — ready to post, share and convert.</div>
+      <ul class="price-features">
+        <li>8 professional photos per month</li>
+        <li>4 short-form videos or reels</li>
+        <li>Captions and post copy included</li>
+        <li>Editing and colour grading</li>
+        <li>Platform-optimised formats</li>
+        <li>Usage rights fully yours</li>
+      </ul>
+      <a href="#contact" class="price-btn price-btn-solid">Get started →</a>
+    </div>
+
+    <!-- Brand Identity -->
+    <div class="price-card">
+      <div class="price-num">03</div>
+      <svg class="price-icon" viewBox="0 0 40 40" fill="none">
+        <circle cx="20" cy="20" r="8" stroke="#00A651" stroke-width="1.5"/>
+        <path d="M20 4v4M20 32v4M4 20h4M32 20h4" stroke="#00A651" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M9 9l2.5 2.5M28.5 28.5L31 31M31 9l-2.5 2.5M11.5 28.5L9 31" stroke="#00A651" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      <div class="price-name">Brand Identity</div>
+      <div class="price-tag">One-off Project</div>
+      <div class="price-amount">30K</div>
+      <div class="price-period">KES — starting from</div>
+      <div class="price-divider"></div>
+      <div class="price-desc">A complete brand identity system that makes your business instantly recognisable and impossible to ignore in any market.</div>
+      <ul class="price-features">
+        <li>Logo design (3 concepts, 2 revisions)</li>
+        <li>Colour palette and typography</li>
+        <li>Brand guidelines document</li>
+        <li>Business card design</li>
+        <li>Social media profile assets</li>
+        <li>All source files included</li>
+      </ul>
+      <a href="#contact" class="price-btn price-btn-outline">Get started →</a>
+    </div>
+
+    <!-- Creative Design -->
+    <div class="price-card">
+      <div class="price-num">04</div>
+      <svg class="price-icon" viewBox="0 0 40 40" fill="none">
+        <rect x="4" y="4" width="14" height="14" rx="2" stroke="#00A651" stroke-width="1.5"/>
+        <rect x="22" y="4" width="14" height="14" rx="2" stroke="#00A651" stroke-width="1.5"/>
+        <rect x="4" y="22" width="14" height="14" rx="2" stroke="#00A651" stroke-width="1.5"/>
+        <rect x="22" y="22" width="14" height="14" rx="2" stroke="#00A651" stroke-width="1.5" opacity="0.4"/>
+        <path d="M25 25l8 8M33 25l-8 8" stroke="#00A651" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+      </svg>
+      <div class="price-name">Creative Design</div>
+      <div class="price-tag">Per Project / Monthly</div>
+      <div class="price-amount">10K</div>
+      <div class="price-period">KES — starting from</div>
+      <div class="price-divider"></div>
+      <div class="price-desc">Campaigns, ad creatives, pitch decks, flyers and print — sharp visuals that communicate your edge and outperform competitors.</div>
+      <ul class="price-features">
+        <li>Social media ad creatives</li>
+        <li>Flyers and poster design</li>
+        <li>Pitch deck design</li>
+        <li>Email newsletter templates</li>
+        <li>Print-ready files</li>
+        <li>2 revision rounds included</li>
+      </ul>
+      <a href="#contact" class="price-btn price-btn-outline">Get started →</a>
+    </div>
+
+  </div>
+
+  <!-- Full Retainer Band -->
+  <div class="pricing-band reveal">
+    <div class="band-left">
+      <div class="band-tag">Best value — Everything included</div>
+      <div class="band-title">Full Agency Retainer</div>
+      <div class="band-desc">Social media management, content creation, brand strategy, and creative design — all handled by Digi-Creatives every single month. One team. One invoice. Full results.</div>
+    </div>
+    <div class="band-right">
+      <div class="band-price">80K</div>
+      <div class="band-period">KES / month — starting from</div>
+      <a href="#contact" class="band-btn">Talk to us →</a>
+    </div>
+  </div>
+
+  <p class="pricing-note reveal">All prices in Kenya Shillings (KES). <span>50% deposit required to begin.</span> Custom packages available on request.</p>
+</section>
+
 <section id="contact">
   <div class="contact-glow"></div>
   <div class="section-label reveal">Get in touch</div>
