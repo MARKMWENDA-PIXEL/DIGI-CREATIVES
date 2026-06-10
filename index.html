@@ -401,7 +401,7 @@
       letter-spacing: -5px;
       line-height: 1;
     }
-    .work-overlay {
+    .work-overlay { z-index: 3; } .work-overlay-fix {
       position: absolute; inset: 0;
       background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 60%);
       padding: 32px;
@@ -409,7 +409,7 @@
       transform: translateY(12px);
       transition: transform 0.4s ease;
     }
-    .work-item:hover .work-overlay { transform: translateY(0); }
+    .work-item:hover .work-overlay { z-index: 3; } .work-overlay-fix { transform: translateY(0); }
     .work-cat {
       font-family: var(--font-mono);
       font-size: 10px;
@@ -424,7 +424,7 @@
       letter-spacing: 1px;
       line-height: 1;
     }
-    .work-arrow {
+    .work-arrow { z-index: 4; } .work-arrow-fix {
       position: absolute; top: 24px; right: 24px;
       width: 40px; height: 40px;
       border: 1px solid rgba(255,255,255,0.2);
@@ -433,7 +433,7 @@
       transition: opacity 0.3s;
       font-size: 18px;
     }
-    .work-item:hover .work-arrow { opacity: 1; }
+    .work-item:hover .work-arrow { z-index: 4; } .work-arrow-fix { opacity: 1; }
 
     /* ── Stats ── */
     #stats {
@@ -1063,42 +1063,82 @@
     <a href="#contact" class="btn-outline reveal reveal-delay-2">Start yours →</a>
   </div>
   <div class="work-grid reveal">
-    <div class="work-item">
-      <div class="work-bg work-bg-1"></div>
-      <div class="work-pattern">NC</div>
+
+    <!-- Card 1: WIDE — Sunshine / Brand Identity -->
+    <div class="work-item work-item-wide">
+      <div class="work-bg" style="
+        background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&q=100&fit=crop&auto=format');
+        background-size: cover;
+        background-position: center;
+      "></div>
+      <div class="work-overlay-dark"></div>
       <div class="work-arrow">↗</div>
       <div class="work-overlay">
         <div class="work-cat">Brand Identity · 2024</div>
         <div class="work-title">Kova Spirits — Complete rebrand for a premium craft gin label</div>
       </div>
     </div>
+
+    <!-- Card 2: Social Media Culture -->
     <div class="work-item">
-      <div class="work-bg work-bg-2"></div>
-      <div class="work-pattern">SM</div>
+      <div class="work-bg" style="
+        background-image: url('https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=1200&q=100&fit=crop&auto=format');
+        background-size: cover;
+        background-position: center;
+      "></div>
+      <div class="work-overlay-dark"></div>
       <div class="work-arrow">↗</div>
       <div class="work-overlay">
         <div class="work-cat">Social Media · 2024</div>
         <div class="work-title">Vertx Apparel — 0 to 120k followers in 6 months</div>
       </div>
     </div>
+
+    <!-- Card 3: Food & Cuisine -->
     <div class="work-item">
-      <div class="work-bg work-bg-3"></div>
-      <div class="work-pattern">CC</div>
+      <div class="work-bg" style="
+        background-image: url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=1200&q=100&fit=crop&auto=format');
+        background-size: cover;
+        background-position: center;
+      "></div>
+      <div class="work-overlay-dark"></div>
       <div class="work-arrow">↗</div>
       <div class="work-overlay">
         <div class="work-cat">Content Creation · 2025</div>
-        <div class="work-title">Sola Farms — Farm-to-table storytelling</div>
+        <div class="work-title">Sola Farms — Farm-to-table visual storytelling</div>
       </div>
     </div>
+
+    <!-- Card 4: Lead Gen / Professional -->
     <div class="work-item">
-      <div class="work-bg work-bg-4"></div>
-      <div class="work-pattern">CD</div>
+      <div class="work-bg" style="
+        background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=100&fit=crop&auto=format');
+        background-size: cover;
+        background-position: top center;
+      "></div>
+      <div class="work-overlay-dark"></div>
       <div class="work-arrow">↗</div>
       <div class="work-overlay">
-        <div class="work-cat">Creative Design · 2025</div>
+        <div class="work-cat">Lead Generation · 2025</div>
         <div class="work-title">Meridian Tech — Product launch campaign</div>
       </div>
     </div>
+
+    <!-- Card 5: Digital / Tech Space -->
+    <div class="work-item">
+      <div class="work-bg" style="
+        background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=100&fit=crop&auto=format');
+        background-size: cover;
+        background-position: center;
+      "></div>
+      <div class="work-overlay-dark"></div>
+      <div class="work-arrow">↗</div>
+      <div class="work-overlay">
+        <div class="work-cat">Digital Marketing · 2025</div>
+        <div class="work-title">NovaTech — Full digital marketing suite</div>
+      </div>
+    </div>
+
   </div>
 </section>
 
