@@ -1,1531 +1,276 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>DigiCreativ — Brand & Social Agency</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23E63946'/><text y='.9em' font-size='80' font-family='Arial Black' fill='white' x='10'>D</text></svg>"/>
-
-
-  <!-- Security Headers -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://images.unsplash.com https://formspree.io; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' https://images.unsplash.com data:; connect-src 'self' https://formspree.io; frame-ancestors 'none';"/>
-  <meta http-equiv="X-Content-Type-Options" content="nosniff"/>
-  <meta http-equiv="X-Frame-Options" content="DENY"/>
-  <meta http-equiv="X-XSS-Protection" content="1; mode=block"/>
-  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin"/>
-  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()"/>
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
-  <meta name="robots" content="index, follow, noarchive"/>
-  <meta name="googlebot" content="index, follow"/>
-
-  <!-- SEO Meta -->
-  <meta name="description" content="DigiCreativ — Bold creative marketing agency offering social media management, content creation, brand identity and creative design. Based in Nakuru, Kenya."/>
-  <meta name="keywords" content="marketing agency Kenya, social media management Nakuru, brand identity Kenya, content creation, DigiCreativ"/>
-  <meta name="author" content="Mark Mwenda — DigiCreativ"/>
-
-  <!-- Open Graph — controls how link looks when shared on WhatsApp, LinkedIn, Facebook -->
-  <meta property="og:title" content="DigiCreativ — We Build Brands That Lead"/>
-  <meta property="og:description" content="Bold social media, content creation and brand identity for businesses ready to dominate their market."/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:url" content="https://markmwenda-pixel.github.io/DIGI-CREATIVES/"/>
-  <meta property="og:image" content="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=90"/>
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="DigiCreativ — We Build Brands That Lead"/>
-  <meta name="twitter:description" content="Bold creative marketing agency based in Nakuru, Kenya."/>
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23E63946'/><text y='.9em' font-size='80' font-family='Arial Black' fill='white' x='10'>D</text></svg>"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
-  <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-    :root {
-      --bg:      #1c1c1e;
-      --off:     #232325;
-      --card:    #2a2a2c;
-      --card2:   #313133;
-      --border:  #3a3a3c;
-      --muted:   #6e6e73;
-      --mid:     #98989d;
-      --light:   #c7c7cc;
-      --white:   #f2f2f7;
-      --accent:  #E63946;
-      --green:   #00A651;
-      --gold:    #C9A84C;
-      --font-display: 'Bebas Neue', sans-serif;
-      --font-body:    'DM Sans', sans-serif;
-      --font-mono:    'DM Mono', monospace;
-    }
-
-    html { scroll-behavior: smooth; }
-    body {
-      background: var(--bg);
-      color: var(--white);
-      font-family: var(--font-body);
-      font-size: 16px;
-      line-height: 1.6;
-      overflow-x: hidden;
-      cursor: none;
-    }
-
-    /* cursor */
-    #cursor {
-      position: fixed; top: 0; left: 0;
-      width: 12px; height: 12px;
-      background: var(--accent);
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 9999;
-      transform: translate(-50%,-50%);
-      transition: transform .15s, background .2s;
-    }
-    #cursor-ring {
-      position: fixed; top: 0; left: 0;
-      width: 36px; height: 36px;
-      border: 1px solid rgba(230,57,70,.45);
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 9998;
-      transform: translate(-50%,-50%);
-      transition: transform .35s ease, width .2s, height .2s;
-    }
-    body:has(a:hover) #cursor,
-    body:has(button:hover) #cursor { transform: translate(-50%,-50%) scale(2.4); background: var(--accent); }
-    body:has(a:hover) #cursor-ring,
-    body:has(button:hover) #cursor-ring { width: 58px; height: 58px; }
-
-    /* noise grain */
-    body::before {
-      content:'';
-      position:fixed; inset:0;
-      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-      opacity:.025;
-      pointer-events:none;
-      z-index:9000;
-    }
-
-    /* ── NAV ── */
-    nav {
-      position: fixed; top:0; left:0; right:0;
-      display: flex; align-items:center; justify-content:space-between;
-      padding: 22px 48px;
-      z-index: 100;
-      border-bottom: 1px solid transparent;
-      transition: border-color .3s, background .3s, padding .3s;
-    }
-    nav.scrolled {
-      background: rgba(28,28,30,.96);
-      border-color: var(--border);
-      backdrop-filter: blur(16px);
-      padding: 14px 48px;
-    }
-    .nav-logo {
-      font-family: var(--font-display);
-      font-size: 28px; letter-spacing: 3px;
-      color: var(--white); text-decoration: none;
-    }
-    .nav-logo span { color: var(--accent); }
-    .nav-links { display:flex; gap:32px; list-style:none; }
-    .nav-links a {
-      font-family: var(--font-mono);
-      font-size: 11px; letter-spacing:.12em;
-      text-transform: uppercase;
-      color: var(--muted); text-decoration:none;
-      transition: color .2s;
-    }
-    .nav-links a:hover { color: var(--accent); }
-    .nav-cta {
-      font-family: var(--font-mono);
-      font-size: 11px; letter-spacing:.1em;
-      text-transform: uppercase;
-      background: var(--accent); color: #fff;
-      border: none; padding: 10px 22px;
-      cursor: none; font-weight:500;
-      transition: background .2s, transform .15s;
-    }
-    .nav-cta:hover { background: #c62d3a; transform: translateY(-1px); }
-
-    /* ── HERO ── */
-    #hero {
-      min-height: 100vh;
-      display: flex; flex-direction:column;
-      justify-content: flex-end;
-      padding: 0 48px 80px;
-      position: relative; overflow:hidden;
-    }
-    .hero-bg {
-      position:absolute; inset:0;
-      background:
-        radial-gradient(ellipse 70% 60% at 75% 35%, rgba(230,57,70,.09) 0%, transparent 70%),
-        radial-gradient(ellipse 50% 50% at 15% 85%, rgba(0,166,81,.05) 0%, transparent 60%);
-    }
-    .hero-grid {
-      position:absolute; inset:0;
-      background-image:
-        linear-gradient(var(--border) 1px, transparent 1px),
-        linear-gradient(90deg, var(--border) 1px, transparent 1px);
-      background-size: 72px 72px;
-      mask-image: radial-gradient(ellipse 100% 80% at 50% 50%, black 30%, transparent 100%);
-      opacity: .35;
-    }
-    .hero-ticker {
-      font-family: var(--font-mono);
-      font-size: 11px; letter-spacing:.15em;
-      color: var(--muted); text-transform:uppercase;
-      margin-bottom: 36px;
-      display: flex; gap:28px;
-      animation: fadeUp .8s .2s both;
-    }
-    .hero-ticker span { color: var(--accent); }
-    .hero-headline {
-      font-family: var(--font-display);
-      font-size: clamp(72px,13vw,190px);
-      line-height: .88; letter-spacing:-1px;
-      color: var(--white);
-      animation: fadeUp .9s .35s both;
-    }
-    .hero-headline em { font-style:normal; color:var(--accent); display:block; }
-    .hero-sub-row {
-      display:flex; align-items:flex-end;
-      justify-content:space-between;
-      margin-top: 44px;
-      animation: fadeUp .9s .5s both;
-    }
-    .hero-sub {
-      max-width: 400px; font-size:17px;
-      color: var(--light); line-height:1.7; font-weight:300;
-    }
-    .hero-actions { display:flex; gap:14px; align-items:center; }
-    .btn-primary {
-      background: var(--accent); color: #fff;
-      border:none; font-family:var(--font-mono);
-      font-size:11px; letter-spacing:.1em;
-      text-transform:uppercase; padding:15px 30px;
-      cursor:none; font-weight:500;
-      text-decoration:none; display:inline-block;
-      transition: background .2s, transform .15s;
-    }
-    .btn-primary:hover { background:#c62d3a; transform:translateY(-2px); }
-    .btn-outline {
-      background:transparent; color:var(--white);
-      border:1px solid var(--border);
-      font-family:var(--font-mono);
-      font-size:11px; letter-spacing:.1em;
-      text-transform:uppercase; padding:15px 30px;
-      cursor:none; text-decoration:none; display:inline-block;
-      transition: border-color .2s, color .2s;
-    }
-    .btn-outline:hover { border-color:var(--accent); color:var(--accent); }
-    .hero-scroll {
-      position:absolute; right:48px; bottom:80px;
-      display:flex; flex-direction:column;
-      align-items:center; gap:10px;
-      animation: fadeUp 1s .8s both;
-    }
-    .hero-scroll span {
-      font-family:var(--font-mono); font-size:10px;
-      letter-spacing:.2em; color:var(--muted);
-      text-transform:uppercase; writing-mode:vertical-rl;
-    }
-    .scroll-line {
-      width:1px; height:60px;
-      background: linear-gradient(to bottom, var(--accent), transparent);
-      animation: scrollPulse 2s infinite;
-    }
-
-    /* ── MARQUEE ── */
-    .marquee-wrap {
-      border-top:1px solid var(--border);
-      border-bottom:1px solid var(--border);
-      overflow:hidden; padding:16px 0;
-      background: var(--off);
-    }
-    .marquee-track {
-      display:flex; gap:0;
-      animation: marquee 22s linear infinite;
-      width:max-content;
-    }
-    .marquee-item {
-      font-family:var(--font-display);
-      font-size:28px; letter-spacing:3px;
-      color:var(--muted); padding:0 44px;
-      white-space:nowrap;
-      display:flex; align-items:center; gap:44px;
-    }
-    .marquee-item::after { content:'✦'; font-size:12px; color:var(--accent); }
-
-    /* ── SECTION BASE ── */
-    section { padding:110px 48px; }
-    .section-label {
-      font-family:var(--font-mono);
-      font-size:11px; letter-spacing:.2em;
-      text-transform:uppercase; color:var(--accent);
-      margin-bottom:18px;
-      display:flex; align-items:center; gap:12px;
-    }
-    .section-label::before {
-      content:''; display:block;
-      width:28px; height:1px; background:var(--accent);
-    }
-    .section-title {
-      font-family:var(--font-display);
-      font-size:clamp(44px,5.5vw,84px);
-      line-height:.95; letter-spacing:1px;
-      margin-bottom:20px; color:var(--white);
-    }
-
-    /* ── SERVICES ── */
-    #services { background:var(--off); }
-    #services .section-label { color:#C9A84C; }
-    #services .section-label::before { background:#C9A84C; }
-    #services .section-title { color:#C9A84C; }
-    .services-intro {
-      display:grid; grid-template-columns:1fr 1fr;
-      gap:72px; align-items:end; margin-bottom:72px;
-    }
-    .services-intro p {
-      font-size:17px; color:var(--mid);
-      font-weight:300; line-height:1.8; align-self:end;
-    }
-    .services-grid {
-      display:grid; grid-template-columns:repeat(2,1fr);
-      gap:1px; background:var(--border);
-      border:1px solid var(--border);
-    }
-    .service-card {
-      background:var(--card); padding:44px;
-      transition:background .3s; position:relative; overflow:hidden;
-    }
-    .service-card::before {
-      content:''; position:absolute;
-      top:0; left:0; right:0; height:2px;
-      background:#C9A84C;
-      transform:scaleX(0); transform-origin:left;
-      transition:transform .4s ease;
-    }
-    .service-card:hover { background:var(--card2); }
-    .service-card:hover::before { transform:scaleX(1); }
-    .service-num {
-      font-family:var(--font-mono); font-size:11px;
-      color:#C9A84C; letter-spacing:.1em; margin-bottom:28px;
-      opacity:0.6;
-    }
-    .service-icon { width:44px; height:44px; margin-bottom:20px; }
-    .service-card h3 {
-      font-family:var(--font-display); font-size:34px;
-      letter-spacing:1px; margin-bottom:14px; color:#C9A84C;
-    }
-    .service-card p { font-size:14px; color:var(--mid); line-height:1.7; margin-bottom:24px; }
-    .service-tags { display:flex; flex-wrap:wrap; gap:7px; }
-    .tag {
-      font-family:var(--font-mono); font-size:10px;
-      letter-spacing:.1em; text-transform:uppercase;
-      border:1px solid var(--border); color:var(--muted); padding:4px 11px;
-      background:var(--off);
-    }
-
-    /* ── WORK ── */
-    #work { background:var(--bg); }
-    .work-header {
-      display:flex; justify-content:space-between;
-      align-items:flex-end; margin-bottom:56px;
-    }
-    .work-grid {
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      grid-template-rows:480px 340px;
-      gap:3px;
-      background:var(--border);
-    }
-    .work-item {
-      position:relative; overflow:hidden;
-      cursor:none; background:var(--card);
-    }
-    .work-item-wide { grid-column:span 2; }
-    .work-bg {
-      position:absolute; inset:0;
-      background-size:cover !important;
-      background-position:center !important;
-      transition:transform .7s cubic-bezier(.25,.46,.45,.94);
-      will-change:transform;
-    }
-    .work-item:hover .work-bg { transform:scale(1.06); }
-    .work-overlay-dark {
-      position:absolute; inset:0;
-      background:linear-gradient(to top, rgba(0,0,0,.88) 0%, rgba(0,0,0,.2) 55%, rgba(0,0,0,.05) 100%);
-      z-index:1;
-      transition:background .4s;
-    }
-    .work-item:hover .work-overlay-dark {
-      background:linear-gradient(to top, rgba(0,0,0,.92) 0%, rgba(230,57,70,.12) 60%, rgba(0,0,0,.05) 100%);
-    }
-    .work-overlay {
-      position:absolute; inset:0;
-      padding:28px; z-index:2;
-      display:flex; flex-direction:column; justify-content:flex-end;
-      transform:translateY(10px);
-      transition:transform .4s ease;
-    }
-    .work-item:hover .work-overlay { transform:translateY(0); }
-    .work-cat {
-      font-family:var(--font-mono); font-size:10px;
-      letter-spacing:.15em; text-transform:uppercase;
-      color:var(--accent); margin-bottom:7px;
-    }
-    .work-title {
-      font-family:var(--font-display); font-size:28px;
-      letter-spacing:1px; line-height:1; color:#fff;
-    }
-    .work-arrow {
-      position:absolute; top:20px; right:20px;
-      width:38px; height:38px; z-index:3;
-      border:1px solid rgba(255,255,255,.2);
-      display:flex; align-items:center; justify-content:center;
-      font-size:16px; color:#fff;
-      opacity:0; transition:opacity .3s;
-    }
-    .work-item:hover .work-arrow { opacity:1; }
-
-    /* ── STATS ── */
-    #stats { background:var(--accent); padding:72px 48px; }
-    .stats-grid {
-      display:grid; grid-template-columns:repeat(4,1fr);
-      gap:1px; background:rgba(0,0,0,.15);
-    }
-    .stat-box { background:var(--accent); padding:44px 28px; text-align:center; }
-    .stat-num {
-      font-family:var(--font-display); font-size:76px;
-      line-height:1; color:#080808; letter-spacing:-2px;
-    }
-    .stat-label {
-      font-family:var(--font-mono); font-size:10px;
-      letter-spacing:.15em; text-transform:uppercase;
-      color:rgba(0,0,0,.5); margin-top:6px;
-    }
-
-    /* ── PROCESS ── */
-    #process { background:var(--off); }
-    .process-steps {
-      display:grid; grid-template-columns:repeat(4,1fr);
-      border:1px solid var(--border); margin-top:56px;
-    }
-    .process-step {
-      padding:44px 32px;
-      border-right:1px solid var(--border);
-      background:var(--card);
-    }
-    .process-step:last-child { border-right:none; }
-    .step-num {
-      font-family:var(--font-display); font-size:72px;
-      line-height:1; color:var(--border); margin-bottom:20px;
-    }
-    .step-title {
-      font-family:var(--font-display); font-size:26px;
-      letter-spacing:1px; margin-bottom:10px; color:var(--white);
-    }
-    .step-desc { font-size:13px; color:var(--mid); line-height:1.7; }
-
-    /* ── PRICING ── */
-    #pricing {
-      background:#0e1f16;
-      padding:110px 48px;
-      position:relative; overflow:hidden;
-    }
-    #pricing .section-label { color:var(--green); }
-    #pricing .section-label::before { background:var(--green); }
-    #pricing .section-title { color:var(--white); }
-    .pricing-glow {
-      position:absolute; top:50%; left:50%;
-      transform:translate(-50%,-50%);
-      width:700px; height:500px;
-      background:radial-gradient(ellipse, rgba(0,166,81,.08) 0%, transparent 70%);
-      pointer-events:none;
-    }
-    .pricing-intro {
-      display:grid; grid-template-columns:1fr 1fr;
-      gap:72px; align-items:end; margin-bottom:56px;
-    }
-    .pricing-intro p { font-size:17px; color:var(--mid); font-weight:300; line-height:1.8; }
-    .pricing-grid {
-      display:grid; grid-template-columns:repeat(4,1fr);
-      gap:1px; background:#1a3326; border:1px solid #1a3326;
-    }
-    .price-card {
-      background:#112218; padding:36px 28px;
-      position:relative; overflow:hidden;
-      transition:background .3s;
-    }
-    .price-card:hover { background:#162b1e; }
-    .price-card::before {
-      content:''; position:absolute;
-      top:0; left:0; right:0; height:2px;
-      background:var(--green);
-      transform:scaleX(0); transform-origin:left;
-      transition:transform .4s ease;
-    }
-    .price-card:hover::before { transform:scaleX(1); }
-    .price-card.featured { background:var(--green); }
-    .price-card.featured:hover { background:#009444; }
-    .price-card.featured::before { display:none; }
-    .price-num {
-      font-family:var(--font-mono); font-size:10px;
-      letter-spacing:.15em; text-transform:uppercase;
-      color:#1a4a2e; margin-bottom:20px;
-    }
-    .price-card.featured .price-num { color:rgba(0,0,0,.35); }
-    .price-icon { width:38px; height:38px; margin-bottom:16px; }
-    .price-name {
-      font-family:var(--font-display); font-size:26px;
-      letter-spacing:1px; color:var(--white);
-      margin-bottom:6px; line-height:1;
-    }
-    .price-card.featured .price-name { color:#080808; }
-    .price-tag {
-      font-family:var(--font-mono); font-size:10px;
-      letter-spacing:.1em; text-transform:uppercase;
-      color:var(--green); margin-bottom:16px;
-    }
-    .price-card.featured .price-tag { color:rgba(0,0,0,.5); }
-    .price-amount {
-      font-family:var(--font-display); font-size:44px;
-      letter-spacing:-1px; color:var(--green);
-      line-height:1; margin-bottom:3px;
-    }
-    .price-card.featured .price-amount { color:#080808; }
-    .price-period {
-      font-family:var(--font-mono); font-size:10px;
-      letter-spacing:.1em; color:var(--muted); margin-bottom:22px;
-    }
-    .price-card.featured .price-period { color:rgba(0,0,0,.4); }
-    .price-divider {
-      height:1px; background:#1a3326; margin-bottom:20px;
-    }
-    .price-card.featured .price-divider { background:rgba(0,0,0,.15); }
-    .price-desc {
-      font-size:13px; color:var(--mid); line-height:1.7; margin-bottom:20px;
-    }
-    .price-card.featured .price-desc { color:rgba(0,0,0,.6); }
-    .price-features { list-style:none; display:flex; flex-direction:column; gap:9px; margin-bottom:28px; }
-    .price-features li {
-      font-size:12px; color:var(--mid);
-      display:flex; align-items:flex-start; gap:9px; line-height:1.5;
-    }
-    .price-card.featured .price-features li { color:rgba(0,0,0,.6); }
-    .price-features li::before {
-      content:'✓'; color:var(--green);
-      font-size:11px; font-weight:600; flex-shrink:0; margin-top:1px;
-    }
-    .price-card.featured .price-features li::before { color:#080808; }
-    .price-btn {
-      display:block; width:100%; text-align:center;
-      font-family:var(--font-mono); font-size:11px;
-      letter-spacing:.12em; text-transform:uppercase;
-      padding:12px; text-decoration:none;
-      transition:all .2s; cursor:none; border:none;
-    }
-    .price-btn-outline {
-      background:transparent; border:1px solid #1a3326; color:var(--mid);
-    }
-    .price-btn-outline:hover { border-color:var(--green); color:var(--green); }
-    .price-btn-solid { background:#080808; color:var(--green); }
-    .price-btn-solid:hover { background:#f0ede8; color:#080808; }
-    .pricing-band {
-      margin-top:2px; background:var(--green);
-      padding:36px 44px;
-      display:flex; align-items:center; justify-content:space-between;
-    }
-    .band-left { flex:1; }
-    .band-tag {
-      font-family:var(--font-mono); font-size:10px;
-      letter-spacing:.2em; text-transform:uppercase;
-      color:rgba(0,0,0,.4); margin-bottom:6px;
-    }
-    .band-title {
-      font-family:var(--font-display); font-size:36px;
-      letter-spacing:2px; color:#080808; line-height:1;
-    }
-    .band-desc { font-size:13px; color:rgba(0,0,0,.5); margin-top:6px; max-width:380px; line-height:1.6; }
-    .band-right { text-align:right; }
-    .band-price {
-      font-family:var(--font-display); font-size:56px;
-      letter-spacing:-2px; color:#080808; line-height:1;
-    }
-    .band-period {
-      font-family:var(--font-mono); font-size:10px;
-      letter-spacing:.1em; color:rgba(0,0,0,.4); margin-bottom:14px;
-    }
-    .band-btn {
-      display:inline-block; background:#080808; color:var(--green);
-      font-family:var(--font-mono); font-size:11px;
-      letter-spacing:.12em; text-transform:uppercase;
-      padding:11px 22px; text-decoration:none;
-      transition:background .2s; cursor:none; border:none;
-    }
-    .band-btn:hover { background:#f0ede8; color:#080808; }
-    .pricing-note {
-      margin-top:36px; text-align:center;
-      font-family:var(--font-mono); font-size:11px;
-      letter-spacing:.1em; color:var(--muted);
-    }
-    .pricing-note span { color:var(--green); }
-
-    /* ── CONTACT ── */
-    #contact {
-      background:var(--off); text-align:center;
-      padding:140px 48px; position:relative; overflow:hidden;
-    }
-    .contact-glow {
-      position:absolute; top:50%; left:50%;
-      transform:translate(-50%,-50%);
-      width:600px; height:400px;
-      background:radial-gradient(ellipse, rgba(230,57,70,.07) 0%, transparent 70%);
-      pointer-events:none;
-    }
-    #contact .section-label { justify-content:center; }
-    #contact .section-label::before { display:none; }
-    .contact-headline {
-      font-family:var(--font-display);
-      font-size:clamp(56px,9vw,130px);
-      line-height:.9; margin-bottom:36px; color:var(--white);
-    }
-    .contact-headline span { color:var(--accent); display:block; }
-    .contact-sub {
-      font-size:17px; color:var(--mid); font-weight:300;
-      max-width:460px; margin:0 auto 44px; line-height:1.7;
-    }
-    .contact-form {
-      max-width:540px; margin:0 auto;
-      display:flex; flex-direction:column; gap:14px;
-    }
-    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
-    .form-field { display:flex; flex-direction:column; gap:7px; text-align:left; }
-    .form-field label {
-      font-family:var(--font-mono); font-size:10px;
-      letter-spacing:.15em; text-transform:uppercase; color:var(--muted);
-    }
-    .form-field input,
-    .form-field textarea,
-    .form-field select {
-      background:var(--card); border:1px solid var(--border);
-      color:var(--white); font-family:var(--font-body);
-      font-size:15px; padding:13px 15px;
-      outline:none; transition:border-color .2s;
-      resize:none; cursor:none;
-    }
-    .form-field input:focus,
-    .form-field textarea:focus,
-    .form-field select:focus { border-color:var(--accent); }
-    .form-field select { appearance:none; }
-    .form-field textarea { height:110px; }
-    .form-submit {
-      background:var(--accent); color:#fff;
-      border:none; font-family:var(--font-mono);
-      font-size:12px; letter-spacing:.12em;
-      text-transform:uppercase; padding:17px;
-      cursor:none; font-weight:500;
-      transition:background .2s, transform .15s; margin-top:6px;
-    }
-    .form-submit:hover { background:#c62d3a; transform:translateY(-2px); }
-
-    /* ── FOOTER ── */
-    footer {
-      border-top:2px solid var(--accent);
-      padding:36px 48px;
-      display:flex; justify-content:space-between; align-items:center;
-      background:#111113;
-    }
-    .footer-logo { font-family:var(--font-display); font-size:22px; letter-spacing:2px; color:var(--white); }
-    .footer-logo span { color:var(--accent); }
-    .footer-links { display:flex; gap:24px; }
-    .footer-links a {
-      font-family:var(--font-mono); font-size:11px;
-      letter-spacing:.1em; text-transform:uppercase;
-      color:var(--muted); text-decoration:none; transition:color .2s;
-    }
-    .footer-links a:hover { color:var(--accent); }
-    .footer-copy { font-family:var(--font-mono); font-size:11px; color:var(--muted); }
-
-
-
-    /* ── LOADING SCREEN ── */
-    #loader {
-      position: fixed; inset: 0;
-      background: #1c1c1e;
-      z-index: 99999;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      gap: 24px;
-      transition: opacity 0.5s ease, visibility 0.5s ease;
-    }
-    #loader.hidden { opacity: 0; visibility: hidden; }
-    .loader-logo {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 48px; letter-spacing: 4px;
-      color: #f2f2f7;
-    }
-    .loader-logo span { color: #E63946; }
-    .loader-bar-wrap {
-      width: 200px; height: 2px;
-      background: #3a3a3c; border-radius: 2px; overflow: hidden;
-    }
-    .loader-bar {
-      height: 100%; width: 0%;
-      background: #E63946; border-radius: 2px;
-      animation: loadBar 1.6s ease forwards;
-    }
-    .loader-text {
-      font-family: 'DM Mono', monospace;
-      font-size: 10px; letter-spacing: 3px;
-      text-transform: uppercase; color: #6e6e73;
-    }
-    @keyframes loadBar {
-      0%   { width: 0%; }
-      60%  { width: 75%; }
-      100% { width: 100%; }
-    }
-
-    /* ── MOBILE RESPONSIVE ── */
-    @media (max-width: 768px) {
-      nav { padding: 16px 20px; }
-      nav.scrolled { padding: 12px 20px; }
-      .nav-links { display: none; }
-      .nav-logo { font-size: 20px; }
-
-      #hero { padding: 0 20px 60px; }
-      .hero-headline { font-size: clamp(52px, 16vw, 90px); }
-      .hero-sub-row { flex-direction: column; gap: 24px; align-items: flex-start; }
-      .hero-sub { max-width: 100%; font-size: 15px; }
-      .hero-actions { flex-direction: column; width: 100%; }
-      .btn-primary, .btn-outline { width: 100%; text-align: center; padding: 14px 20px; }
-      .hero-scroll { display: none; }
-      .hero-ticker { font-size: 9px; gap: 16px; flex-wrap: wrap; }
-
-      section { padding: 72px 20px; }
-
-      .services-intro { grid-template-columns: 1fr; gap: 24px; margin-bottom: 40px; }
-      .services-grid { grid-template-columns: 1fr; }
-
-      .work-grid {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-      }
-      .work-item { min-height: 260px; }
-      .work-item-wide { grid-column: span 1; min-height: 320px; }
-
-      .stats-grid { grid-template-columns: repeat(2,1fr); }
-      .stat-num { font-size: 52px; }
-
-      .pricing-intro { grid-template-columns: 1fr; gap: 20px; }
-      .pricing-grid { grid-template-columns: 1fr; }
-      .pricing-band { flex-direction: column; gap: 24px; text-align: left; }
-      .band-right { text-align: left; }
-      .band-price { font-size: 40px; }
-
-      .process-steps { grid-template-columns: 1fr; }
-      .process-step { border-right: none; border-bottom: 1px solid var(--border); }
-      .process-step:last-child { border-bottom: none; }
-
-      .contact-headline { font-size: clamp(44px, 14vw, 80px); }
-      .form-row { grid-template-columns: 1fr; }
-
-      footer { flex-direction: column; gap: 16px; text-align: center; padding: 28px 20px; }
-      .footer-links { flex-wrap: wrap; justify-content: center; gap: 16px; }
-
-      .section-title { font-size: clamp(40px, 10vw, 64px); }
-
-      .marquee-item { font-size: 22px; padding: 0 28px; }
-    }
-
-    @media (max-width: 480px) {
-      .hero-headline { font-size: clamp(44px, 18vw, 72px); }
-      .stats-grid { grid-template-columns: repeat(2,1fr); }
-      .stat-num { font-size: 44px; }
-      .band-title { font-size: 28px; }
-    }
-
-
-    /* ── BACK TO TOP ── */
-    #back-top {
-      position: fixed; bottom: 90px; right: 24px;
-      width: 44px; height: 44px;
-      background: var(--card2);
-      border: 1px solid var(--border);
-      color: var(--white);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 20px; cursor: none;
-      opacity: 0; visibility: hidden;
-      transition: opacity 0.3s, background 0.2s, visibility 0.3s;
-      z-index: 500;
-    }
-    #back-top.visible { opacity: 1; visibility: visible; }
-    #back-top:hover { background: var(--accent); border-color: var(--accent); }
-
-    /* ── WHATSAPP BUTTON ── */
-    #whatsapp-btn {
-      position: fixed; bottom: 24px; right: 24px;
-      width: 54px; height: 54px;
-      background: #25D366;
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      z-index: 500; cursor: none;
-      box-shadow: 0 4px 20px rgba(37,211,102,0.4);
-      transition: transform 0.2s, box-shadow 0.2s;
-      text-decoration: none;
-    }
-    #whatsapp-btn:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,0.5); }
-    #whatsapp-btn svg { width: 28px; height: 28px; fill: #fff; }
-
-    /* ── ACTIVE NAV ── */
-    .nav-links a.active { color: var(--accent); }
-
-    /* ── MOBILE HAMBURGER ── */
-    .nav-hamburger {
-      display: none;
-      flex-direction: column; gap: 5px;
-      cursor: none; background: none; border: none; padding: 4px;
-    }
-    .nav-hamburger span {
-      display: block; width: 24px; height: 2px;
-      background: var(--white); border-radius: 2px;
-      transition: all 0.3s;
-    }
-    @media (max-width: 768px) {
-      .nav-hamburger { display: flex; }
-      .nav-cta { display: none; }
-      .nav-links {
-        position: fixed; inset: 0; top: 56px;
-        background: rgba(28,28,30,0.98);
-        flex-direction: column; align-items: center;
-        justify-content: center; gap: 36px;
-        display: none;
-        backdrop-filter: blur(20px);
-      }
-      .nav-links.open { display: flex; }
-      .nav-links a { font-size: 14px; letter-spacing: .15em; }
-    }
-
-    /* ── PHONE CTA IN HERO ── */
-    .hero-phone {
-      font-family: var(--font-mono);
-      font-size: 12px; letter-spacing: .12em;
-      color: var(--muted); margin-top: 16px;
-      display: flex; align-items: center; gap: 8px;
-    }
-    .hero-phone a {
-      color: var(--accent); text-decoration: none;
-      transition: color .2s;
-    }
-    .hero-phone a:hover { color: #fff; }
-
-    /* ── ANIMATIONS ── */
-    @keyframes fadeUp {
-      from { opacity:0; transform:translateY(30px); }
-      to   { opacity:1; transform:translateY(0); }
-    }
-    @keyframes marquee {
-      from { transform:translateX(0); }
-      to   { transform:translateX(-50%); }
-    }
-    @keyframes scrollPulse {
-      0%,100% { opacity:.4; }
-      50%     { opacity:1; }
-    }
-    .reveal { opacity:0; transform:translateY(36px); transition:opacity .7s ease, transform .7s ease; }
-    .reveal.visible { opacity:1; transform:translateY(0); }
-    .reveal-delay-1 { transition-delay:.1s; }
-    .reveal-delay-2 { transition-delay:.2s; }
-    .reveal-delay-3 { transition-delay:.3s; }
-  </style>
-</head>
-<body>
-
-
-<!-- section-a -->
-<div id="loader">
-  <div class="loader-logo">DIGI<span>CREATIV</span><span style="color:#E63946">.</span></div>
-  <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
-  <div class="loader-text">Loading experience...</div>
-</div>
-
-<div id="cursor"></div>
-<div id="cursor-ring"></div>
-
-<!-- nav -->
-<nav id="navbar">
-  <a href="#" class="nav-logo">DIGICREATIV<span>.</span></a>
-  <ul class="nav-links">
-    <li><a href="#services">Services</a></li>
-    <li><a href="#work">Work</a></li>
-    <li><a href="#pricing">Pricing</a></li>
-    <li><a href="#process">Process</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
-  <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Start a project</button>
-</nav>
-
-<!-- a -->
-<section id="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-grid"></div>
-  <div class="hero-ticker">
-    <span>✦</span> Social Media &nbsp;<span>✦</span> Content Creation &nbsp;<span>✦</span> Branding &nbsp;<span>✦</span> Analytics
-  </div>
-  <h1 class="hero-headline">
-    We Build<br><em>Brands</em>That Lead.
-  </h1>
-  <div class="hero-sub-row">
-    <p class="hero-sub">DigiCreativ is a bold marketing agency helping businesses dominate their market through powerful branding, social content, and creative strategy.</p>
-    <div class="hero-actions">
-      <a href="#work" class="btn-primary">See our work</a>
-      <a href="#services" class="btn-outline">Our services</a>
-    </div>
-  </div>
-  <div class="hero-phone">
-    📞 <a href="tel:+254705996298">+254 705 996 298</a> &nbsp;·&nbsp;
-    <a href="mailto:iammarkmwenda12@gmail.com">iammarkmwenda12@gmail.com</a>
-  </div>
-  <div class="hero-scroll">
-    <div class="scroll-line"></div>
-    <span>Scroll</span>
-  </div>
-</section>
-
-<!-- b -->
-<div class="marquee-wrap">
-  <div class="marquee-track">
-    <div class="marquee-item">Brand Identity</div>
-    <div class="marquee-item">Social Media</div>
-    <div class="marquee-item">Content Strategy</div>
-    <div class="marquee-item">Analytics</div>
-    <div class="marquee-item">Lead Generation</div>
-    <div class="marquee-item">Visual Design</div>
-    <div class="marquee-item">Brand Identity</div>
-    <div class="marquee-item">Social Media</div>
-    <div class="marquee-item">Content Strategy</div>
-    <div class="marquee-item">Analytics</div>
-  </div>
-</div>
-
-<!-- c -->
-<section id="services">
-  <div class="services-intro">
-    <div>
-      <div class="section-label reveal">What we do</div>
-      <h2 class="section-title reveal reveal-delay-1">Our<br>Services</h2>
-    </div>
-    <p class="reveal reveal-delay-2">We blend creative strategy with relentless execution. Every brand we touch gets treated like our own — because your growth is our obsession.</p>
-  </div>
-  <div class="services-grid reveal">
-    <div class="service-card">
-      <div class="service-num">01</div>
-      <svg class="service-icon" viewBox="0 0 44 44" fill="none">
-        <rect x="3" y="7" width="38" height="30" rx="4" stroke="#E63946" stroke-width="1.5"/>
-        <path d="M3 19h38" stroke="#E63946" stroke-width="1.5"/>
-        <circle cx="11" cy="13" r="2" fill="#E63946"/>
-        <circle cx="18" cy="13" r="2" fill="#E63946" opacity=".4"/>
-        <path d="M11 29l5-5 4 4 5-7 5 5" stroke="#E63946" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      <h3>Social Media</h3>
-      <p>We manage your presence across every platform — crafting content that stops the scroll and builds real communities around your brand.</p>
-      <div class="service-tags">
-        <span class="tag">Instagram</span><span class="tag">TikTok</span><span class="tag">LinkedIn</span><span class="tag">X</span><span class="tag">Community</span>
-      </div>
-    </div>
-    <div class="service-card">
-      <div class="service-num">02</div>
-      <svg class="service-icon" viewBox="0 0 44 44" fill="none">
-        <path d="M22 5L5 17v22h34V17L22 5z" stroke="#E63946" stroke-width="1.5" stroke-linejoin="round"/>
-        <path d="M15 39V26h14v13" stroke="#E63946" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="22" cy="19" r="4" stroke="#E63946" stroke-width="1.5"/>
-      </svg>
-      <h3>Content Creation</h3>
-      <p>From scripting to shooting to editing — we produce thumb-stopping video, photo and copy that converts viewers into customers.</p>
-      <div class="service-tags">
-        <span class="tag">Video</span><span class="tag">Photography</span><span class="tag">Copywriting</span><span class="tag">Reels</span>
-      </div>
-    </div>
-    <div class="service-card">
-      <div class="service-num">03</div>
-      <svg class="service-icon" viewBox="0 0 44 44" fill="none">
-        <circle cx="22" cy="22" r="9" stroke="#E63946" stroke-width="1.5"/>
-        <path d="M22 4v3M22 37v3M4 22h3M37 22h3" stroke="#E63946" stroke-width="1.5" stroke-linecap="round"/>
-        <circle cx="22" cy="22" r="3.5" fill="#E63946" opacity=".3"/>
-      </svg>
-      <h3>Brand Identity</h3>
-      <p>Logo, palette, typography, voice — we build brand systems that are unmistakably yours and instantly recognisable in any market.</p>
-      <div class="service-tags">
-        <span class="tag">Logo Design</span><span class="tag">Style Guide</span><span class="tag">Brand Voice</span><span class="tag">Packaging</span>
-      </div>
-    </div>
-    <div class="service-card">
-      <div class="service-num">04</div>
-      <svg class="service-icon" viewBox="0 0 44 44" fill="none">
-        <rect x="5" y="5" width="15" height="15" rx="2" stroke="#E63946" stroke-width="1.5"/>
-        <rect x="24" y="5" width="15" height="15" rx="2" stroke="#E63946" stroke-width="1.5"/>
-        <rect x="5" y="24" width="15" height="15" rx="2" stroke="#E63946" stroke-width="1.5"/>
-        <rect x="24" y="24" width="15" height="15" rx="2" stroke="#E63946" stroke-width="1.5" opacity=".4"/>
-        <path d="M27 27l8 8M35 27l-8 8" stroke="#E63946" stroke-width="1.5" stroke-linecap="round" opacity=".4"/>
-      </svg>
-      <h3>Creative Design</h3>
-      <p>Campaigns, decks, ads, print — whatever the canvas, we design visuals that communicate your edge and outperform the competition.</p>
-      <div class="service-tags">
-        <span class="tag">Campaigns</span><span class="tag">Ad Creatives</span><span class="tag">Pitch Decks</span><span class="tag">Print</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- d -->
-<section id="work">
-  <div class="work-header">
-    <div>
-      <div class="section-label reveal">Portfolio</div>
-      <h2 class="section-title reveal reveal-delay-1">Selected<br>Work</h2>
-    </div>
-    <a href="#contact" class="btn-outline reveal reveal-delay-2">Start yours →</a>
-  </div>
-  <div class="work-grid reveal">
-
-    <!-- Card 1 WIDE: Analytics Dashboard -->
-    <div class="work-item work-item-wide">
-      <div class="work-bg" style="background-image:url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&q=100&fit=crop&auto=format');background-position:center top;"></div>
-      <div class="work-overlay-dark"></div>
-      <div class="work-arrow">↗</div>
-      <div class="work-overlay">
-        <div class="work-cat">Analytics & Strategy · 2024</div>
-        <div class="work-title">Meridian Tech — Full digital analytics suite and growth strategy</div>
-      </div>
-    </div>
-
-    <!-- Card 2: Social Media Expert -->
-    <div class="work-item">
-      <div class="work-bg" style="background-image:url('https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=1200&q=100&fit=crop&auto=format');"></div>
-      <div class="work-overlay-dark"></div>
-      <div class="work-arrow">↗</div>
-      <div class="work-overlay">
-        <div class="work-cat">Social Media · 2024</div>
-        <div class="work-title">Vertx Apparel — 0 to 120k followers in 6 months</div>
-      </div>
-    </div>
-
-    <!-- Card 3: Lead Gen / Team Meeting -->
-    <div class="work-item">
-      <div class="work-bg" style="background-image:url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=100&fit=crop&auto=format');background-position:top;"></div>
-      <div class="work-overlay-dark"></div>
-      <div class="work-arrow">↗</div>
-      <div class="work-overlay">
-        <div class="work-cat">Lead Generation · 2025</div>
-        <div class="work-title">Kova Spirits — Lead gen campaign and brand strategy</div>
-      </div>
-    </div>
-
-    <!-- Card 4: Digital Marketing / Laptop + Data -->
-    <div class="work-item">
-      <div class="work-bg" style="background-image:url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=100&fit=crop&auto=format');"></div>
-      <div class="work-overlay-dark"></div>
-      <div class="work-arrow">↗</div>
-      <div class="work-overlay">
-        <div class="work-cat">Digital Marketing · 2025</div>
-        <div class="work-title">Sola Brands — Data-driven digital marketing overhaul</div>
-      </div>
-    </div>
-
-    <!-- Card 5: Expert Branding / Design Work -->
-    <div class="work-item">
-      <div class="work-bg" style="background-image:url('https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1200&q=100&fit=crop&auto=format');"></div>
-      <div class="work-overlay-dark"></div>
-      <div class="work-arrow">↗</div>
-      <div class="work-overlay">
-        <div class="work-cat">Brand Identity · 2025</div>
-        <div class="work-title">NovaTech — Complete brand identity and design system</div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- e -->
-<div id="stats">
-  <div class="stats-grid">
-    <div class="stat-box reveal"><div class="stat-num" data-target="64">0</div><div class="stat-label">Brands Transformed</div></div>
-    <div class="stat-box reveal reveal-delay-1"><div class="stat-num" data-target="2">0</div><div class="stat-label">Years in Market</div></div>
-    <div class="stat-box reveal reveal-delay-2"><div class="stat-num" data-target="12">0</div><div class="stat-label">Industries Served</div></div>
-    <div class="stat-box reveal reveal-delay-3"><div class="stat-num" data-target="98">0</div><div class="stat-label">% Client Retention</div></div>
-  </div>
-</div>
-
-<!-- f -->
-<section id="pricing">
-  <div class="pricing-glow"></div>
-  <div class="pricing-intro">
-    <div>
-      <div class="section-label reveal">Rate Card</div>
-      <h2 class="section-title reveal reveal-delay-1">Transparent<br>Pricing</h2>
-    </div>
-    <p class="reveal reveal-delay-2">No hidden fees. No surprises. Clear honest pricing built around the results you need. Every package is fully customisable.</p>
-  </div>
-  <div class="pricing-grid reveal">
-    <div class="price-card">
-      <div class="price-num">01</div>
-      <svg class="price-icon" viewBox="0 0 40 40" fill="none">
-        <rect x="2" y="6" width="36" height="28" rx="4" stroke="#00A651" stroke-width="1.5"/>
-        <path d="M2 16h36" stroke="#00A651" stroke-width="1.5"/>
-        <circle cx="9" cy="11" r="2" fill="#00A651"/>
-        <path d="M10 26l5-5 3 3 5-6 5 5" stroke="#00A651" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      <div class="price-name">Social Media</div>
-      <div class="price-tag">Monthly Retainer</div>
-      <div class="price-amount">15K</div>
-      <div class="price-period">KES / month — starting from</div>
-      <div class="price-divider"></div>
-      <div class="price-desc">Full management of your social presence across 2 platforms — strategy, content, posting and engagement.</div>
-      <ul class="price-features">
-        <li>2 platforms managed</li>
-        <li>12 posts per month</li>
-        <li>Caption and hashtag strategy</li>
-        <li>Community engagement</li>
-        <li>Monthly performance report</li>
-      </ul>
-      <a href="#contact" class="price-btn price-btn-outline">Get started →</a>
-    </div>
-    <div class="price-card featured">
-      <div class="price-num">02 — Most Popular</div>
-      <svg class="price-icon" viewBox="0 0 40 40" fill="none">
-        <circle cx="20" cy="20" r="10" stroke="#080808" stroke-width="1.5"/>
-        <path d="M20 4v4M20 32v4M4 20h4M32 20h4" stroke="#080808" stroke-width="1.5" stroke-linecap="round"/>
-        <circle cx="20" cy="20" r="4" fill="#080808" opacity=".4"/>
-      </svg>
-      <div class="price-name">Content Creation</div>
-      <div class="price-tag">Monthly Package</div>
-      <div class="price-amount">20K</div>
-      <div class="price-period">KES / month — starting from</div>
-      <div class="price-divider"></div>
-      <div class="price-desc">Professional photo, video and reel production delivered monthly — ready to post and convert.</div>
-      <ul class="price-features">
-        <li>8 professional photos</li>
-        <li>4 short-form videos/reels</li>
-        <li>Captions and copy included</li>
-        <li>Editing and colour grading</li>
-        <li>Platform-optimised formats</li>
-      </ul>
-      <a href="#contact" class="price-btn price-btn-solid">Get started →</a>
-    </div>
-    <div class="price-card">
-      <div class="price-num">03</div>
-      <svg class="price-icon" viewBox="0 0 40 40" fill="none">
-        <circle cx="20" cy="20" r="8" stroke="#00A651" stroke-width="1.5"/>
-        <path d="M20 4v4M20 32v4M4 20h4M32 20h4" stroke="#00A651" stroke-width="1.5" stroke-linecap="round"/>
-        <circle cx="20" cy="20" r="3" fill="#00A651" opacity=".3"/>
-      </svg>
-      <div class="price-name">Brand Identity</div>
-      <div class="price-tag">One-off Project</div>
-      <div class="price-amount">30K</div>
-      <div class="price-period">KES — starting from</div>
-      <div class="price-divider"></div>
-      <div class="price-desc">A complete brand identity system that makes your business instantly recognisable in any market.</div>
-      <ul class="price-features">
-        <li>Logo design (3 concepts)</li>
-        <li>Colour palette and typography</li>
-        <li>Brand guidelines document</li>
-        <li>Business card design</li>
-        <li>All source files included</li>
-      </ul>
-      <a href="#contact" class="price-btn price-btn-outline">Get started →</a>
-    </div>
-    <div class="price-card">
-      <div class="price-num">04</div>
-      <svg class="price-icon" viewBox="0 0 40 40" fill="none">
-        <rect x="4" y="4" width="14" height="14" rx="2" stroke="#00A651" stroke-width="1.5"/>
-        <rect x="22" y="4" width="14" height="14" rx="2" stroke="#00A651" stroke-width="1.5"/>
-        <rect x="4" y="22" width="14" height="14" rx="2" stroke="#00A651" stroke-width="1.5"/>
-        <rect x="22" y="22" width="14" height="14" rx="2" stroke="#00A651" stroke-width="1.5" opacity=".4"/>
-      </svg>
-      <div class="price-name">Creative Design</div>
-      <div class="price-tag">Per Project</div>
-      <div class="price-amount">10K</div>
-      <div class="price-period">KES — starting from</div>
-      <div class="price-divider"></div>
-      <div class="price-desc">Campaigns, ad creatives, pitch decks, flyers and print — sharp visuals that outperform competitors.</div>
-      <ul class="price-features">
-        <li>Social media ad creatives</li>
-        <li>Flyers and poster design</li>
-        <li>Pitch deck design</li>
-        <li>Print-ready files</li>
-        <li>2 revision rounds</li>
-      </ul>
-      <a href="#contact" class="price-btn price-btn-outline">Get started →</a>
-    </div>
-  </div>
-  <div class="pricing-band reveal">
-    <div class="band-left">
-      <div class="band-tag">Best value — Everything included</div>
-      <div class="band-title">Full Agency Retainer</div>
-      <div class="band-desc">Social media, content creation, brand strategy, and creative design — all handled by DigiCreativ every month.</div>
-    </div>
-    <div class="band-right">
-      <div class="band-price">80K</div>
-      <div class="band-period">KES / month — starting from</div>
-      <a href="#contact" class="band-btn">Talk to us →</a>
-    </div>
-  </div>
-  <p class="pricing-note reveal">All prices in Kenya Shillings (KES). <span>50% deposit required to begin.</span> Custom packages available on request.</p>
-</section>
-
-
-<!-- g -->
-<section id="testimonials" style="background:var(--bg);padding:110px 48px;">
-  <div class="section-label reveal">Client voices</div>
-  <h2 class="section-title reveal reveal-delay-1">What They<br>Say</h2>
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:56px;" class="reveal">
-
-    <div style="background:var(--card);padding:40px 36px;position:relative;">
-      <div style="font-size:48px;color:var(--accent);font-family:'Bebas Neue',sans-serif;line-height:1;margin-bottom:16px;opacity:.4;">"</div>
-      <p style="font-size:15px;color:var(--mid);line-height:1.8;margin-bottom:24px;font-style:italic;">DigiCreativ transformed our Instagram from 200 followers to over 8,000 in just 3 months. The content quality is unmatched and the strategy is clearly working.</p>
-      <div style="display:flex;align-items:center;gap:12px;">
-        <div style="width:40px;height:40px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:18px;color:#fff;">J</div>
-        <div>
-          <div style="font-size:13px;font-weight:500;color:var(--white);">James Kariuki</div>
-          <div style="font-size:11px;color:var(--muted);font-family:'DM Mono',monospace;letter-spacing:.05em;">CEO, Kariuki Foods</div>
-        </div>
-      </div>
-      <div style="position:absolute;top:0;left:0;right:0;height:2px;background:var(--accent);"></div>
-    </div>
-
-    <div style="background:var(--card2);padding:40px 36px;position:relative;">
-      <div style="font-size:48px;color:#C9A84C;font-family:'Bebas Neue',sans-serif;line-height:1;margin-bottom:16px;opacity:.4;">"</div>
-      <p style="font-size:15px;color:var(--mid);line-height:1.8;margin-bottom:24px;font-style:italic;">Our brand identity is now something we are proud to show anyone. The logo, the colours, everything just clicks. We have had clients compliment our branding on the first meeting.</p>
-      <div style="display:flex;align-items:center;gap:12px;">
-        <div style="width:40px;height:40px;border-radius:50%;background:#C9A84C;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:18px;color:#080808;">A</div>
-        <div>
-          <div style="font-size:13px;font-weight:500;color:var(--white);">Aisha Wanjiku</div>
-          <div style="font-size:11px;color:var(--muted);font-family:'DM Mono',monospace;letter-spacing:.05em;">Founder, Wanjiku Boutique</div>
-        </div>
-      </div>
-      <div style="position:absolute;top:0;left:0;right:0;height:2px;background:#C9A84C;"></div>
-    </div>
-
-    <div style="background:var(--card);padding:40px 36px;position:relative;">
-      <div style="font-size:48px;color:var(--green);font-family:'Bebas Neue',sans-serif;line-height:1;margin-bottom:16px;opacity:.4;">"</div>
-      <p style="font-size:15px;color:var(--mid);line-height:1.8;margin-bottom:24px;font-style:italic;">Working with DigiCreativ felt like having a full marketing department. They handled everything — content, posting, strategy — while we focused on running the business.</p>
-      <div style="display:flex;align-items:center;gap:12px;">
-        <div style="width:40px;height:40px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:18px;color:#080808;">P</div>
-        <div>
-          <div style="font-size:13px;font-weight:500;color:var(--white);">Peter Omondi</div>
-          <div style="font-size:11px;color:var(--muted);font-family:'DM Mono',monospace;letter-spacing:.05em;">MD, Omondi Properties</div>
-        </div>
-      </div>
-      <div style="position:absolute;top:0;left:0;right:0;height:2px;background:var(--green);"></div>
-    </div>
-
-  </div>
-</section>
-
-<!-- h -->
-<section id="process">
-  <div class="section-label reveal">How we work</div>
-  <h2 class="section-title reveal reveal-delay-1">The<br>Process</h2>
-  <div class="process-steps reveal">
-    <div class="process-step">
-      <div class="step-num">01</div>
-      <div class="step-title">Discover</div>
-      <p class="step-desc">We immerse ourselves in your world — your goals, market, competitors, and audience — before a single pixel is designed.</p>
-    </div>
-    <div class="process-step">
-      <div class="step-num">02</div>
-      <div class="step-title">Strategise</div>
-      <p class="step-desc">We map a clear path: positioning, messaging, channels and content pillars that give your brand an unfair advantage.</p>
-    </div>
-    <div class="process-step">
-      <div class="step-num">03</div>
-      <div class="step-title">Create</div>
-      <p class="step-desc">Our creative team executes with obsessive attention to quality — visuals, copy, and content built to perform.</p>
-    </div>
-    <div class="process-step">
-      <div class="step-num">04</div>
-      <div class="step-title">Scale</div>
-      <p class="step-desc">We launch, measure, iterate, and push. Growth is not a one-time event — it is a system we build with you.</p>
-    </div>
-  </div>
-</section>
-
-<!-- i -->
-<section id="contact">
-  <div class="contact-glow"></div>
-  <div class="section-label reveal">Get in touch</div>
-  <h2 class="contact-headline reveal reveal-delay-1">Let's Build<span>Something.</span></h2>
-  <p class="contact-sub reveal reveal-delay-2">Tell us about your brand. We will tell you how we would make it legendary.</p>
-  <form class="contact-form reveal reveal-delay-3" action="https://formspree.io/f/xlgknjqn" method="POST">
-
-    <!-- Honeypot field — hidden from users, catches bots -->
-    <input type="text" id="hp-field" name="_gotcha" style="display:none !important;position:absolute;left:-9999px;" tabindex="-1" autocomplete="off"/>
-    <input type="hidden" name="_subject" value="New DigiCreativ enquiry"/>
-    <input type="hidden" name="_next" value="https://markmwenda-pixel.github.io/DIGI-CREATIVES/"/>
-
-    <div class="form-row">
-      <div class="form-field">
-        <label>Your name</label>
-        <input type="text" name="name" placeholder="John Kamau" required/>
-      </div>
-      <div class="form-field">
-        <label>Email address</label>
-        <input type="email" name="email" placeholder="john@company.com" required/>
-      </div>
-    </div>
-    <div class="form-field">
-      <label>Service needed</label>
-      <select name="service">
-        <option value="">Select a service…</option>
-        <option>Social Media Management</option>
-        <option>Content Creation</option>
-        <option>Brand Identity</option>
-        <option>Creative Design</option>
-        <option>Full Agency Retainer</option>
-      </select>
-    </div>
-    <div class="form-field">
-      <label>Tell us about your project</label>
-      <textarea name="message" placeholder="What are you building? What is the challenge? What is your timeline?"></textarea>
-    </div>
-    <button type="submit" class="form-submit">Send message →</button>
-  </form>
-</section>
-
-<!-- j -->
-<footer>
-  <div class="footer-logo">DIGICREATIV<span>.</span></div>
-  <div class="footer-links">
-    <a href="#services">Services</a>
-    <a href="#work">Work</a>
-    <a href="#pricing">Pricing</a>
-    <a href="#process">Process</a>
-    <a href="#contact">Contact</a>
-  </div>
-
-  <div style="display:flex;gap:14px;align-items:center;">
-    <a href="https://instagram.com" target="_blank" style="color:var(--muted);text-decoration:none;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;transition:color .2s;" onmouseover="this.style.color='#E63946'" onmouseout="this.style.color=''">IG</a>
-    <a href="https://tiktok.com" target="_blank" style="color:var(--muted);text-decoration:none;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;transition:color .2s;" onmouseover="this.style.color='#E63946'" onmouseout="this.style.color=''">TK</a>
-    <a href="https://linkedin.com/in/mark-mwenda-411652b6" target="_blank" style="color:var(--muted);text-decoration:none;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;transition:color .2s;" onmouseover="this.style.color='#E63946'" onmouseout="this.style.color=''">LI</a>
-  </div>
-  <div class="footer-copy">© 2023 DigiCreativ · iammarkmwenda12@gmail.com</div>
-</footer>
-
-
-<!-- section-b -->
-<a id="whatsapp-btn" href="https://wa.me/254705996298?text=Hi%20DigiCreativ%2C%20I%20would%20like%20to%20discuss%20a%20project" target="_blank" aria-label="Chat on WhatsApp">
-  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-  </svg>
-</a>
-
-<!-- section-c -->
-<button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
-
-<script>
-
-
-  // ── SECURITY LAYER ──────────────────────────────────────────────────────────
-
-  // 1. Disable right click (prevents view source / inspect element shortcuts)
-  document.addEventListener('contextmenu', e => e.preventDefault());
-
-  // 2. Disable keyboard shortcuts that expose source code
-  document.addEventListener('keydown', e => {
-    // Block F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U, Ctrl+S, Ctrl+A
-    if (
-      e.key === 'F12' ||
-      (e.ctrlKey && e.shiftKey && ['I','J','C','K'].includes(e.key.toUpperCase())) ||
-      (e.ctrlKey && ['U','S'].includes(e.key.toUpperCase()))
-    ) {
-      e.preventDefault();
-      return false;
-    }
-  });
-
-  // 3. Detect and respond to DevTools opening
-  let devToolsOpen = false;
-  const devToolsCheck = () => {
-    const threshold = 160;
-    if (
-      window.outerWidth - window.innerWidth > threshold ||
-      window.outerHeight - window.innerHeight > threshold
-    ) {
-      if (!devToolsOpen) {
-        devToolsOpen = true;
-        document.body.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100vh;background:#1c1c1e;color:#E63946;font-family:monospace;font-size:20px;letter-spacing:2px;">ACCESS RESTRICTED</div>';
-      }
-    } else {
-      devToolsOpen = false;
-    }
-  };
-  setInterval(devToolsCheck, 1000);
-
-  // 4. Disable text selection on sensitive elements
-  document.querySelectorAll('.footer-copy, .hero-phone, .contact-form').forEach(el => {
-    el.style.userSelect = 'none';
-    el.style.webkitUserSelect = 'none';
-  });
-
-  // 5. Obfuscate email — render it dynamically so scrapers can't read it
-  const emailParts = ['iammarkmwenda12', '@', 'gmail', '.', 'com'];
-  const emailEls = document.querySelectorAll('a[href^="mailto:"]');
-  emailEls.forEach(el => {
-    el.href = 'mailto:' + emailParts.join('');
-    el.textContent = emailParts.join('');
-  });
-
-  // 6. Sanitise all form inputs before submission
-  const form = document.querySelector('.contact-form');
-  if (form) {
-    form.addEventListener('submit', function(e) {
-      const inputs = this.querySelectorAll('input, textarea');
-      let safe = true;
-      const sqlPattern = /((SELECT|INSERT|UPDATE|DELETE|DROP|ALTER|EXEC|UNION|SCRIPT)|--|;|'|")/gi;
-      const xssPattern = /<[^>]*>|javascript:|on\w+\s*=/gi;
-      inputs.forEach(input => {
-        if (sqlPattern.test(input.value) || xssPattern.test(input.value)) {
-          safe = false;
-          input.style.borderColor = '#E63946';
-          input.value = '';
-          input.placeholder = 'Invalid input detected — please retype';
-        }
-      });
-      if (!safe) {
-        e.preventDefault();
-        const btn = form.querySelector('.form-submit');
-        btn.textContent = 'Security check failed — please retry';
-        btn.style.background = '#E63946';
-        setTimeout(() => {
-          btn.textContent = 'Send message →';
-          btn.style.background = '';
-        }, 3000);
-      }
-    });
+<style>
+  :root {
+    --bg: #f8f6f2;
+    --off: #f1ece5;
+    --card: #ffffff;
+    --card2: #f7f4ef;
+    --border: #e6ddd2;
+    --muted: #6f6a66;
+    --mid: #8b8480;
+    --light: #b7b0aa;
+    --white: #1f1a1f;
+    --accent: #4b1f6f;
+    --green: #4b1f6f;
+    --gold: #7a4aa6;
   }
 
-  // 7. Prevent clickjacking — ensure page is not inside an iframe
-  if (window.self !== window.top) {
-    window.top.location = window.self.location;
+  html {
+    scroll-behavior: smooth;
   }
 
-  // 8. Console warning to deter script kiddies
-  console.clear();
-  console.log('%cSTOP!', 'color:#E63946;font-size:48px;font-weight:bold;');
-  console.log('%cThis is a browser feature intended for developers.', 'font-size:14px;');
-  console.log('%cIf someone told you to paste something here, it is a scam.', 'color:#E63946;font-size:14px;');
-
-  // 9. Honeypot — detect automated bots filling hidden fields
-  const honeypot = document.getElementById('hp-field');
-  if (form && honeypot) {
-    form.addEventListener('submit', e => {
-      if (honeypot.value !== '') {
-        e.preventDefault();
-        console.warn('Bot detected — submission blocked');
-      }
-    });
+  body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+    cursor: none;
   }
 
-  // 10. Rate limit form submissions — max 3 per session
-  let submitCount = parseInt(sessionStorage.getItem('submitCount') || '0');
-  if (form) {
-    form.addEventListener('submit', () => {
-      submitCount++;
-      sessionStorage.setItem('submitCount', submitCount);
-      if (submitCount > 3) {
-        form.querySelector('.form-submit').disabled = true;
-        form.querySelector('.form-submit').textContent = 'Too many submissions — try again later';
-      }
-    });
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(75,31,111,0.04) 0.8px, transparent 0.8px);
+    background-size: 14px 14px;
+    pointer-events: none;
+    z-index: 9000;
+    opacity: 0.25;
   }
 
-  // Loading screen
-  window.addEventListener('load', () => {
-    setTimeout(() => {
-      document.getElementById('loader').classList.add('hidden');
-    }, 1800);
-  });
-
-  // Mobile hamburger menu
-  function toggleMenu() {
-    document.querySelector('.nav-links').classList.toggle('open');
+  .cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 12px;
+    height: 12px;
+    background: var(--accent);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: transform .15s, background .2s;
   }
-  // Close menu on link click
-  document.querySelectorAll('.nav-links a').forEach(a => {
-    a.addEventListener('click', () => {
-      document.querySelector('.nav-links').classList.remove('open');
-    });
-  });
 
-  // Back to top visibility
-  window.addEventListener('scroll', () => {
-    const btn = document.getElementById('back-top');
-    if (window.scrollY > 400) btn.classList.add('visible');
-    else btn.classList.remove('visible');
-  });
-
-  // Active nav highlight on scroll
-  const sections = document.querySelectorAll('section[id], div[id="stats"]');
-  const navLinks = document.querySelectorAll('.nav-links a');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        navLinks.forEach(a => {
-          a.classList.remove('active');
-          if (a.getAttribute('href') === '#' + entry.target.id) {
-            a.classList.add('active');
-          }
-        });
-      }
-    });
-  }, { threshold: 0.4 });
-  sections.forEach(s => observer.observe(s));
-
-  const cursor = document.getElementById('cursor');
-  const ring   = document.getElementById('cursor-ring');
-  document.addEventListener('mousemove', e => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top  = e.clientY + 'px';
-    setTimeout(() => {
-      ring.style.left = e.clientX + 'px';
-      ring.style.top  = e.clientY + 'px';
-    }, 80);
-  });
-
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 60);
-  });
-
-  const reveals = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
-    });
-  }, { threshold: .12 });
-  reveals.forEach(el => io.observe(el));
-
-  function animateCounter(el) {
-    const target = parseInt(el.dataset.target);
-    const step   = target / (1400 / 16);
-    let current  = 0;
-    const timer  = setInterval(() => {
-      current = Math.min(current + step, target);
-      el.textContent = Math.floor(current);
-      if (current >= target) clearInterval(timer);
-    }, 16);
+  .cursor-ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 36px;
+    height: 36px;
+    border: 1px solid rgba(75,31,111,.25);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: transform .35s ease, width .2s, height .2s;
   }
-  const statNums = document.querySelectorAll('.stat-num[data-target]');
-  const statIO = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { animateCounter(e.target); statIO.unobserve(e.target); }
-    });
-  }, { threshold: .5 });
-  statNums.forEach(el => statIO.observe(el));
-</script>
-</body>
-</html>
+
+  nav.scrolled {
+    background: rgba(248,246,242,.96);
+    border-color: var(--border);
+    backdrop-filter: blur(16px);
+    padding: 14px 48px;
+  }
+
+  .nav-logo span,
+  .hero-headline em,
+  .section-label,
+  .price-features li::before {
+    color: var(--accent);
+  }
+
+  .btn-primary,
+  .nav-cta,
+  .form-submit,
+  .band-btn {
+    background: var(--accent);
+    color: #fff;
+  }
+
+  .btn-primary:hover,
+  .nav-cta:hover,
+  .form-submit:hover,
+  .band-btn:hover {
+    background: #3d155b;
+  }
+
+  .hero-bg {
+    background: radial-gradient(ellipse 70% 60% at 75% 35%, rgba(75,31,111,.08) 0%, transparent 70%),
+                radial-gradient(ellipse 50% 50% at 15% 85%, rgba(75,31,111,.04) 0%, transparent 60%);
+  }
+
+  .marquee-wrap,
+  .services,
+  .contact,
+  .process {
+    background: var(--off);
+  }
+
+  .service-card,
+  .price-card,
+  .process-step,
+  .work-item {
+    background: var(--card);
+  }
+
+  .loader {
+    position: fixed;
+    inset: 0;
+    background: #f8f6f2;
+    z-index: 99999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+  }
+
+  .loader-logo {
+    font-family: Bebas Neue, sans-serif;
+    font-size: 48px;
+    letter-spacing: 4px;
+    color: #1f1a1f;
+  }
+
+  .loader-logo span {
+    color: var(--accent);
+  }
+
+  .loader-bar-wrap {
+    width: 200px;
+    height: 2px;
+    background: #e6ddd2;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .loader-bar {
+    height: 100%;
+    width: 0;
+    background: var(--accent);
+    border-radius: 2px;
+    animation: loadBar 1.6s ease forwards;
+  }
+
+  .loader-text {
+    font-family: DM Mono, monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #6f6a66;
+  }
+
+  .nav-logo,
+  .hero-headline,
+  .section-title,
+  .service-card h3,
+  .price-name,
+  .band-title,
+  .contact-headline {
+    color: #1f1a1f;
+  }
+
+  .nav-links a,
+  .hero-sub,
+  .service-card p,
+  .price-desc,
+  .step-desc,
+  .contact-sub,
+  .band-desc,
+  .footer-copy {
+    color: #6f6a66;
+  }
+
+  .work-overlay-dark {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(255,255,255,.88) 0, rgba(75,31,111,.12) 60%, rgba(255,255,255,.05) 100%);
+    z-index: 1;
+    transition: background .4s;
+  }
+
+  .work-arrow {
+    border: 1px solid rgba(31,26,31,.15);
+    color: #1f1a1f;
+  }
+
+  .price-card.featured {
+    background: var(--green);
+  }
+
+  .price-card.featured .price-name,
+  .price-card.featured .price-amount,
+  .price-card.featured .price-period,
+  .price-card.featured .price-desc,
+  .price-card.featured .price-features li,
+  .price-card.featured .price-num {
+    color: #1f1a1f;
+  }
+
+  .price-card.featured .price-divider {
+    background: rgba(0,0,0,.15);
+  }
+
+  .stat-num {
+    color: #1f1a1f;
+  }
+
+  .stat-label,
+  .footer-links a,
+  .footer-copy {
+    color: #6f6a66;
+  }
+
+  .footer {
+    border-top: 2px solid var(--accent);
+    background: #f1ece5;
+  }
+
+  .back-top {
+    background: var(--card2);
+    border: 1px solid var(--border);
+    color: #1f1a1f;
+  }
+
+  .back-top:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+  }
+
+  .whatsapp-btn {
+    background: #4b1f6f;
+  }
+
+  .whatsapp-btn svg {
+    fill: #fff;
+  }
+
+  .nav-hamburger span {
+    background: #1f1a1f;
+  }
+
+  .contact-glow,
+  .pricing-glow {
+    pointer-events: none;
+  }
+
+  .hero-headline em {
+    font-style: normal;
+    display: block;
+  }
+</style> 
+#E63946 -> #4B1F6F
+#C62D3A -> #3D155B
+#1c1c1e -> #f8f6f2
+#232325 -> #ffffff
+#2a2a2c -> #ffffff
+#313133 -> #f7f4ef
+#3a3a3c -> #e6ddd2
+#f2f2f7 -> #1f1a1f
+rgba(230,57,70,...) -> rgba(75,31,111,...)
+fill="#4B1F6F"
+stroke="#4B1F6F"
