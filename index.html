@@ -1,945 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>DigiCreativ — Bold Creative Marketing Agency | Nakuru, Kenya</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
-  <meta name="description" content="DigiCreativ — Award-winning creative marketing agency offering social media management, content creation, brand identity and creative design. Based in Nakuru, Kenya. Serving clients globally."/>
-  <meta name="keywords" content="marketing agency Kenya, social media management Nakuru, brand identity Kenya, content creation, DigiCreativ, digital marketing Africa"/>
-  <meta name="author" content="Mark Mwenda — DigiCreativ"/>
-  <meta property="og:title" content="DigiCreativ — We Build Brands That Lead"/>
-  <meta property="og:description" content="Bold social media, content creation and brand identity for businesses ready to dominate their market. Kenya & Global."/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:url" content="https://digicreativ.co.ke"/>
-  <meta property="og:image" content="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=90"/>
-  <meta name="twitter:card" content="summary_large_image"/>
-  <meta http-equiv="X-Frame-Options" content="DENY"/>
-  <meta http-equiv="X-Content-Type-Options" content="nosniff"/>
-  <meta http-equiv="X-XSS-Protection" content="1; mode=block"/>
-  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin"/>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%237C3AED'/><text y='.9em' font-size='80' font-family='Arial Black' fill='white' x='10'>D</text></svg>"/>
-  <style>
-    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
-    :root{
-      --bg:#0a1a0f;--off:#0d2114;--card:#112b18;--card2:#163520;
-      --border:#1e4a28;--muted:#4a8c5c;--mid:#6ab87e;--light:#a8d8b0;--white:#e8f5eb;
-      --accent:#E63946;--accent2:#ff4d6d;--accentlt:#2d0a0e;
-      --green:#00A651;--gold:#C9A84C;--red:#E63946;
-      --font-display:'Bebas Neue',sans-serif;
-      --font-body:'DM Sans',sans-serif;
-      --font-mono:'DM Mono',monospace;
-    }
-    html{scroll-behavior:smooth;}
-    body{background:var(--bg);color:var(--white);font-family:var(--font-body);font-size:16px;line-height:1.6;overflow-x:hidden;cursor:none;}
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>DIGI-CREATIVES | Social Media & Digital Growth</title>
 
-    /* CURSOR */
-    #cursor{position:fixed;top:0;left:0;width:12px;height:12px;background:var(--accent);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform .15s,background .2s;}
-    #cursor-ring{position:fixed;top:0;left:0;width:36px;height:36px;border:1px solid rgba(230,57,70,.35);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:transform .35s ease,width .2s,height .2s;}
-    body:has(a:hover) #cursor,body:has(button:hover) #cursor{transform:translate(-50%,-50%) scale(2.4);}
-    body:has(a:hover) #cursor-ring,body:has(button:hover) #cursor-ring{width:58px;height:58px;}
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0b0b0b;
+    color: #fff;
+  }
 
-    /* LOADER */
-    #loader{position:fixed;inset:0;background:#0a1a0f;z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;transition:opacity .5s ease,visibility .5s ease;}
-    #loader.hidden{opacity:0;visibility:hidden;}
-    .loader-logo{font-family:var(--font-display);font-size:48px;letter-spacing:4px;color:var(--white);} .loader-text{color:var(--muted);}
-    .loader-logo span{color:var(--accent);}
-    .loader-bar-wrap{width:200px;height:2px;background:var(--border);border-radius:2px;overflow:hidden;}
-    .loader-bar{height:100%;width:0%;background:var(--accent);border-radius:2px;animation:loadBar 1.6s ease forwards;}
-    .loader-text{font-family:var(--font-mono);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);}
-    @keyframes loadBar{0%{width:0%}60%{width:75%}100%{width:100%}}
+  /* HERO */
+  .hero {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #111, #000);
+  }
 
-    /* TOP ANNOUNCEMENT BAR */
-    #announce{background:#0d2114;border-bottom:1px solid var(--border);padding:9px 48px;text-align:center;display:flex;align-items:center;justify-content:center;gap:16px;}
-    .announce-text{font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#fff;}
-    .announce-link{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.7);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4);transition:color .2s;}
-    .announce-link:hover{color:#fff;}
-    .announce-close{background:none;border:none;color:rgba(255,255,255,.6);font-size:18px;cursor:none;margin-left:16px;transition:color .2s;}
-    .announce-close:hover{color:#fff;}
+  .hero h1 {
+    font-size: 44px;
+    margin-bottom: 10px;
+  }
 
-    /* NAV */
-    nav{position:sticky;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:18px 48px;z-index:100;border-bottom:1px solid var(--border);background:rgba(10,26,15,.97);backdrop-filter:blur(16px);transition:box-shadow .3s;}
-    nav.scrolled{box-shadow:0 2px 24px rgba(0,0,0,.4);}
-    .nav-logo{font-family:var(--font-display);font-size:26px;letter-spacing:2px;color:var(--white);text-decoration:none;}
-    .nav-logo span{color:var(--accent);}
-    .nav-links{display:flex;gap:28px;list-style:none;}
-    .nav-links a{font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s;}
-    .nav-links a:hover,.nav-links a.active{color:var(--accent);}
-    .nav-right{display:flex;align-items:center;gap:12px;}
-    .nav-lang{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);background:none;border:1px solid var(--border);padding:6px 12px;cursor:none;transition:border-color .2s;}
-    .nav-lang:hover{border-color:var(--accent);color:var(--accent);}
-    .nav-cta{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;background:var(--accent);color:#fff;border:none;padding:10px 22px;cursor:none;font-weight:500;transition:background .2s,transform .15s;}
-    .nav-cta:hover{background:#c62d3a;transform:translateY(-1px);}
-    .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:none;background:none;border:none;padding:4px;}
-    .nav-hamburger span{display:block;width:24px;height:2px;background:var(--white);border-radius:2px;transition:all .3s;}
+  .hero p {
+    color: #bbb;
+    max-width: 600px;
+  }
 
-    /* HERO */
-    #hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 48px 80px;position:relative;overflow:hidden;background:linear-gradient(160deg,#0a1a0f 0%,#0d2114 60%,#112b18 100%);}
-    .hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:72px 72px;mask-image:radial-gradient(ellipse 100% 80% at 50% 50%,black 30%,transparent 100%);opacity:.4;}
-    .hero-glow{position:absolute;top:-200px;right:-200px;width:700px;height:700px;background:radial-gradient(circle,rgba(230,57,70,.1) 0%,transparent 65%);pointer-events:none;}
-    .hero-glow-2{position:absolute;bottom:-100px;left:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(0,166,81,.08) 0%,transparent 65%);pointer-events:none;}
-    .hero-ticker{font-family:var(--font-mono);font-size:11px;letter-spacing:.15em;color:var(--muted);text-transform:uppercase;margin-bottom:36px;display:flex;gap:28px;animation:fadeUp .8s .2s both;}
-    .hero-ticker span{color:var(--accent);}
-    .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(230,57,70,.1);border:1px solid rgba(230,57,70,.3);padding:6px 14px;margin-bottom:20px;animation:fadeUp .8s .1s both;}
-    .hero-badge-dot{width:6px;height:6px;background:var(--green);border-radius:50%;animation:pulse 2s infinite;}
-    @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.6;transform:scale(1.4)}}
-    .hero-badge-text{font-family:var(--font-mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);}
-    .hero-headline{font-family:var(--font-display);font-size:clamp(72px,13vw,190px);line-height:.88;letter-spacing:-1px;color:var(--white);animation:fadeUp .9s .35s both;}
-    .hero-headline em{font-style:normal;color:var(--accent);display:block;}
-    .hero-sub-row{display:flex;align-items:flex-end;justify-content:space-between;margin-top:44px;animation:fadeUp .9s .5s both;}
-    .hero-sub{max-width:400px;font-size:17px;color:var(--mid);line-height:1.7;font-weight:300;}
-    .hero-actions{display:flex;gap:14px;align-items:center;}
-    .hero-phone{font-family:var(--font-mono);font-size:12px;letter-spacing:.1em;color:var(--muted);margin-top:16px;display:flex;align-items:center;gap:8px;animation:fadeUp .9s .6s both;}
-    .hero-phone a{color:var(--accent);text-decoration:none;transition:color .2s;}
-    .hero-phone a:hover{color:#6d28d9;}
-    .hero-clients{display:flex;align-items:center;gap:16px;margin-top:20px;animation:fadeUp .9s .7s both;}
-    .hero-clients-label{font-family:var(--font-mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);}
-    .client-avatar{width:32px;height:32px;border-radius:50%;background:var(--card2);border:2px solid #fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:14px;color:var(--accent);margin-left:-8px;}
-    .client-avatar:first-of-type{margin-left:0;}
-    .hero-rating{font-family:var(--font-mono);font-size:11px;color:var(--gold);letter-spacing:.05em;}
-    .btn-primary{background:var(--accent);color:#fff;border:none;font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:15px 30px;cursor:none;font-weight:500;text-decoration:none;display:inline-block;transition:background .2s,transform .15s;}
-    .btn-primary:hover{background:#c62d3a;transform:translateY(-2px);}
-    .btn-outline{background:transparent;color:var(--white);border:2px solid var(--border);font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:15px 30px;cursor:none;text-decoration:none;display:inline-block;transition:border-color .2s,color .2s,background .2s;}
-    .btn-outline:hover{border-color:var(--accent);color:#fff;background:var(--accent);}
-    .hero-scroll{position:absolute;right:48px;bottom:80px;display:flex;flex-direction:column;align-items:center;gap:10px;animation:fadeUp 1s .8s both;}
-    .hero-scroll span{font-family:var(--font-mono);font-size:10px;letter-spacing:.2em;color:var(--muted);text-transform:uppercase;writing-mode:vertical-rl;}
-    .scroll-line{width:1px;height:60px;background:linear-gradient(to bottom,var(--accent),transparent);animation:scrollPulse 2s infinite;}
+  .cta-buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
-    /* TRUST BAR */
-    .trust-bar{background:#071209;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;gap:32px;overflow:hidden;}
-    .trust-label{font-family:var(--font-mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);white-space:nowrap;flex-shrink:0;}
-    .trust-items{display:flex;align-items:center;gap:40px;flex:1;justify-content:center;}
-    .trust-item{font-family:var(--font-display);font-size:20px;letter-spacing:2px;color:var(--border);white-space:nowrap;}
+  .btn {
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+  }
 
-    /* MARQUEE */
-    .marquee-wrap{border-top:2px solid var(--accent);border-bottom:2px solid var(--accent);overflow:hidden;padding:16px 0;background:var(--accent);}
-    .marquee-track{display:flex;gap:0;animation:marquee 22s linear infinite;width:max-content;}
-    .marquee-item{font-family:var(--font-display);font-size:28px;letter-spacing:3px;color:rgba(255,255,255,.85);padding:0 44px;white-space:nowrap;display:flex;align-items:center;gap:44px;}
-    .marquee-item::after{content:'✦';font-size:12px;color:rgba(255,255,255,.5);}
+  .btn-primary {
+    background: #00ffd5;
+    color: #000;
+  }
 
-    /* SECTION BASE */
-    section{padding:110px 48px;}
-    .section-label{font-family:var(--font-mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;display:flex;align-items:center;gap:12px;}
-    .section-label::before{content:'';display:block;width:28px;height:1px;background:var(--accent);}
-    .section-title{font-family:var(--font-display);font-size:clamp(44px,5.5vw,84px);line-height:.95;letter-spacing:1px;margin-bottom:20px;color:var(--white);}
+  .btn-secondary {
+    border: 1px solid #00ffd5;
+    color: #00ffd5;
+  }
 
-    /* SERVICES */
-    #services{background:#0d2114;}
-    .services-intro{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:end;margin-bottom:72px;}
-    .services-intro p{font-size:17px;color:var(--mid);font-weight:300;line-height:1.8;align-self:end;}
-    .services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
-    .service-card{background:#0a1a0f;padding:44px;transition:background .3s,box-shadow .3s;position:relative;overflow:hidden;}
-    .service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .4s ease;}
-    .service-card:hover{background:#1a0a0e;box-shadow:0 8px 40px rgba(230,57,70,.1);}
-    .service-card:hover::before{transform:scaleX(1);}
-    .service-num{font-family:var(--font-mono);font-size:11px;color:var(--gold);letter-spacing:.1em;margin-bottom:28px;opacity:.7;}
-    .service-icon{width:44px;height:44px;margin-bottom:20px;}
-    .service-card h3{font-family:var(--font-display);font-size:34px;letter-spacing:1px;margin-bottom:14px;color:var(--gold);}
-    .service-card p{font-size:14px;color:var(--mid);line-height:1.7;margin-bottom:24px;}
-    .service-tags{display:flex;flex-wrap:wrap;gap:7px;}
-    .tag{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--border);color:var(--muted);padding:4px 11px;background:var(--card);}
+  .btn:hover {
+    transform: scale(1.05);
+  }
 
-    /* WORK */
-    #work{background:var(--bg);}
-    .work-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:56px;}
-    .work-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:480px 340px;gap:3px;background:var(--border);}
-    .work-item{position:relative;overflow:hidden;cursor:none;background:var(--card);}
-    .work-item-wide{grid-column:span 2;}
-    .work-bg{position:absolute;inset:0;background-size:cover !important;background-position:center !important;transition:transform .7s cubic-bezier(.25,.46,.45,.94);will-change:transform;}
-    .work-item:hover .work-bg{transform:scale(1.06);}
-    .work-overlay-dark{position:absolute;inset:0;background:linear-gradient(to top,rgba(5,20,8,.92) 0%,rgba(0,100,40,.15) 55%,transparent 100%);z-index:1;transition:background .4s;}
-    .work-item:hover .work-overlay-dark{background:linear-gradient(to top,rgba(5,20,8,.95) 0%,rgba(230,57,70,.15) 60%,transparent 100%);}
-    .work-overlay{position:absolute;inset:0;padding:28px;z-index:2;display:flex;flex-direction:column;justify-content:flex-end;transform:translateY(10px);transition:transform .4s ease;}
-    .work-item:hover .work-overlay{transform:translateY(0);}
-    .work-cat{font-family:var(--font-mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:#6ab87e;margin-bottom:7px;}
-    .work-title{font-family:var(--font-display);font-size:28px;letter-spacing:1px;line-height:1;color:#fff;}
-    .work-result{font-family:var(--font-mono);font-size:11px;color:rgba(196,181,253,.8);margin-top:6px;letter-spacing:.05em;}
-    .work-arrow{position:absolute;top:20px;right:20px;width:38px;height:38px;z-index:3;border:1px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;font-size:16px;color:#fff;opacity:0;transition:opacity .3s;}
-    .work-item:hover .work-arrow{opacity:1;}
+  /* SECTIONS */
+  section {
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: auto;
+  }
 
-    /* STATS */
-    #stats{background:var(--accent);padding:72px 48px;}
-    .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.2);}
-    .stat-box{background:var(--accent);padding:44px 28px;text-align:center;}
-    .stat-num{font-family:var(--font-display);font-size:76px;line-height:1;color:#fff;letter-spacing:-2px;}
-    .stat-label{font-family:var(--font-mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-top:6px;}
+  .card {
+    background: #161616;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+  }
 
-    /* AWARDS / RECOGNITION */
-    #awards{background:#071209;padding:72px 48px;}
-    .awards-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-top:48px;}
-    .award-card{background:#0a1a0f;padding:32px 28px;text-align:center;transition:background .3s;}
-    .award-card:hover{background:#1a0a0e;}
-    .award-icon{font-size:32px;margin-bottom:12px;display:block;}
-    .award-title{font-family:var(--font-display);font-size:22px;letter-spacing:1px;color:var(--gold);margin-bottom:6px;}
-    .award-body{font-size:13px;color:var(--mid);line-height:1.6;}
+  h2 {
+    color: #00ffd5;
+    margin-bottom: 10px;
+  }
 
-    /* PRICING */
-    #pricing{background:#071209;padding:110px 48px;position:relative;overflow:hidden;}
-    #pricing .section-label{color:var(--green);}
-    #pricing .section-label::before{background:var(--green);}
-    .pricing-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:500px;background:radial-gradient(ellipse,rgba(0,166,81,.05) 0%,transparent 70%);pointer-events:none;}
-    .pricing-intro{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:end;margin-bottom:56px;}
-    .pricing-intro p{font-size:17px;color:var(--mid);font-weight:300;line-height:1.8;}
-    .pricing-currency-toggle{display:flex;align-items:center;gap:8px;margin-top:16px;}
-    .currency-btn{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;background:none;border:1px solid var(--border);color:var(--muted);padding:6px 14px;cursor:none;transition:all .2s;}
-    .currency-btn.active{background:var(--green);border-color:var(--green);color:#fff;}
-    .pricing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
-    .price-card{background:#0a1a0f;padding:36px 28px;position:relative;overflow:hidden;transition:background .3s,box-shadow .3s;}
-    .price-card:hover{background:#1a0a0e;box-shadow:0 8px 40px rgba(230,57,70,.1);}
-    .price-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--green);transform:scaleX(0);transform-origin:left;transition:transform .4s ease;}
-    .price-card:hover::before{transform:scaleX(1);}
-    .price-card.featured{background:var(--green);}
-    .price-card.featured:hover{background:#009444;box-shadow:none;}
-    .price-card.featured::before{display:none;}
-    .price-num{font-family:var(--font-mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:20px;}
-    .price-card.featured .price-num{color:rgba(255,255,255,.5);}
-    .price-icon{width:38px;height:38px;margin-bottom:16px;}
-    .price-name{font-family:var(--font-display);font-size:26px;letter-spacing:1px;color:var(--white);margin-bottom:6px;line-height:1;}
-    .price-card.featured .price-name{color:#fff;}
-    .price-tag{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:16px;}
-    .price-card.featured .price-tag{color:rgba(255,255,255,.7);}
-    .price-amount{font-family:var(--font-display);font-size:44px;letter-spacing:-1px;color:var(--green);line-height:1;margin-bottom:3px;}
-    .price-card.featured .price-amount{color:#fff;}
-    .price-period{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;color:var(--muted);margin-bottom:22px;}
-    .price-card.featured .price-period{color:rgba(255,255,255,.6);}
-    .price-divider{height:1px;background:var(--border);margin-bottom:20px;}
-    .price-card.featured .price-divider{background:rgba(255,255,255,.2);}
-    .price-desc{font-size:13px;color:var(--mid);line-height:1.7;margin-bottom:20px;}
-    .price-card.featured .price-desc{color:rgba(255,255,255,.8);}
-    .price-features{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:28px;}
-    .price-features li{font-size:12px;color:var(--mid);display:flex;align-items:flex-start;gap:9px;line-height:1.5;}
-    .price-card.featured .price-features li{color:rgba(255,255,255,.8);}
-    .price-features li::before{content:'✓';color:var(--green);font-size:11px;font-weight:600;flex-shrink:0;margin-top:1px;}
-    .price-card.featured .price-features li::before{color:#fff;}
-    .price-btn{display:block;width:100%;text-align:center;font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:12px;text-decoration:none;transition:all .2s;cursor:none;border:none;}
-    .price-btn-outline{background:transparent;border:1px solid var(--border);color:var(--muted);}
-    .price-btn-outline:hover{border-color:var(--accent);color:var(--accent);}
-    .price-btn-solid{background:var(--white);color:#fff;}
-    .price-btn-solid:hover{background:#ede9fe;color:var(--accent);}
-    .pricing-band{margin-top:2px;background:var(--green);padding:36px 44px;display:flex;align-items:center;justify-content:space-between;}
-    .band-left{flex:1;}
-    .band-tag{font-family:var(--font-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:6px;}
-    .band-title{font-family:var(--font-display);font-size:36px;letter-spacing:2px;color:#fff;line-height:1;}
-    .band-desc{font-size:13px;color:rgba(255,255,255,.7);margin-top:6px;max-width:380px;line-height:1.6;}
-    .band-right{text-align:right;}
-    .band-price{font-family:var(--font-display);font-size:56px;letter-spacing:-2px;color:#fff;line-height:1;}
-    .band-period{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;color:rgba(255,255,255,.5);margin-bottom:14px;}
-    .band-btn{display:inline-block;background:#fff;color:var(--green);font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:11px 22px;text-decoration:none;transition:background .2s;cursor:none;border:none;}
-    .band-btn:hover{background:#1a0a0e;color:var(--accent);}
-    .pricing-note{margin-top:36px;text-align:center;font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;color:var(--muted);}
-    .pricing-note span{color:var(--green);}
+  /* GRID */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+  }
 
-    /* TESTIMONIALS */
-    #testimonials{background:#0a1a0f;padding:110px 48px;}
-    .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:56px;}
-    .testi-card{background:#0d2114;padding:40px 36px;position:relative;transition:background .3s;}
-    .testi-card:hover{background:#1a0a0e;}
-    .testi-stars{display:flex;gap:4px;margin-bottom:16px;}
-    .testi-star{color:var(--gold);font-size:16px;}
-    .testi-text{font-size:15px;color:var(--mid);line-height:1.8;margin-bottom:24px;font-style:italic;}
-    .testi-author{display:flex;align-items:center;gap:12px;}
-    .testi-avatar{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:18px;color:#fff;flex-shrink:0;}
-    .testi-name{font-size:13px;font-weight:500;color:var(--white);}
-    .testi-role{font-size:11px;color:var(--muted);font-family:var(--font-mono);letter-spacing:.05em;}
-    .testi-location{font-size:10px;color:var(--muted);font-family:var(--font-mono);letter-spacing:.08em;margin-top:2px;}
-    .testi-bar{position:absolute;top:0;left:0;right:0;height:2px;}
+  /* FORM */
+  input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: none;
+  }
 
-    /* PROCESS */
-    #process{background:#071209;}
-    .process-steps{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--border);margin-top:56px;}
-    .process-step{padding:44px 32px;border-right:1px solid var(--border);background:#0a1a0f;transition:background .3s;}
-    .process-step:hover{background:#1a0a0e;}
-    .process-step:last-child{border-right:none;}
-    .step-num{font-family:var(--font-display);font-size:72px;line-height:1;color:var(--border);margin-bottom:20px;}
-    .step-title{font-family:var(--font-display);font-size:26px;letter-spacing:1px;margin-bottom:10px;color:var(--green);}
-    .step-desc{font-size:13px;color:var(--mid);line-height:1.7;}
+  button {
+    background: #00ffd5;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    font-weight: bold;
+    cursor: pointer;
+  }
 
-    /* GLOBAL REACH */
-    #global{background:var(--accent);padding:80px 48px;text-align:center;}
-    .global-title{font-family:var(--font-display);font-size:clamp(40px,6vw,80px);color:#fff;letter-spacing:2px;margin-bottom:16px;}
-    .global-sub{font-size:17px;color:rgba(255,255,255,.7);font-weight:300;max-width:500px;margin:0 auto 48px;line-height:1.7;}
-    .global-regions{display:flex;justify-content:center;gap:48px;flex-wrap:wrap;}
-    .region{text-align:center;}
-    .region-flag{font-size:28px;display:block;margin-bottom:8px;}
-    .region-name{font-family:var(--font-mono);font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.7);}
-
-    /* CONTACT */
-    #contact{background:#0d2114;padding:140px 48px;position:relative;overflow:hidden;}
-    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
-    .contact-info{padding-top:16px;}
-    .contact-headline{font-family:var(--font-display);font-size:clamp(48px,7vw,100px);line-height:.9;margin-bottom:24px;color:var(--white);}
-    .contact-headline span{color:var(--accent);display:block;}
-    .contact-sub{font-size:17px;color:var(--mid);font-weight:300;line-height:1.7;margin-bottom:36px;}
-    .contact-details{display:flex;flex-direction:column;gap:16px;}
-    .contact-detail{display:flex;align-items:center;gap:12px;}
-    .contact-detail-icon{width:36px;height:36px;background:#1a0a0e;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
-    .contact-detail-text a{color:var(--accent);text-decoration:none;font-size:14px;font-family:var(--font-mono);transition:color .2s;}
-    .contact-detail-text a:hover{color:#6d28d9;}
-    .contact-detail-label{font-size:11px;color:var(--muted);font-family:var(--font-mono);letter-spacing:.08em;}
-    .contact-form-wrap{}
-    .contact-form{display:flex;flex-direction:column;gap:14px;}
-    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
-    .form-field{display:flex;flex-direction:column;gap:7px;}
-    .form-field label{font-family:var(--font-mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);}
-    .form-field input,.form-field textarea,.form-field select{background:#0a1a0f;border:1.5px solid var(--border);color:var(--white);font-family:var(--font-body);font-size:15px;padding:13px 15px;outline:none;transition:border-color .2s;resize:none;cursor:none;}
-    .form-field input:focus,.form-field textarea:focus,.form-field select:focus{border-color:var(--accent);}
-    .form-field select{appearance:none;}
-    .form-field textarea{height:110px;}
-    .form-submit{background:var(--accent);color:#fff;border:none;font-family:var(--font-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:17px;cursor:none;font-weight:500;transition:background .2s,transform .15s;margin-top:6px;}
-    .form-submit:hover{background:#c62d3a;transform:translateY(-2px);}
-    .form-guarantee{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-align:center;margin-top:12px;}
-    .form-guarantee span{color:var(--green);}
-
-    /* FOOTER */
-    footer{background:#050e08;padding:60px 48px 36px;color:var(--white);}
-    .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;}
-    .footer-brand .footer-logo{font-family:var(--font-display);font-size:28px;letter-spacing:2px;color:var(--white);}
-    .footer-brand .footer-logo span{color:var(--accent);}
-    .footer-brand p{font-size:13px;color:rgba(255,255,255,.5);line-height:1.7;margin-top:12px;max-width:260px;}
-    .footer-col-title{font-family:var(--font-mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:16px;}
-    .footer-col-links{list-style:none;display:flex;flex-direction:column;gap:10px;}
-    .footer-col-links a{font-size:13px;color:rgba(255,255,255,.6);text-decoration:none;transition:color .2s;}
-    .footer-col-links a:hover{color:var(--accent);}
-    .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);}
-    .footer-copy{font-family:var(--font-mono);font-size:11px;color:rgba(255,255,255,.3);}
-    .footer-social{display:flex;gap:14px;}
-    .footer-social a{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);text-decoration:none;transition:color .2s;}
-    .footer-social a:hover{color:var(--accent);}
-
-    /* FLOATING BUTTONS */
-    #whatsapp-btn{position:fixed;bottom:24px;right:24px;width:54px;height:54px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:500;cursor:none;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:transform .2s,box-shadow .2s;}
-    #whatsapp-btn:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(37,211,102,.5);}
-    #whatsapp-btn svg{width:28px;height:28px;fill:#fff;}
-    #back-top{position:fixed;bottom:90px;right:24px;width:44px;height:44px;background:var(--card);border:1px solid var(--border);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:20px;cursor:none;opacity:0;visibility:hidden;transition:opacity .3s,background .2s,visibility .3s;z-index:500;}
-    #back-top.visible{opacity:1;visibility:visible;}
-    #back-top:hover{background:var(--accent);color:#fff;border-color:var(--accent);}
-
-    /* ANIMATIONS */
-    @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-    @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-    @keyframes scrollPulse{0%,100%{opacity:.4}50%{opacity:1}}
-    .reveal{opacity:0;transform:translateY(36px);transition:opacity .7s ease,transform .7s ease;}
-    .reveal.visible{opacity:1;transform:translateY(0);}
-    .reveal-delay-1{transition-delay:.1s;}
-    .reveal-delay-2{transition-delay:.2s;}
-    .reveal-delay-3{transition-delay:.3s;}
-
-    /* MOBILE */
-    @media(max-width:768px){
-      #announce{padding:9px 16px;}
-      nav{padding:14px 20px;}
-      .nav-links{display:none;position:fixed;inset:0;top:56px;background:rgba(10,26,15,.99);flex-direction:column;align-items:center;justify-content:center;gap:36px;backdrop-filter:blur(20px);}
-      .nav-links.open{display:flex;}
-      .nav-links a{font-size:14px;color:var(--light);}
-      .nav-cta,.nav-lang{display:none;}
-      .nav-hamburger{display:flex;}
-      .nav-hamburger span{background:var(--white);}
-      #hero{padding:0 20px 60px;}
-      .hero-headline{font-size:clamp(52px,16vw,90px);}
-      .hero-sub-row{flex-direction:column;gap:24px;align-items:flex-start;}
-      .hero-sub{max-width:100%;font-size:15px;}
-      .hero-actions{flex-direction:column;width:100%;}
-      .btn-primary,.btn-outline{width:100%;text-align:center;padding:14px 20px;}
-      .hero-scroll{display:none;}
-      .trust-bar{flex-direction:column;gap:16px;padding:16px 20px;}
-      .trust-items{flex-wrap:wrap;gap:20px;justify-content:flex-start;}
-      section{padding:72px 20px;}
-      .services-intro{grid-template-columns:1fr;gap:24px;margin-bottom:40px;}
-      .services-grid{grid-template-columns:1fr;}
-      .work-grid{grid-template-columns:1fr;grid-template-rows:auto;}
-      .work-item{min-height:260px;}
-      .work-item-wide{grid-column:span 1;min-height:320px;}
-      .stats-grid{grid-template-columns:repeat(2,1fr);}
-      .stat-num{font-size:52px;}
-      .awards-grid{grid-template-columns:repeat(2,1fr);}
-      .pricing-intro{grid-template-columns:1fr;gap:20px;}
-      .pricing-grid{grid-template-columns:1fr;}
-      .pricing-band{flex-direction:column;gap:24px;}
-      .band-right{text-align:left;}
-      .testi-grid{grid-template-columns:1fr;}
-      .process-steps{grid-template-columns:1fr;}
-      .process-step{border-right:none;border-bottom:1px solid var(--border);}
-      .process-step:last-child{border-bottom:none;}
-      .global-regions{gap:24px;}
-      .contact-grid{grid-template-columns:1fr;}
-      .form-row{grid-template-columns:1fr;}
-      footer{padding:40px 20px 28px;}
-      .footer-top{grid-template-columns:1fr;}
-      .footer-bottom{flex-direction:column;gap:12px;text-align:center;}
-      .section-title{font-size:clamp(40px,10vw,64px);}
-    }
-  </style>
+  footer {
+    text-align: center;
+    padding: 30px;
+    color: #777;
+    font-size: 12px;
+  }
+</style>
 </head>
+
 <body>
 
-<div id="loader">
-  <div class="loader-logo"><span style="color:var(--green);">DIGI</span><span style="color:var(--accent);">CREATIV</span><span style="color:var(--green);font-size:56px;">.</span></div>
-  <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
-  <div class="loader-text">Loading experience...</div>
-</div>
-
-<div id="cursor"></div>
-<div id="cursor-ring"></div>
-
-<!-- ANNOUNCEMENT BAR -->
-<div id="announce">
-  <span class="announce-text">🌍 Now serving clients across Kenya, East Africa & globally</span>
-  <a href="#pricing" class="announce-link">View pricing →</a>
-  <button class="announce-close" onclick="document.getElementById('announce').style.display='none'">×</button>
-</div>
-
-<!-- NAV -->
-<nav id="navbar">
-  <a href="#" class="nav-logo" style="display:flex;align-items:baseline;gap:0;"><span style="color:var(--green);letter-spacing:3px;">DIGI</span><span style="color:var(--accent);letter-spacing:3px;">CREATIV</span><span style="color:var(--green);font-size:36px;line-height:0.8;">.</span></a>
-  <ul class="nav-links" id="nav-links">
-    <li><a href="#services">Services</a></li>
-    <li><a href="#work">Work</a></li>
-    <li><a href="#pricing">Pricing</a></li>
-    <li><a href="#testimonials">Reviews</a></li>
-    <li><a href="#global">Global</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <div class="nav-right">
-    <button class="nav-lang" onclick="toggleCurrency()">KES / USD</button>
-    <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-    <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Start a project</button>
-  </div>
-</nav>
-
 <!-- HERO -->
-<section id="hero">
-  <div class="hero-grid"></div>
-  <div class="hero-glow"></div>
-  <div class="hero-glow-2"></div>
-  <div class="hero-badge">
-    <div class="hero-badge-dot"></div>
-    <span class="hero-badge-text">Now accepting new clients — 2 spots left this month</span>
+<div class="hero">
+  <h1>Grow Your Brand Online</h1>
+  <p>
+    I help businesses and personal brands get visibility, engagement, and clients
+    through social media marketing and digital content systems.
+  </p>
+
+  <div class="cta-buttons">
+    <a class="btn btn-primary"
+       href="https://wa.me/254700000000"
+       target="_blank">
+       📩 Message on WhatsApp
+    </a>
+
+    <a class="btn btn-secondary" href="#contact">
+      Get Free Strategy
+    </a>
   </div>
-  <div class="hero-ticker">
-    <span>✦</span> Social Media &nbsp;<span>✦</span> Content Creation &nbsp;<span>✦</span> Branding &nbsp;<span>✦</span> Analytics &nbsp;<span>✦</span> Lead Generation
+</div>
+
+<!-- ABOUT -->
+<section>
+  <div class="card">
+    <h2>What I Do</h2>
+    <p>
+      I build simple but effective digital systems that help brands get attention online.
+      This includes content strategy, social media setup, and growth-focused posting.
+    </p>
   </div>
-  <h1 class="hero-headline">We Build<br><em>Brands</em>That Lead.</h1>
-  <div class="hero-sub-row">
-    <p class="hero-sub">DigiCreativ is an award-winning creative marketing agency helping businesses across Kenya and the globe dominate their market through bold branding, social content, and creative strategy.</p>
-    <div class="hero-actions">
-      <a href="#work" class="btn-primary">See our work</a>
-      <a href="#services" class="btn-outline">Our services</a>
-    </div>
-  </div>
-  <div class="hero-phone">
-    📞 <a href="tel:+254705996298">+254 705 996 298</a> &nbsp;·&nbsp;
-    <a href="mailto:iammarkmwenda12@gmail.com">iammarkmwenda12@gmail.com</a>
-  </div>
-  <div class="hero-clients">
-    <span class="hero-clients-label">Trusted by 64+ brands</span>
-    <div class="client-avatar">K</div>
-    <div class="client-avatar">V</div>
-    <div class="client-avatar">S</div>
-    <div class="client-avatar">M</div>
-    <div class="client-avatar">N</div>
-    <span class="hero-rating">★★★★★ 4.9/5</span>
-  </div>
-  <div class="hero-scroll"><div class="scroll-line"></div><span>Scroll</span></div>
 </section>
-
-<!-- TRUST BAR -->
-<div class="trust-bar">
-  <span class="trust-label">As seen in</span>
-  <div class="trust-items">
-    <span class="trust-item">Business Daily</span>
-    <span class="trust-item">Nairobi Business</span>
-    <span class="trust-item">Tech Africa</span>
-    <span class="trust-item">Creative Kenya</span>
-    <span class="trust-item">StartupBlink</span>
-  </div>
-</div>
-
-<!-- MARQUEE -->
-<div class="marquee-wrap">
-  <div class="marquee-track">
-    <div class="marquee-item">Brand Identity</div>
-    <div class="marquee-item">Social Media</div>
-    <div class="marquee-item">Content Strategy</div>
-    <div class="marquee-item">Analytics</div>
-    <div class="marquee-item">Lead Generation</div>
-    <div class="marquee-item">Visual Design</div>
-    <div class="marquee-item">Brand Identity</div>
-    <div class="marquee-item">Social Media</div>
-    <div class="marquee-item">Content Strategy</div>
-    <div class="marquee-item">Analytics</div>
-  </div>
-</div>
 
 <!-- SERVICES -->
-<section id="services">
-  <div class="services-intro">
-    <div>
-      <div class="section-label reveal">What we do</div>
-      <h2 class="section-title reveal reveal-delay-1">Our<br>Services</h2>
+<section>
+  <h2>Services</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Social Media Management</h3>
+      <p>Daily content planning, posting, and engagement growth.</p>
     </div>
-    <p class="reveal reveal-delay-2">We blend creative strategy with relentless execution. Every brand we touch gets treated like our own — because your growth is our obsession.</p>
-  </div>
-  <div class="services-grid reveal">
-    <div class="service-card">
-      <div class="service-num">01</div>
-      <svg class="service-icon" viewBox="0 0 44 44" fill="none"><rect x="3" y="7" width="38" height="30" rx="4" stroke="#7C3AED" stroke-width="1.5"/><path d="M3 19h38" stroke="#7C3AED" stroke-width="1.5"/><circle cx="11" cy="13" r="2" fill="#7C3AED"/><circle cx="18" cy="13" r="2" fill="#7C3AED" opacity=".4"/><path d="M11 29l5-5 4 4 5-7 5 5" stroke="#7C3AED" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <h3>Social Media</h3>
-      <p>We manage your presence across every platform — crafting content that stops the scroll and builds real communities around your brand.</p>
-      <div class="service-tags"><span class="tag">Instagram</span><span class="tag">TikTok</span><span class="tag">LinkedIn</span><span class="tag">X</span><span class="tag">Community</span></div>
+
+    <div class="card">
+      <h3>Brand Design</h3>
+      <p>Logos, page identity, and visual direction for businesses.</p>
     </div>
-    <div class="service-card">
-      <div class="service-num">02</div>
-      <svg class="service-icon" viewBox="0 0 44 44" fill="none"><path d="M22 5L5 17v22h34V17L22 5z" stroke="#7C3AED" stroke-width="1.5" stroke-linejoin="round"/><path d="M15 39V26h14v13" stroke="#7C3AED" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22" cy="19" r="4" stroke="#7C3AED" stroke-width="1.5"/></svg>
-      <h3>Content Creation</h3>
-      <p>From scripting to shooting to editing — we produce thumb-stopping video, photo and copy that converts viewers into customers.</p>
-      <div class="service-tags"><span class="tag">Video</span><span class="tag">Photography</span><span class="tag">Copywriting</span><span class="tag">Reels</span></div>
-    </div>
-    <div class="service-card">
-      <div class="service-num">03</div>
-      <svg class="service-icon" viewBox="0 0 44 44" fill="none"><circle cx="22" cy="22" r="9" stroke="#7C3AED" stroke-width="1.5"/><path d="M22 4v3M22 37v3M4 22h3M37 22h3" stroke="#7C3AED" stroke-width="1.5" stroke-linecap="round"/><circle cx="22" cy="22" r="3.5" fill="#7C3AED" opacity=".3"/></svg>
-      <h3>Brand Identity</h3>
-      <p>Logo, palette, typography, voice — we build brand systems that are unmistakably yours and instantly recognisable in any market.</p>
-      <div class="service-tags"><span class="tag">Logo Design</span><span class="tag">Style Guide</span><span class="tag">Brand Voice</span><span class="tag">Packaging</span></div>
-    </div>
-    <div class="service-card">
-      <div class="service-num">04</div>
-      <svg class="service-icon" viewBox="0 0 44 44" fill="none"><rect x="5" y="5" width="15" height="15" rx="2" stroke="#7C3AED" stroke-width="1.5"/><rect x="24" y="5" width="15" height="15" rx="2" stroke="#7C3AED" stroke-width="1.5"/><rect x="5" y="24" width="15" height="15" rx="2" stroke="#7C3AED" stroke-width="1.5"/><rect x="24" y="24" width="15" height="15" rx="2" stroke="#7C3AED" stroke-width="1.5" opacity=".4"/></svg>
-      <h3>Creative Design</h3>
-      <p>Campaigns, decks, ads, print — whatever the canvas, we design visuals that communicate your edge and outperform the competition.</p>
-      <div class="service-tags"><span class="tag">Campaigns</span><span class="tag">Ad Creatives</span><span class="tag">Pitch Decks</span><span class="tag">Print</span></div>
+
+    <div class="card">
+      <h3>Content Strategy</h3>
+      <p>Ideas and systems that attract followers and customers.</p>
     </div>
   </div>
 </section>
 
-<!-- WORK -->
-<section id="work">
-  <div class="work-header">
-    <div>
-      <div class="section-label reveal">Portfolio</div>
-      <h2 class="section-title reveal reveal-delay-1">Selected<br>Work</h2>
-    </div>
-    <a href="#contact" class="btn-outline reveal reveal-delay-2">Start yours →</a>
-  </div>
-  <div class="work-grid reveal">
-    <div class="work-item work-item-wide">
-      <div class="work-bg" style="background-image:url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&q=100&fit=crop&auto=format');background-position:center top;"></div>
-      <div class="work-overlay-dark"></div><div class="work-arrow">↗</div>
-      <div class="work-overlay">
-        <div class="work-cat">Analytics & Strategy · 2024</div>
-        <div class="work-title">Meridian Tech — Full digital analytics suite</div>
-        <div class="work-result">↑ 340% organic growth in 6 months</div>
-      </div>
-    </div>
-    <div class="work-item">
-      <div class="work-bg" style="background-image:url('https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=1200&q=100&fit=crop&auto=format');"></div>
-      <div class="work-overlay-dark"></div><div class="work-arrow">↗</div>
-      <div class="work-overlay">
-        <div class="work-cat">Social Media · 2024</div>
-        <div class="work-title">Vertx Apparel</div>
-        <div class="work-result">0 → 120k followers in 6 months</div>
-      </div>
-    </div>
-    <div class="work-item">
-      <div class="work-bg" style="background-image:url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=100&fit=crop&auto=format');background-position:top;"></div>
-      <div class="work-overlay-dark"></div><div class="work-arrow">↗</div>
-      <div class="work-overlay">
-        <div class="work-cat">Lead Generation · 2025</div>
-        <div class="work-title">Kova Spirits</div>
-        <div class="work-result">↑ 280% increase in qualified leads</div>
-      </div>
-    </div>
-    <div class="work-item">
-      <div class="work-bg" style="background-image:url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=100&fit=crop&auto=format');"></div>
-      <div class="work-overlay-dark"></div><div class="work-arrow">↗</div>
-      <div class="work-overlay">
-        <div class="work-cat">Digital Marketing · 2025</div>
-        <div class="work-title">Sola Brands</div>
-        <div class="work-result">↑ 4.2x return on ad spend</div>
-      </div>
-    </div>
-    <div class="work-item">
-      <div class="work-bg" style="background-image:url('https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1200&q=100&fit=crop&auto=format');"></div>
-      <div class="work-overlay-dark"></div><div class="work-arrow">↗</div>
-      <div class="work-overlay">
-        <div class="work-cat">Brand Identity · 2025</div>
-        <div class="work-title">NovaTech</div>
-        <div class="work-result">Complete rebrand — 2 industry awards</div>
-      </div>
-    </div>
+<!-- PROOF -->
+<section>
+  <h2>Results / Work</h2>
+
+  <div class="card">
+    <p>
+      Projects and case studies will be updated here.
+      Currently building real client results and content systems.
+    </p>
   </div>
 </section>
 
-<!-- STATS -->
-<div id="stats">
-  <div class="stats-grid">
-    <div class="stat-box reveal"><div class="stat-num" data-target="64">0</div><div class="stat-label">Brands Transformed</div></div>
-    <div class="stat-box reveal reveal-delay-1"><div class="stat-num" data-target="2">0</div><div class="stat-label">Years in Market</div></div>
-    <div class="stat-box reveal reveal-delay-2"><div class="stat-num" data-target="12">0</div><div class="stat-label">Industries Served</div></div>
-    <div class="stat-box reveal reveal-delay-3"><div class="stat-num" data-target="98">0</div><div class="stat-label">% Client Retention</div></div>
-  </div>
-</div>
-
-<!-- AWARDS -->
-<section id="awards">
-  <div class="section-label reveal">Recognition</div>
-  <h2 class="section-title reveal reveal-delay-1">Awards &<br>Recognition</h2>
-  <div class="awards-grid reveal">
-    <div class="award-card">
-      <span class="award-icon">🏆</span>
-      <div class="award-title">Best Agency 2024</div>
-      <div class="award-body">Nairobi Business Awards — Marketing Agency of the Year</div>
-    </div>
-    <div class="award-card">
-      <span class="award-icon">⭐</span>
-      <div class="award-title">Top Creative</div>
-      <div class="award-body">Creative Kenya — Outstanding Brand Identity Campaign</div>
-    </div>
-    <div class="award-card">
-      <span class="award-icon">🌍</span>
-      <div class="award-title">Africa Rising</div>
-      <div class="award-body">StartupBlink — Top Digital Agency East Africa 2025</div>
-    </div>
-    <div class="award-card">
-      <span class="award-icon">📈</span>
-      <div class="award-title">Growth Award</div>
-      <div class="award-body">Tech Africa — Fastest Growing Marketing Agency 2025</div>
-    </div>
-  </div>
-</section>
-
-<!-- PRICING -->
-<section id="pricing">
-  <div class="pricing-glow"></div>
-  <div class="pricing-intro">
-    <div>
-      <div class="section-label reveal">Rate Card</div>
-      <h2 class="section-title reveal reveal-delay-1">Transparent<br>Pricing</h2>
-      <div class="pricing-currency-toggle reveal">
-        <button class="currency-btn active" onclick="setCurrency('KES',this)">KES</button>
-        <button class="currency-btn" onclick="setCurrency('USD',this)">USD</button>
-        <button class="currency-btn" onclick="setCurrency('GBP',this)">GBP</button>
-      </div>
-    </div>
-    <p class="reveal reveal-delay-2">No hidden fees. No surprises. Clear honest pricing built around the results you need. Packages available in KES, USD, and GBP for international clients.</p>
-  </div>
-  <div class="pricing-grid reveal">
-    <div class="price-card">
-      <div class="price-num">01</div>
-      <svg class="price-icon" viewBox="0 0 40 40" fill="none"><rect x="2" y="6" width="36" height="28" rx="4" stroke="#00A651" stroke-width="1.5"/><path d="M2 16h36" stroke="#00A651" stroke-width="1.5"/><circle cx="9" cy="11" r="2" fill="#00A651"/><path d="M10 26l5-5 3 3 5-6 5 5" stroke="#00A651" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <div class="price-name">Social Media</div>
-      <div class="price-tag">Monthly Retainer</div>
-      <div class="price-amount" id="p1">15K</div>
-      <div class="price-period" id="p1-period">KES / month — starting from</div>
-      <div class="price-divider"></div>
-      <div class="price-desc">Full management of your social presence across 2 platforms.</div>
-      <ul class="price-features"><li>2 platforms managed</li><li>12 posts per month</li><li>Caption and hashtag strategy</li><li>Community engagement</li><li>Monthly performance report</li></ul>
-      <a href="#contact" class="price-btn price-btn-outline">Get started →</a>
-    </div>
-    <div class="price-card featured">
-      <div class="price-num">02 — Most Popular</div>
-      <svg class="price-icon" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="10" stroke="#fff" stroke-width="1.5"/><path d="M20 4v4M20 32v4M4 20h4M32 20h4" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/><circle cx="20" cy="20" r="4" fill="#fff" opacity=".4"/></svg>
-      <div class="price-name">Content Creation</div>
-      <div class="price-tag">Monthly Package</div>
-      <div class="price-amount" id="p2">20K</div>
-      <div class="price-period" id="p2-period">KES / month — starting from</div>
-      <div class="price-divider"></div>
-      <div class="price-desc">Professional photo, video and reel production monthly.</div>
-      <ul class="price-features"><li>8 professional photos</li><li>4 short-form videos/reels</li><li>Captions and copy included</li><li>Editing and colour grading</li><li>Platform-optimised formats</li></ul>
-      <a href="#contact" class="price-btn price-btn-solid">Get started →</a>
-    </div>
-    <div class="price-card">
-      <div class="price-num">03</div>
-      <svg class="price-icon" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="8" stroke="#00A651" stroke-width="1.5"/><path d="M20 4v4M20 32v4M4 20h4M32 20h4" stroke="#00A651" stroke-width="1.5" stroke-linecap="round"/><circle cx="20" cy="20" r="3" fill="#00A651" opacity=".3"/></svg>
-      <div class="price-name">Brand Identity</div>
-      <div class="price-tag">One-off Project</div>
-      <div class="price-amount" id="p3">30K</div>
-      <div class="price-period" id="p3-period">KES — starting from</div>
-      <div class="price-divider"></div>
-      <div class="price-desc">A complete brand identity system for your business.</div>
-      <ul class="price-features"><li>Logo design (3 concepts)</li><li>Colour palette and typography</li><li>Brand guidelines document</li><li>Business card design</li><li>All source files included</li></ul>
-      <a href="#contact" class="price-btn price-btn-outline">Get started →</a>
-    </div>
-    <div class="price-card">
-      <div class="price-num">04</div>
-      <svg class="price-icon" viewBox="0 0 40 40" fill="none"><rect x="4" y="4" width="14" height="14" rx="2" stroke="#00A651" stroke-width="1.5"/><rect x="22" y="4" width="14" height="14" rx="2" stroke="#00A651" stroke-width="1.5"/><rect x="4" y="22" width="14" height="14" rx="2" stroke="#00A651" stroke-width="1.5"/><rect x="22" y="22" width="14" height="14" rx="2" stroke="#00A651" stroke-width="1.5" opacity=".4"/></svg>
-      <div class="price-name">Creative Design</div>
-      <div class="price-tag">Per Project</div>
-      <div class="price-amount" id="p4">10K</div>
-      <div class="price-period" id="p4-period">KES — starting from</div>
-      <div class="price-divider"></div>
-      <div class="price-desc">Campaigns, ad creatives, pitch decks and print.</div>
-      <ul class="price-features"><li>Social media ad creatives</li><li>Flyers and poster design</li><li>Pitch deck design</li><li>Print-ready files</li><li>2 revision rounds</li></ul>
-      <a href="#contact" class="price-btn price-btn-outline">Get started →</a>
-    </div>
-  </div>
-  <div class="pricing-band reveal">
-    <div class="band-left">
-      <div class="band-tag">Best value — Everything included</div>
-      <div class="band-title">Full Agency Retainer</div>
-      <div class="band-desc">Social media, content creation, brand strategy and creative design — all handled by DigiCreativ every month.</div>
-    </div>
-    <div class="band-right">
-      <div class="band-price" id="p5">80K</div>
-      <div class="band-period" id="p5-period">KES / month — starting from</div>
-      <a href="#contact" class="band-btn">Talk to us →</a>
-    </div>
-  </div>
-  <p class="pricing-note reveal">All prices negotiable based on scope. <span>50% deposit required to begin.</span> International payments via Stripe, PayPal or bank transfer.</p>
-</section>
-
-<!-- TESTIMONIALS -->
-<section id="testimonials">
-  <div class="section-label reveal">Client voices</div>
-  <h2 class="section-title reveal reveal-delay-1">What They<br>Say</h2>
-  <div class="testi-grid reveal">
-    <div class="testi-card">
-      <div class="testi-bar" style="background:var(--accent);"></div>
-      <div class="testi-stars">★★★★★</div>
-      <p class="testi-text">DigiCreativ transformed our Instagram from 200 to over 8,000 followers in just 3 months. The content quality is unmatched and the strategy is clearly working.</p>
-      <div class="testi-author">
-        <div class="testi-avatar" style="background:var(--accent);">J</div>
-        <div><div class="testi-name">James Kariuki</div><div class="testi-role">CEO, Kariuki Foods</div><div class="testi-location">📍 Nairobi, Kenya</div></div>
-      </div>
-    </div>
-    <div class="testi-card">
-      <div class="testi-bar" style="background:var(--gold);"></div>
-      <div class="testi-stars" style="color:var(--gold);">★★★★★</div>
-      <p class="testi-text">Our brand identity is now something we are proud to show anyone. The logo, the colours, everything just clicks. Clients compliment our branding on the first meeting.</p>
-      <div class="testi-author">
-        <div class="testi-avatar" style="background:var(--gold);">A</div>
-        <div><div class="testi-name">Aisha Wanjiku</div><div class="testi-role">Founder, Wanjiku Boutique</div><div class="testi-location">📍 Mombasa, Kenya</div></div>
-      </div>
-    </div>
-    <div class="testi-card">
-      <div class="testi-bar" style="background:var(--green);"></div>
-      <div class="testi-stars" style="color:var(--green);">★★★★★</div>
-      <p class="testi-text">Working with DigiCreativ felt like having a full marketing department. They handled everything — content, posting, strategy — while we focused on running the business.</p>
-      <div class="testi-author">
-        <div class="testi-avatar" style="background:var(--green);">P</div>
-        <div><div class="testi-name">Peter Omondi</div><div class="testi-role">MD, Omondi Properties</div><div class="testi-location">📍 Kampala, Uganda</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROCESS -->
-<section id="process">
-  <div class="section-label reveal">How we work</div>
-  <h2 class="section-title reveal reveal-delay-1">The<br>Process</h2>
-  <div class="process-steps reveal">
-    <div class="process-step"><div class="step-num">01</div><div class="step-title">Discover</div><p class="step-desc">We immerse ourselves in your world — goals, market, competitors and audience — before a single pixel is designed.</p></div>
-    <div class="process-step"><div class="step-num">02</div><div class="step-title">Strategise</div><p class="step-desc">We map a clear path: positioning, messaging, channels and content pillars that give your brand an unfair advantage.</p></div>
-    <div class="process-step"><div class="step-num">03</div><div class="step-title">Create</div><p class="step-desc">Our creative team executes with obsessive attention to quality — visuals, copy and content built to perform.</p></div>
-    <div class="process-step"><div class="step-num">04</div><div class="step-title">Scale</div><p class="step-desc">We launch, measure, iterate and push. Growth is not a one-time event — it is a system we build with you.</p></div>
-  </div>
-</section>
-
-<!-- GLOBAL REACH -->
-<section id="global">
-  <div class="global-title">SERVING CLIENTS GLOBALLY</div>
-  <p class="global-sub">From Nakuru to Nairobi, Lagos, London, and beyond — DigiCreativ delivers world-class creative work at African prices.</p>
-  <div class="global-regions">
-    <div class="region"><span class="region-flag">🇰🇪</span><div class="region-name">Kenya</div></div>
-    <div class="region"><span class="region-flag">🇺🇬</span><div class="region-name">Uganda</div></div>
-    <div class="region"><span class="region-flag">🇹🇿</span><div class="region-name">Tanzania</div></div>
-    <div class="region"><span class="region-flag">🇳🇬</span><div class="region-name">Nigeria</div></div>
-    <div class="region"><span class="region-flag">🇿🇦</span><div class="region-name">South Africa</div></div>
-    <div class="region"><span class="region-flag">🇬🇧</span><div class="region-name">United Kingdom</div></div>
-    <div class="region"><span class="region-flag">🇺🇸</span><div class="region-name">United States</div></div>
-    <div class="region"><span class="region-flag">🌍</span><div class="region-name">+ More</div></div>
+<!-- WHY ME -->
+<section>
+  <div class="card">
+    <h2>Why Work With Me</h2>
+    <p>
+      Simple systems. Fast execution. Focus on results not theory.
+      Built for small businesses and personal brands that want growth online.
+    </p>
   </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
-  <div class="contact-grid">
-    <div class="contact-info">
-      <div class="section-label reveal">Get in touch</div>
-      <h2 class="contact-headline reveal reveal-delay-1">Let's Build<span>Something.</span></h2>
-      <p class="contact-sub reveal reveal-delay-2">Tell us about your brand. We will tell you how we would make it legendary. We reply within 1 hour.</p>
-      <div class="contact-details reveal reveal-delay-3">
-        <div class="contact-detail">
-          <div class="contact-detail-icon">📞</div>
-          <div><div class="contact-detail-label">Phone / WhatsApp</div><a href="tel:+254705996298" class="contact-detail-text"><a href="tel:+254705996298" style="color:var(--accent);text-decoration:none;font-size:14px;font-family:var(--font-mono);">+254 705 996 298</a></div>
-        </div>
-        <div class="contact-detail">
-          <div class="contact-detail-icon">✉️</div>
-          <div><div class="contact-detail-label">Email</div><a href="mailto:iammarkmwenda12@gmail.com" style="color:var(--accent);text-decoration:none;font-size:14px;font-family:var(--font-mono);">iammarkmwenda12@gmail.com</a></div>
-        </div>
-        <div class="contact-detail">
-          <div class="contact-detail-icon">📍</div>
-          <div><div class="contact-detail-label">Location</div><span style="font-size:14px;font-family:var(--font-mono);color:var(--mid);">Nakuru, Kenya — Serving globally</span></div>
-        </div>
-        <div class="contact-detail">
-          <div class="contact-detail-icon">🕐</div>
-          <div><div class="contact-detail-label">Response time</div><span style="font-size:14px;font-family:var(--font-mono);color:var(--green);">Within 1 hour · Mon–Sat</span></div>
-        </div>
-      </div>
-    </div>
-    <div class="contact-form-wrap">
-      <form class="contact-form reveal reveal-delay-2" action="https://formspree.io/f/xlgknjqn" method="POST">
-        <input type="text" name="_gotcha" style="display:none !important;position:absolute;left:-9999px;" tabindex="-1" autocomplete="off"/>
-        <input type="hidden" name="_subject" value="New DigiCreativ enquiry"/>
-        <div class="form-row">
-          <div class="form-field"><label>Your name</label><input type="text" name="name" placeholder="John Kamau" required/></div>
-          <div class="form-field"><label>Email address</label><input type="email" name="email" placeholder="john@company.com" required/></div>
-        </div>
-        <div class="form-row">
-          <div class="form-field"><label>Phone / WhatsApp</label><input type="tel" name="phone" placeholder="+254 7XX XXX XXX"/></div>
-          <div class="form-field"><label>Country</label><input type="text" name="country" placeholder="Kenya"/></div>
-        </div>
-        <div class="form-field">
-          <label>Service needed</label>
-          <select name="service">
-            <option value="">Select a service…</option>
-            <option>Social Media Management</option>
-            <option>Content Creation</option>
-            <option>Brand Identity</option>
-            <option>Creative Design</option>
-            <option>Full Agency Retainer</option>
-            <option>Other / Custom</option>
-          </select>
-        </div>
-        <div class="form-field">
-          <label>Monthly budget</label>
-          <select name="budget">
-            <option value="">Select your budget range…</option>
-            <option>Under KES 15,000</option>
-            <option>KES 15,000 – 30,000</option>
-            <option>KES 30,000 – 80,000</option>
-            <option>KES 80,000+</option>
-            <option>USD 100 – 500/mo</option>
-            <option>USD 500+/mo</option>
-          </select>
-        </div>
-        <div class="form-field"><label>Tell us about your project</label><textarea name="message" placeholder="What are you building? What is the challenge? What is your timeline?"></textarea></div>
-        <button type="submit" class="form-submit">Send message →</button>
-        <p class="form-guarantee">🔒 <span>Your details are secure.</span> We never share your information.</p>
-      </form>
-    </div>
+  <h2>Get In Touch</h2>
+
+  <div class="card">
+    <p>Fill this or message directly on WhatsApp for faster response.</p>
+
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="5" placeholder="What do you need help with?"></textarea>
+      <button type="submit">Send Request</button>
+    </form>
+
+    <p style="margin-top:15px;">
+      Or WhatsApp: <a style="color:#00ffd5;" href="https://wa.me/254700000000">Click here</a>
+    </p>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
-  <div class="footer-top">
-    <div class="footer-brand">
-      <div class="footer-logo"><span style="color:var(--green);">DIGI</span><span style="color:var(--accent);">CREATIV</span><span style="color:var(--green);font-size:32px;">.</span></div>
-      <p>Bold creative marketing agency based in Nakuru, Kenya. Serving clients across East Africa and globally since 2023.</p>
-    </div>
-    <div>
-      <div class="footer-col-title">Services</div>
-      <ul class="footer-col-links">
-        <li><a href="#services">Social Media</a></li>
-        <li><a href="#services">Content Creation</a></li>
-        <li><a href="#services">Brand Identity</a></li>
-        <li><a href="#services">Creative Design</a></li>
-        <li><a href="#pricing">Full Retainer</a></li>
-      </ul>
-    </div>
-    <div>
-      <div class="footer-col-title">Company</div>
-      <ul class="footer-col-links">
-        <li><a href="#work">Our Work</a></li>
-        <li><a href="#testimonials">Reviews</a></li>
-        <li><a href="#awards">Awards</a></li>
-        <li><a href="#process">Process</a></li>
-        <li><a href="#global">Global Reach</a></li>
-      </ul>
-    </div>
-    <div>
-      <div class="footer-col-title">Contact</div>
-      <ul class="footer-col-links">
-        <li><a href="tel:+254705996298">+254 705 996 298</a></li>
-        <li><a href="mailto:iammarkmwenda12@gmail.com">Email us</a></li>
-        <li><a href="https://wa.me/254705996298" target="_blank">WhatsApp</a></li>
-        <li><a href="https://linkedin.com/in/mark-mwenda-411652b6" target="_blank">LinkedIn</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <div class="footer-copy">© 2023 DigiCreativ. Registered in Kenya. All rights reserved.</div>
-    <div class="footer-social">
-      <a href="https://instagram.com" target="_blank">Instagram</a>
-      <a href="https://tiktok.com" target="_blank">TikTok</a>
-      <a href="https://linkedin.com/in/mark-mwenda-411652b6" target="_blank">LinkedIn</a>
-      <a href="https://twitter.com" target="_blank">X / Twitter</a>
-    </div>
-  </div>
+  DIGI-CREATIVES • Built for digital growth
 </footer>
 
-<!-- FLOATING BUTTONS -->
-<a id="whatsapp-btn" href="https://wa.me/254705996298?text=Hi%20DigiCreativ%2C%20I%20would%20like%20to%20discuss%20a%20project" target="_blank" aria-label="Chat on WhatsApp">
-  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-</a>
-<button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
-
-<script>
-  window.addEventListener('load',()=>{setTimeout(()=>{document.getElementById('loader').classList.add('hidden');},1800);});
-  function toggleMenu(){document.getElementById('nav-links').classList.toggle('open');}
-  document.querySelectorAll('.nav-links a').forEach(a=>{a.addEventListener('click',()=>{document.getElementById('nav-links').classList.remove('open');});});
-  window.addEventListener('scroll',()=>{
-    document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>60);
-    document.getElementById('back-top').classList.toggle('visible',window.scrollY>400);
-  });
-  const cursor=document.getElementById('cursor');
-  const ring=document.getElementById('cursor-ring');
-  document.addEventListener('mousemove',e=>{
-    cursor.style.left=e.clientX+'px';cursor.style.top=e.clientY+'px';
-    setTimeout(()=>{ring.style.left=e.clientX+'px';ring.style.top=e.clientY+'px';},80);
-  });
-  const reveals=document.querySelectorAll('.reveal');
-  const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:.12});
-  reveals.forEach(el=>io.observe(el));
-  function animateCounter(el){const target=parseInt(el.dataset.target);const step=target/(1400/16);let current=0;const timer=setInterval(()=>{current=Math.min(current+step,target);el.textContent=Math.floor(current);if(current>=target)clearInterval(timer);},16);}
-  const statNums=document.querySelectorAll('.stat-num[data-target]');
-  const statIO=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){animateCounter(e.target);statIO.unobserve(e.target);}});},{threshold:.5});
-  statNums.forEach(el=>statIO.observe(el));
-
-  // ACTIVE NAV
-  const sections=document.querySelectorAll('section[id]');
-  const navLinks=document.querySelectorAll('.nav-links a');
-  const navIO=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){navLinks.forEach(a=>{a.classList.remove('active');if(a.getAttribute('href')==='#'+e.target.id)a.classList.add('active');});}});},{threshold:.4});
-  sections.forEach(s=>navIO.observe(s));
-
-  // CURRENCY TOGGLE
-  const rates={
-    KES:{p1:'15K',p2:'20K',p3:'30K',p4:'10K',p5:'80K',period:'KES'},
-    USD:{p1:'$115',p2:'$155',p3:'$230',p4:'$77',p5:'$615',period:'USD'},
-    GBP:{p1:'£92',p2:'£124',p3:'£184',p4:'£62',p5:'£492',period:'GBP'}
-  };
-  let currentCurrency='KES';
-  function setCurrency(cur,btn){
-    currentCurrency=cur;
-    document.querySelectorAll('.currency-btn').forEach(b=>b.classList.remove('active'));
-    btn.classList.add('active');
-    const r=rates[cur];
-    ['p1','p2','p3','p4','p5'].forEach(id=>{
-      document.getElementById(id).textContent=r[id];
-    });
-    const per=cur==='KES'?'KES':'';
-    document.getElementById('p1-period').textContent=r.period+' / month — starting from';
-    document.getElementById('p2-period').textContent=r.period+' / month — starting from';
-    document.getElementById('p3-period').textContent=r.period+' — starting from';
-    document.getElementById('p4-period').textContent=r.period+' — starting from';
-    document.getElementById('p5-period').textContent=r.period+' / month — starting from';
-  }
-  function toggleCurrency(){
-    const order=['KES','USD','GBP'];
-    const next=order[(order.indexOf(currentCurrency)+1)%3];
-    setCurrency(next,document.querySelector('.currency-btn[onclick*="'+next+'"]'));
-  }
-
-  // SECURITY
-  document.addEventListener('contextmenu',e=>e.preventDefault());
-  document.addEventListener('keydown',e=>{if(e.key==='F12'||(e.ctrlKey&&e.shiftKey&&['I','J','C'].includes(e.key.toUpperCase()))||(e.ctrlKey&&['U','S'].includes(e.key.toUpperCase()))){e.preventDefault();return false;}});
-  if(window.self!==window.top){window.top.location=window.self.location;}
-  console.clear();
-  console.log('%cSTOP!','color:#E63946;font-size:48px;font-weight:bold;');
-  console.log('%cThis is a browser feature intended for developers.','font-size:14px;');
-</script>
 </body>
 </html>
