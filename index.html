@@ -3,30 +3,23 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>DigiCreativ — Bold Creative Marketing Agency | Nakuru, Kenya</title>
+  <title>DigiCreativ — Social Media & Brand Marketing | Nakuru, Kenya</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
-  <meta name="description" content="DigiCreativ — Award-winning creative marketing agency offering social media management, content creation, brand identity and creative design. Based in Nakuru, Kenya. Serving clients globally."/>
-  <meta name="keywords" content="marketing agency Kenya, social media management Nakuru, brand identity Kenya, content creation, DigiCreativ, digital marketing Africa"/>
-  <meta name="author" content="Mark Mwenda — DigiCreativ"/>
-  <meta property="og:title" content="DigiCreativ — We Build Brands That Lead"/>
-  <meta property="og:description" content="Bold social media, content creation and brand identity for businesses ready to dominate their market. Kenya & Global."/>
+  <meta name="description" content="DigiCreativ — Social media management, content creation and brand identity for small businesses in Nakuru and across Kenya. Run by Mark Mwenda."/>
+  <meta name="keywords" content="social media management Nakuru, brand identity Kenya, content creation, digital marketing Kenya, DigiCreativ"/>
+  <meta property="og:title" content="DigiCreativ — We Help Your Business Get Noticed Online"/>
+  <meta property="og:description" content="Social media management, content creation and brand identity for businesses in Nakuru, Kenya."/>
   <meta property="og:type" content="website"/>
-  <meta property="og:url" content="https://digicreativ.co.ke"/>
-  <meta property="og:image" content="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=90"/>
-  <meta name="twitter:card" content="summary_large_image"/>
   <meta http-equiv="X-Frame-Options" content="DENY"/>
   <meta http-equiv="X-Content-Type-Options" content="nosniff"/>
-  <meta http-equiv="X-XSS-Protection" content="1; mode=block"/>
-  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin"/>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%237C3AED'/><text y='.9em' font-size='80' font-family='Arial Black' fill='white' x='10'>D</text></svg>"/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230a1a0f'/><text y='.9em' font-size='80' font-family='Arial Black' fill='%2300A651' x='10'>D</text></svg>"/>
   <style>
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
     :root{
       --bg:#0a1a0f;--off:#0d2114;--card:#112b18;--card2:#163520;
-      --border:#1e4a28;--muted:#4a8c5c;--mid:#6ab87e;--light:#a8d8b0;--white:#e8f5eb;
-      --accent:#E63946;--accent2:#ff4d6d;--accentlt:#2d0a0e;
-      --green:#00A651;--gold:#C9A84C;--red:#E63946;
+      --border:#1e4a28;--muted:#4a8c5c;--mid:#6ab87e;--light:#a8d8b0;
+      --white:#e8f5eb;--accent:#E63946;--green:#00A651;--gold:#C9A84C;
       --font-display:'Bebas Neue',sans-serif;
       --font-body:'DM Sans',sans-serif;
       --font-mono:'DM Mono',monospace;
@@ -34,845 +27,802 @@
     html{scroll-behavior:smooth;}
     body{background:var(--bg);color:var(--white);font-family:var(--font-body);font-size:16px;line-height:1.6;overflow-x:hidden;cursor:none;}
 
-    /* CURSOR */
-    #cursor{position:fixed;top:0;left:0;width:12px;height:12px;background:var(--accent);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform .15s,background .2s;}
+    #cursor{position:fixed;top:0;left:0;width:12px;height:12px;background:var(--accent);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform .15s;}
     #cursor-ring{position:fixed;top:0;left:0;width:36px;height:36px;border:1px solid rgba(230,57,70,.35);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:transform .35s ease,width .2s,height .2s;}
     body:has(a:hover) #cursor,body:has(button:hover) #cursor{transform:translate(-50%,-50%) scale(2.4);}
     body:has(a:hover) #cursor-ring,body:has(button:hover) #cursor-ring{width:58px;height:58px;}
 
-    /* LOADER */
-    #loader{position:fixed;inset:0;background:#0a1a0f;z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;transition:opacity .5s ease,visibility .5s ease;}
+    #loader{position:fixed;inset:0;background:var(--bg);z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;transition:opacity .5s ease,visibility .5s ease;}
     #loader.hidden{opacity:0;visibility:hidden;}
-    .loader-logo{font-family:var(--font-display);font-size:48px;letter-spacing:4px;color:var(--white);} .loader-text{color:var(--muted);}
-    .loader-logo span{color:var(--accent);}
+    .loader-logo{font-family:var(--font-display);font-size:48px;letter-spacing:4px;}
+    .loader-logo .lg{color:var(--green);}
+    .loader-logo .lr{color:var(--accent);}
     .loader-bar-wrap{width:200px;height:2px;background:var(--border);border-radius:2px;overflow:hidden;}
-    .loader-bar{height:100%;width:0%;background:var(--accent);border-radius:2px;animation:loadBar 1.6s ease forwards;}
+    .loader-bar{height:100%;width:0%;background:var(--green);animation:loadBar 1.6s ease forwards;}
     .loader-text{font-family:var(--font-mono);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);}
     @keyframes loadBar{0%{width:0%}60%{width:75%}100%{width:100%}}
 
-    /* TOP ANNOUNCEMENT BAR */
-    #announce{background:#0d2114;border-bottom:1px solid var(--border);padding:9px 48px;text-align:center;display:flex;align-items:center;justify-content:center;gap:16px;}
-    .announce-text{font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#fff;}
-    .announce-link{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.7);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4);transition:color .2s;}
-    .announce-link:hover{color:#fff;}
-    .announce-close{background:none;border:none;color:rgba(255,255,255,.6);font-size:18px;cursor:none;margin-left:16px;transition:color .2s;}
-    .announce-close:hover{color:#fff;}
-
-    /* NAV */
-    nav{position:sticky;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:18px 48px;z-index:100;border-bottom:1px solid var(--border);background:rgba(10,26,15,.97);backdrop-filter:blur(16px);transition:box-shadow .3s;}
-    nav.scrolled{box-shadow:0 2px 24px rgba(0,0,0,.4);}
-    .nav-logo{font-family:var(--font-display);font-size:26px;letter-spacing:2px;color:var(--white);text-decoration:none;}
-    .nav-logo span{color:var(--accent);}
+    nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 48px;background:rgba(10,26,15,.97);border-bottom:1px solid var(--border);backdrop-filter:blur(16px);}
+    .nav-logo{font-family:var(--font-display);font-size:24px;letter-spacing:2px;text-decoration:none;display:flex;align-items:baseline;gap:1px;}
+    .nav-logo .lg{color:var(--green);}
+    .nav-logo .lr{color:var(--accent);}
     .nav-links{display:flex;gap:28px;list-style:none;}
     .nav-links a{font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s;}
-    .nav-links a:hover,.nav-links a.active{color:var(--accent);}
-    .nav-right{display:flex;align-items:center;gap:12px;}
-    .nav-lang{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);background:none;border:1px solid var(--border);padding:6px 12px;cursor:none;transition:border-color .2s;}
-    .nav-lang:hover{border-color:var(--accent);color:var(--accent);}
-    .nav-cta{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;background:var(--accent);color:#fff;border:none;padding:10px 22px;cursor:none;font-weight:500;transition:background .2s,transform .15s;}
-    .nav-cta:hover{background:#c62d3a;transform:translateY(-1px);}
+    .nav-links a:hover,.nav-links a.active{color:var(--green);}
+    .nav-cta{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;background:var(--accent);color:#fff;border:none;padding:10px 22px;cursor:none;font-weight:500;transition:background .2s;}
+    .nav-cta:hover{background:#c62d3a;}
     .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:none;background:none;border:none;padding:4px;}
-    .nav-hamburger span{display:block;width:24px;height:2px;background:var(--white);border-radius:2px;transition:all .3s;}
+    .nav-hamburger span{display:block;width:24px;height:2px;background:var(--white);border-radius:2px;}
 
-    /* HERO */
-    #hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 48px 80px;position:relative;overflow:hidden;background:linear-gradient(160deg,#0a1a0f 0%,#0d2114 60%,#112b18 100%);}
-    .hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:72px 72px;mask-image:radial-gradient(ellipse 100% 80% at 50% 50%,black 30%,transparent 100%);opacity:.4;}
-    .hero-glow{position:absolute;top:-200px;right:-200px;width:700px;height:700px;background:radial-gradient(circle,rgba(230,57,70,.1) 0%,transparent 65%);pointer-events:none;}
-    .hero-glow-2{position:absolute;bottom:-100px;left:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(0,166,81,.08) 0%,transparent 65%);pointer-events:none;}
-    .hero-ticker{font-family:var(--font-mono);font-size:11px;letter-spacing:.15em;color:var(--muted);text-transform:uppercase;margin-bottom:36px;display:flex;gap:28px;animation:fadeUp .8s .2s both;}
-    .hero-ticker span{color:var(--accent);}
-    .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(230,57,70,.1);border:1px solid rgba(230,57,70,.3);padding:6px 14px;margin-bottom:20px;animation:fadeUp .8s .1s both;}
-    .hero-badge-dot{width:6px;height:6px;background:var(--green);border-radius:50%;animation:pulse 2s infinite;}
-    @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.6;transform:scale(1.4)}}
-    .hero-badge-text{font-family:var(--font-mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);}
-    .hero-headline{font-family:var(--font-display);font-size:clamp(72px,13vw,190px);line-height:.88;letter-spacing:-1px;color:var(--white);animation:fadeUp .9s .35s both;}
-    .hero-headline em{font-style:normal;color:var(--accent);display:block;}
-    .hero-sub-row{display:flex;align-items:flex-end;justify-content:space-between;margin-top:44px;animation:fadeUp .9s .5s both;}
-    .hero-sub{max-width:400px;font-size:17px;color:var(--mid);line-height:1.7;font-weight:300;}
+    #hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 48px 80px;position:relative;overflow:hidden;}
+    .hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:72px 72px;mask-image:radial-gradient(ellipse 100% 80% at 50% 50%,black 30%,transparent 100%);opacity:.35;}
+    .hero-glow{position:absolute;top:-200px;right:-100px;width:600px;height:600px;background:radial-gradient(circle,rgba(0,166,81,.08) 0%,transparent 65%);pointer-events:none;}
+    .hero-glow2{position:absolute;bottom:-100px;left:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(230,57,70,.06) 0%,transparent 65%);pointer-events:none;}
+
+    .hero-ticker{font-family:var(--font-mono);font-size:11px;letter-spacing:.15em;color:var(--muted);text-transform:uppercase;margin-bottom:20px;display:flex;gap:28px;animation:fadeUp .8s .05s both;}
+    .hero-ticker span{color:var(--green);}
+    .hero-honest-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,166,81,.1);border:1px solid rgba(0,166,81,.3);padding:7px 16px;margin-bottom:24px;animation:fadeUp .8s .1s both;}
+    .badge-dot{width:7px;height:7px;background:var(--green);border-radius:50%;animation:pulse 2s infinite;}
+    .badge-text{font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--green);}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+
+    .hero-headline{font-family:var(--font-display);font-size:clamp(64px,12vw,170px);line-height:.88;letter-spacing:-1px;color:var(--white);animation:fadeUp .9s .3s both;}
+    .hero-headline em{font-style:normal;color:var(--green);display:block;}
+    .hero-sub-row{display:flex;align-items:flex-end;justify-content:space-between;margin-top:40px;animation:fadeUp .9s .45s both;}
+    .hero-sub{max-width:420px;font-size:17px;color:var(--mid);line-height:1.7;font-weight:300;}
     .hero-actions{display:flex;gap:14px;align-items:center;}
-    .hero-phone{font-family:var(--font-mono);font-size:12px;letter-spacing:.1em;color:var(--muted);margin-top:16px;display:flex;align-items:center;gap:8px;animation:fadeUp .9s .6s both;}
-    .hero-phone a{color:var(--accent);text-decoration:none;transition:color .2s;}
-    .hero-phone a:hover{color:#6d28d9;}
-    .hero-clients{display:flex;align-items:center;gap:16px;margin-top:20px;animation:fadeUp .9s .7s both;}
-    .hero-clients-label{font-family:var(--font-mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);}
-    .client-avatar{width:32px;height:32px;border-radius:50%;background:var(--card2);border:2px solid #fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:14px;color:var(--accent);margin-left:-8px;}
-    .client-avatar:first-of-type{margin-left:0;}
-    .hero-rating{font-family:var(--font-mono);font-size:11px;color:var(--gold);letter-spacing:.05em;}
+    .hero-honest-note{font-family:var(--font-mono);font-size:11px;color:var(--muted);margin-top:14px;letter-spacing:.05em;animation:fadeUp .9s .6s both;}
+    .hero-honest-note span{color:var(--green);}
+    .hero-phone{font-family:var(--font-mono);font-size:12px;color:var(--muted);margin-top:12px;display:flex;align-items:center;gap:8px;animation:fadeUp .9s .65s both;}
+    .hero-phone a{color:var(--accent);text-decoration:none;}
+
     .btn-primary{background:var(--accent);color:#fff;border:none;font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:15px 30px;cursor:none;font-weight:500;text-decoration:none;display:inline-block;transition:background .2s,transform .15s;}
     .btn-primary:hover{background:#c62d3a;transform:translateY(-2px);}
-    .btn-outline{background:transparent;color:var(--white);border:2px solid var(--border);font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:15px 30px;cursor:none;text-decoration:none;display:inline-block;transition:border-color .2s,color .2s,background .2s;}
-    .btn-outline:hover{border-color:var(--accent);color:#fff;background:var(--accent);}
-    .hero-scroll{position:absolute;right:48px;bottom:80px;display:flex;flex-direction:column;align-items:center;gap:10px;animation:fadeUp 1s .8s both;}
+    .btn-outline{background:transparent;color:var(--white);border:1px solid var(--border);font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:15px 30px;cursor:none;text-decoration:none;display:inline-block;transition:border-color .2s,color .2s;}
+    .btn-outline:hover{border-color:var(--green);color:var(--green);}
+    .hero-scroll{position:absolute;right:48px;bottom:80px;display:flex;flex-direction:column;align-items:center;gap:10px;}
     .hero-scroll span{font-family:var(--font-mono);font-size:10px;letter-spacing:.2em;color:var(--muted);text-transform:uppercase;writing-mode:vertical-rl;}
-    .scroll-line{width:1px;height:60px;background:linear-gradient(to bottom,var(--accent),transparent);animation:scrollPulse 2s infinite;}
+    .scroll-line{width:1px;height:60px;background:linear-gradient(to bottom,var(--green),transparent);animation:scrollPulse 2s infinite;}
 
-    /* TRUST BAR */
-    .trust-bar{background:#071209;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;gap:32px;overflow:hidden;}
-    .trust-label{font-family:var(--font-mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);white-space:nowrap;flex-shrink:0;}
-    .trust-items{display:flex;align-items:center;gap:40px;flex:1;justify-content:center;}
-    .trust-item{font-family:var(--font-display);font-size:20px;letter-spacing:2px;color:var(--border);white-space:nowrap;}
+    .marquee-wrap{overflow:hidden;padding:16px 0;background:var(--accent);border-top:1px solid rgba(255,255,255,.1);border-bottom:1px solid rgba(255,255,255,.1);}
+    .marquee-track{display:flex;animation:marquee 22s linear infinite;width:max-content;}
+    .marquee-item{font-family:var(--font-display);font-size:26px;letter-spacing:3px;color:rgba(255,255,255,.85);padding:0 44px;white-space:nowrap;display:flex;align-items:center;gap:44px;}
+    .marquee-item::after{content:'✦';font-size:11px;color:rgba(255,255,255,.5);}
 
-    /* MARQUEE */
-    .marquee-wrap{border-top:2px solid var(--accent);border-bottom:2px solid var(--accent);overflow:hidden;padding:16px 0;background:var(--accent);}
-    .marquee-track{display:flex;gap:0;animation:marquee 22s linear infinite;width:max-content;}
-    .marquee-item{font-family:var(--font-display);font-size:28px;letter-spacing:3px;color:rgba(255,255,255,.85);padding:0 44px;white-space:nowrap;display:flex;align-items:center;gap:44px;}
-    .marquee-item::after{content:'✦';font-size:12px;color:rgba(255,255,255,.5);}
+    section{padding:100px 48px;}
+    .section-label{font-family:var(--font-mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--green);margin-bottom:16px;display:flex;align-items:center;gap:12px;}
+    .section-label::before{content:'';display:block;width:28px;height:1px;background:var(--green);}
+    .section-title{font-family:var(--font-display);font-size:clamp(44px,5.5vw,80px);line-height:.95;letter-spacing:1px;margin-bottom:20px;color:var(--white);}
 
-    /* SECTION BASE */
-    section{padding:110px 48px;}
-    .section-label{font-family:var(--font-mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;display:flex;align-items:center;gap:12px;}
-    .section-label::before{content:'';display:block;width:28px;height:1px;background:var(--accent);}
-    .section-title{font-family:var(--font-display);font-size:clamp(44px,5.5vw,84px);line-height:.95;letter-spacing:1px;margin-bottom:20px;color:var(--white);}
+    #about{background:var(--off);}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+    .about-photo-box{background:var(--card);border:1px solid var(--border);padding:40px;display:flex;flex-direction:column;align-items:center;gap:20px;}
+    .about-avatar{width:120px;height:120px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:48px;color:#fff;letter-spacing:2px;box-shadow:0 0 0 4px var(--card),0 0 0 6px var(--green);}
+    .about-name{font-family:var(--font-display);font-size:32px;letter-spacing:2px;color:var(--white);}
+    .about-role{font-family:var(--font-mono);font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--green);}
+    .about-location{font-family:var(--font-mono);font-size:11px;color:var(--muted);margin-top:4px;}
+    .about-story{font-size:17px;color:var(--mid);line-height:1.85;font-weight:300;}
+    .about-story strong{color:var(--white);font-weight:500;}
+    .about-skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px;}
+    .skill-tag{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--border);color:var(--muted);padding:5px 12px;background:var(--card);}
 
-    /* SERVICES */
-    #services{background:#0d2114;}
-    .services-intro{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:end;margin-bottom:72px;}
-    .services-intro p{font-size:17px;color:var(--mid);font-weight:300;line-height:1.8;align-self:end;}
+    #services{background:var(--bg);}
+    .services-intro{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:end;margin-bottom:64px;}
+    .services-intro p{font-size:16px;color:var(--mid);font-weight:300;line-height:1.8;}
     .services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
-    .service-card{background:#0a1a0f;padding:44px;transition:background .3s,box-shadow .3s;position:relative;overflow:hidden;}
-    .service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .4s ease;}
-    .service-card:hover{background:#1a0a0e;box-shadow:0 8px 40px rgba(230,57,70,.1);}
+    .service-card{background:var(--card);padding:40px;transition:background .3s;position:relative;overflow:hidden;}
+    .service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--green);transform:scaleX(0);transform-origin:left;transition:transform .4s ease;}
+    .service-card:hover{background:var(--card2);}
     .service-card:hover::before{transform:scaleX(1);}
-    .service-num{font-family:var(--font-mono);font-size:11px;color:var(--gold);letter-spacing:.1em;margin-bottom:28px;opacity:.7;}
-    .service-icon{width:44px;height:44px;margin-bottom:20px;}
-    .service-card h3{font-family:var(--font-display);font-size:34px;letter-spacing:1px;margin-bottom:14px;color:var(--gold);}
-    .service-card p{font-size:14px;color:var(--mid);line-height:1.7;margin-bottom:24px;}
+    .service-num{font-family:var(--font-mono);font-size:11px;color:var(--gold);letter-spacing:.1em;margin-bottom:24px;opacity:.7;}
+    .service-icon{width:40px;height:40px;margin-bottom:18px;}
+    .service-card h3{font-family:var(--font-display);font-size:30px;letter-spacing:1px;margin-bottom:12px;color:var(--gold);}
+    .service-card p{font-size:14px;color:var(--mid);line-height:1.7;margin-bottom:20px;}
     .service-tags{display:flex;flex-wrap:wrap;gap:7px;}
-    .tag{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--border);color:var(--muted);padding:4px 11px;background:var(--card);}
+    .tag{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--border);color:var(--muted);padding:4px 10px;background:var(--off);}
 
-    /* WORK */
-    #work{background:var(--bg);}
-    .work-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:56px;}
-    .work-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:480px 340px;gap:3px;background:var(--border);}
-    .work-item{position:relative;overflow:hidden;cursor:none;background:var(--card);}
-    .work-item-wide{grid-column:span 2;}
-    .work-bg{position:absolute;inset:0;background-size:cover !important;background-position:center !important;transition:transform .7s cubic-bezier(.25,.46,.45,.94);will-change:transform;}
-    .work-item:hover .work-bg{transform:scale(1.06);}
-    .work-overlay-dark{position:absolute;inset:0;background:linear-gradient(to top,rgba(5,20,8,.92) 0%,rgba(0,100,40,.15) 55%,transparent 100%);z-index:1;transition:background .4s;}
-    .work-item:hover .work-overlay-dark{background:linear-gradient(to top,rgba(5,20,8,.95) 0%,rgba(230,57,70,.15) 60%,transparent 100%);}
-    .work-overlay{position:absolute;inset:0;padding:28px;z-index:2;display:flex;flex-direction:column;justify-content:flex-end;transform:translateY(10px);transition:transform .4s ease;}
-    .work-item:hover .work-overlay{transform:translateY(0);}
-    .work-cat{font-family:var(--font-mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:#6ab87e;margin-bottom:7px;}
-    .work-title{font-family:var(--font-display);font-size:28px;letter-spacing:1px;line-height:1;color:#fff;}
-    .work-result{font-family:var(--font-mono);font-size:11px;color:rgba(196,181,253,.8);margin-top:6px;letter-spacing:.05em;}
-    .work-arrow{position:absolute;top:20px;right:20px;width:38px;height:38px;z-index:3;border:1px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;font-size:16px;color:#fff;opacity:0;transition:opacity .3s;}
-    .work-item:hover .work-arrow{opacity:1;}
+    #work{background:var(--off);}
+    .work-honest-note{background:rgba(0,166,81,.08);border:1px solid rgba(0,166,81,.2);padding:16px 20px;margin-bottom:48px;display:flex;align-items:flex-start;gap:12px;}
+    .work-honest-note p{font-size:13px;color:var(--mid);line-height:1.6;font-family:var(--font-mono);}
+    .work-honest-note p strong{color:var(--green);}
+    .work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);}
+    .work-item{background:var(--card);padding:36px;transition:background .3s;border:none;}
+    .work-item:hover{background:var(--card2);}
+    .work-tag{font-family:var(--font-mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--green);margin-bottom:12px;}
+    .work-title{font-family:var(--font-display);font-size:26px;letter-spacing:1px;color:var(--white);margin-bottom:10px;line-height:1;}
+    .work-desc{font-size:13px;color:var(--mid);line-height:1.6;margin-bottom:16px;}
+    .work-result{font-family:var(--font-mono);font-size:11px;color:var(--gold);letter-spacing:.05em;}
+    .work-result::before{content:'→ ';color:var(--muted);}
+    .work-soon{background:var(--card);padding:36px;border:1px dashed var(--border);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;text-align:center;min-height:200px;}
+    .work-soon p{font-size:13px;color:var(--muted);font-family:var(--font-mono);}
+    .work-soon strong{color:var(--green);}
 
-    /* STATS */
-    #stats{background:var(--accent);padding:72px 48px;}
+    #stats{background:var(--accent);padding:64px 48px;}
     .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.2);}
-    .stat-box{background:var(--accent);padding:44px 28px;text-align:center;}
-    .stat-num{font-family:var(--font-display);font-size:76px;line-height:1;color:#fff;letter-spacing:-2px;}
+    .stat-box{background:var(--accent);padding:40px 24px;text-align:center;}
+    .stat-num{font-family:var(--font-display);font-size:64px;line-height:1;color:#fff;letter-spacing:-2px;}
     .stat-label{font-family:var(--font-mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-top:6px;}
+    .stat-note{font-size:11px;color:rgba(255,255,255,.4);margin-top:4px;font-family:var(--font-mono);}
 
-    /* AWARDS / RECOGNITION */
-    #awards{background:#071209;padding:72px 48px;}
-    .awards-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-top:48px;}
-    .award-card{background:#0a1a0f;padding:32px 28px;text-align:center;transition:background .3s;}
-    .award-card:hover{background:#1a0a0e;}
-    .award-icon{font-size:32px;margin-bottom:12px;display:block;}
-    .award-title{font-family:var(--font-display);font-size:22px;letter-spacing:1px;color:var(--gold);margin-bottom:6px;}
-    .award-body{font-size:13px;color:var(--mid);line-height:1.6;}
+    #lead-magnet{background:var(--bg);}
+    .lead-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--border);}
+    .lead-card{background:var(--card);padding:40px;}
+    .lead-card.accent{background:var(--accent);}
+    .lead-title{font-family:var(--font-display);font-size:36px;letter-spacing:1px;color:var(--white);margin-bottom:12px;}
+    .lead-card.accent .lead-title{color:#fff;}
+    .lead-desc{font-size:14px;color:var(--mid);line-height:1.7;margin-bottom:24px;}
+    .lead-card.accent .lead-desc{color:rgba(255,255,255,.8);}
+    .lead-btn{display:inline-block;font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:13px 24px;text-decoration:none;cursor:none;transition:background .2s;}
+    .lead-btn-white{background:#fff;color:var(--accent);}
+    .lead-btn-white:hover{background:var(--accentlt,#ffe0e2);}
+    .lead-btn-outline{background:transparent;border:1px solid var(--border);color:var(--white);}
+    .lead-btn-outline:hover{border-color:var(--green);color:var(--green);}
+    .lead-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:24px;}
+    .lead-list li{font-size:13px;color:var(--mid);display:flex;gap:10px;align-items:flex-start;line-height:1.5;}
+    .lead-list li::before{content:'✓';color:var(--green);font-size:12px;flex-shrink:0;margin-top:1px;}
+    .lead-card.accent .lead-list li{color:rgba(255,255,255,.8);}
+    .lead-card.accent .lead-list li::before{color:#fff;}
 
-    /* PRICING */
-    #pricing{background:#071209;padding:110px 48px;position:relative;overflow:hidden;}
+    #pricing{background:var(--off);padding:100px 48px;}
     #pricing .section-label{color:var(--green);}
     #pricing .section-label::before{background:var(--green);}
-    .pricing-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:500px;background:radial-gradient(ellipse,rgba(0,166,81,.05) 0%,transparent 70%);pointer-events:none;}
-    .pricing-intro{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:end;margin-bottom:56px;}
-    .pricing-intro p{font-size:17px;color:var(--mid);font-weight:300;line-height:1.8;}
-    .pricing-currency-toggle{display:flex;align-items:center;gap:8px;margin-top:16px;}
-    .currency-btn{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;background:none;border:1px solid var(--border);color:var(--muted);padding:6px 14px;cursor:none;transition:all .2s;}
-    .currency-btn.active{background:var(--green);border-color:var(--green);color:#fff;}
+    .pricing-honest{background:rgba(0,166,81,.07);border:1px solid rgba(0,166,81,.2);padding:16px 20px;margin-bottom:48px;}
+    .pricing-honest p{font-size:13px;color:var(--mid);font-family:var(--font-mono);line-height:1.6;}
+    .pricing-honest p strong{color:var(--green);}
+    .pricing-intro{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:end;margin-bottom:48px;}
+    .pricing-intro p{font-size:16px;color:var(--mid);font-weight:300;line-height:1.8;}
     .pricing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
-    .price-card{background:#0a1a0f;padding:36px 28px;position:relative;overflow:hidden;transition:background .3s,box-shadow .3s;}
-    .price-card:hover{background:#1a0a0e;box-shadow:0 8px 40px rgba(230,57,70,.1);}
+    .price-card{background:var(--card);padding:32px 24px;position:relative;overflow:hidden;transition:background .3s;}
+    .price-card:hover{background:var(--card2);}
     .price-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--green);transform:scaleX(0);transform-origin:left;transition:transform .4s ease;}
     .price-card:hover::before{transform:scaleX(1);}
     .price-card.featured{background:var(--green);}
-    .price-card.featured:hover{background:#009444;box-shadow:none;}
+    .price-card.featured:hover{background:#009444;}
     .price-card.featured::before{display:none;}
-    .price-num{font-family:var(--font-mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:20px;}
+    .price-num{font-family:var(--font-mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;}
     .price-card.featured .price-num{color:rgba(255,255,255,.5);}
-    .price-icon{width:38px;height:38px;margin-bottom:16px;}
-    .price-name{font-family:var(--font-display);font-size:26px;letter-spacing:1px;color:var(--white);margin-bottom:6px;line-height:1;}
+    .price-name{font-family:var(--font-display);font-size:24px;letter-spacing:1px;color:var(--white);margin-bottom:6px;}
     .price-card.featured .price-name{color:#fff;}
-    .price-tag{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:16px;}
+    .price-tag{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:14px;}
     .price-card.featured .price-tag{color:rgba(255,255,255,.7);}
-    .price-amount{font-family:var(--font-display);font-size:44px;letter-spacing:-1px;color:var(--green);line-height:1;margin-bottom:3px;}
+    .price-amount{font-family:var(--font-display);font-size:40px;letter-spacing:-1px;color:var(--green);line-height:1;margin-bottom:3px;}
     .price-card.featured .price-amount{color:#fff;}
-    .price-period{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;color:var(--muted);margin-bottom:22px;}
+    .price-period{font-family:var(--font-mono);font-size:10px;color:var(--muted);margin-bottom:18px;}
     .price-card.featured .price-period{color:rgba(255,255,255,.6);}
-    .price-divider{height:1px;background:var(--border);margin-bottom:20px;}
+    .price-divider{height:1px;background:var(--border);margin-bottom:16px;}
     .price-card.featured .price-divider{background:rgba(255,255,255,.2);}
-    .price-desc{font-size:13px;color:var(--mid);line-height:1.7;margin-bottom:20px;}
-    .price-card.featured .price-desc{color:rgba(255,255,255,.8);}
-    .price-features{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:28px;}
-    .price-features li{font-size:12px;color:var(--mid);display:flex;align-items:flex-start;gap:9px;line-height:1.5;}
-    .price-card.featured .price-features li{color:rgba(255,255,255,.8);}
-    .price-features li::before{content:'✓';color:var(--green);font-size:11px;font-weight:600;flex-shrink:0;margin-top:1px;}
+    .price-features{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:24px;}
+    .price-features li{font-size:12px;color:var(--mid);display:flex;align-items:flex-start;gap:8px;line-height:1.5;}
+    .price-card.featured .price-features li{color:rgba(255,255,255,.85);}
+    .price-features li::before{content:'✓';color:var(--green);font-size:11px;font-weight:600;flex-shrink:0;}
     .price-card.featured .price-features li::before{color:#fff;}
-    .price-btn{display:block;width:100%;text-align:center;font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:12px;text-decoration:none;transition:all .2s;cursor:none;border:none;}
+    .price-btn{display:block;width:100%;text-align:center;font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:11px;text-decoration:none;transition:all .2s;cursor:none;border:none;}
     .price-btn-outline{background:transparent;border:1px solid var(--border);color:var(--muted);}
-    .price-btn-outline:hover{border-color:var(--accent);color:var(--accent);}
-    .price-btn-solid{background:var(--white);color:#fff;}
-    .price-btn-solid:hover{background:#ede9fe;color:var(--accent);}
-    .pricing-band{margin-top:2px;background:var(--green);padding:36px 44px;display:flex;align-items:center;justify-content:space-between;}
-    .band-left{flex:1;}
+    .price-btn-outline:hover{border-color:var(--green);color:var(--green);}
+    .price-btn-solid{background:#fff;color:var(--green);}
+    .price-btn-solid:hover{background:var(--card);color:var(--green);}
+    .pricing-band{margin-top:2px;background:var(--green);padding:32px 40px;display:flex;align-items:center;justify-content:space-between;}
     .band-tag{font-family:var(--font-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:6px;}
-    .band-title{font-family:var(--font-display);font-size:36px;letter-spacing:2px;color:#fff;line-height:1;}
-    .band-desc{font-size:13px;color:rgba(255,255,255,.7);margin-top:6px;max-width:380px;line-height:1.6;}
-    .band-right{text-align:right;}
-    .band-price{font-family:var(--font-display);font-size:56px;letter-spacing:-2px;color:#fff;line-height:1;}
-    .band-period{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;color:rgba(255,255,255,.5);margin-bottom:14px;}
+    .band-title{font-family:var(--font-display);font-size:32px;letter-spacing:2px;color:#fff;}
+    .band-desc{font-size:13px;color:rgba(255,255,255,.7);margin-top:6px;max-width:340px;line-height:1.6;}
+    .band-price{font-family:var(--font-display);font-size:48px;letter-spacing:-2px;color:#fff;text-align:right;}
+    .band-period{font-family:var(--font-mono);font-size:10px;color:rgba(255,255,255,.5);margin-bottom:12px;text-align:right;}
     .band-btn{display:inline-block;background:#fff;color:var(--green);font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:11px 22px;text-decoration:none;transition:background .2s;cursor:none;border:none;}
-    .band-btn:hover{background:#1a0a0e;color:var(--accent);}
-    .pricing-note{margin-top:36px;text-align:center;font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;color:var(--muted);}
+    .band-btn:hover{background:var(--card);color:var(--green);}
+    .pricing-note{margin-top:28px;text-align:center;font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;color:var(--muted);}
     .pricing-note span{color:var(--green);}
 
-    /* TESTIMONIALS */
-    #testimonials{background:#0a1a0f;padding:110px 48px;}
-    .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:56px;}
-    .testi-card{background:#0d2114;padding:40px 36px;position:relative;transition:background .3s;}
-    .testi-card:hover{background:#1a0a0e;}
-    .testi-stars{display:flex;gap:4px;margin-bottom:16px;}
-    .testi-star{color:var(--gold);font-size:16px;}
-    .testi-text{font-size:15px;color:var(--mid);line-height:1.8;margin-bottom:24px;font-style:italic;}
-    .testi-author{display:flex;align-items:center;gap:12px;}
-    .testi-avatar{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:18px;color:#fff;flex-shrink:0;}
-    .testi-name{font-size:13px;font-weight:500;color:var(--white);}
-    .testi-role{font-size:11px;color:var(--muted);font-family:var(--font-mono);letter-spacing:.05em;}
-    .testi-location{font-size:10px;color:var(--muted);font-family:var(--font-mono);letter-spacing:.08em;margin-top:2px;}
-    .testi-bar{position:absolute;top:0;left:0;right:0;height:2px;}
-
-    /* PROCESS */
-    #process{background:#071209;}
-    .process-steps{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--border);margin-top:56px;}
-    .process-step{padding:44px 32px;border-right:1px solid var(--border);background:#0a1a0f;transition:background .3s;}
-    .process-step:hover{background:#1a0a0e;}
+    #process{background:var(--bg);}
+    .process-steps{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--border);margin-top:48px;}
+    .process-step{padding:36px 28px;border-right:1px solid var(--border);background:var(--card);transition:background .3s;}
+    .process-step:hover{background:var(--card2);}
     .process-step:last-child{border-right:none;}
-    .step-num{font-family:var(--font-display);font-size:72px;line-height:1;color:var(--border);margin-bottom:20px;}
-    .step-title{font-family:var(--font-display);font-size:26px;letter-spacing:1px;margin-bottom:10px;color:var(--green);}
+    .step-num{font-family:var(--font-display);font-size:60px;line-height:1;color:var(--border);margin-bottom:16px;}
+    .step-title{font-family:var(--font-display);font-size:24px;letter-spacing:1px;margin-bottom:8px;color:var(--green);}
     .step-desc{font-size:13px;color:var(--mid);line-height:1.7;}
 
-    /* GLOBAL REACH */
-    #global{background:var(--accent);padding:80px 48px;text-align:center;}
-    .global-title{font-family:var(--font-display);font-size:clamp(40px,6vw,80px);color:#fff;letter-spacing:2px;margin-bottom:16px;}
-    .global-sub{font-size:17px;color:rgba(255,255,255,.7);font-weight:300;max-width:500px;margin:0 auto 48px;line-height:1.7;}
-    .global-regions{display:flex;justify-content:center;gap:48px;flex-wrap:wrap;}
-    .region{text-align:center;}
-    .region-flag{font-size:28px;display:block;margin-bottom:8px;}
-    .region-name{font-family:var(--font-mono);font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.7);}
-
-    /* CONTACT */
-    #contact{background:#0d2114;padding:140px 48px;position:relative;overflow:hidden;}
+    #contact{background:var(--off);padding:120px 48px;}
     .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
-    .contact-info{padding-top:16px;}
-    .contact-headline{font-family:var(--font-display);font-size:clamp(48px,7vw,100px);line-height:.9;margin-bottom:24px;color:var(--white);}
+    .contact-headline{font-family:var(--font-display);font-size:clamp(48px,7vw,96px);line-height:.9;margin-bottom:20px;color:var(--white);}
     .contact-headline span{color:var(--accent);display:block;}
-    .contact-sub{font-size:17px;color:var(--mid);font-weight:300;line-height:1.7;margin-bottom:36px;}
-    .contact-details{display:flex;flex-direction:column;gap:16px;}
+    .contact-sub{font-size:16px;color:var(--mid);font-weight:300;line-height:1.7;margin-bottom:32px;}
+    .contact-details{display:flex;flex-direction:column;gap:14px;}
     .contact-detail{display:flex;align-items:center;gap:12px;}
-    .contact-detail-icon{width:36px;height:36px;background:#1a0a0e;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
-    .contact-detail-text a{color:var(--accent);text-decoration:none;font-size:14px;font-family:var(--font-mono);transition:color .2s;}
-    .contact-detail-text a:hover{color:#6d28d9;}
+    .contact-detail-icon{width:34px;height:34px;background:rgba(0,166,81,.1);border:1px solid rgba(0,166,81,.2);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;}
     .contact-detail-label{font-size:11px;color:var(--muted);font-family:var(--font-mono);letter-spacing:.08em;}
-    .contact-form-wrap{}
+    .contact-detail a{color:var(--green);text-decoration:none;font-size:14px;font-family:var(--font-mono);transition:color .2s;}
+    .contact-detail a:hover{color:var(--white);}
+    .contact-detail span{color:var(--mid);font-size:14px;font-family:var(--font-mono);}
     .contact-form{display:flex;flex-direction:column;gap:14px;}
     .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
     .form-field{display:flex;flex-direction:column;gap:7px;}
     .form-field label{font-family:var(--font-mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);}
-    .form-field input,.form-field textarea,.form-field select{background:#0a1a0f;border:1.5px solid var(--border);color:var(--white);font-family:var(--font-body);font-size:15px;padding:13px 15px;outline:none;transition:border-color .2s;resize:none;cursor:none;}
-    .form-field input:focus,.form-field textarea:focus,.form-field select:focus{border-color:var(--accent);}
+    .form-field input,.form-field textarea,.form-field select{background:var(--card);border:1px solid var(--border);color:var(--white);font-family:var(--font-body);font-size:15px;padding:12px 14px;outline:none;transition:border-color .2s;resize:none;cursor:none;}
+    .form-field input:focus,.form-field textarea:focus,.form-field select:focus{border-color:var(--green);}
     .form-field select{appearance:none;}
-    .form-field textarea{height:110px;}
-    .form-submit{background:var(--accent);color:#fff;border:none;font-family:var(--font-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:17px;cursor:none;font-weight:500;transition:background .2s,transform .15s;margin-top:6px;}
-    .form-submit:hover{background:#c62d3a;transform:translateY(-2px);}
-    .form-guarantee{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-align:center;margin-top:12px;}
-    .form-guarantee span{color:var(--green);}
+    .form-field textarea{height:100px;}
+    .form-submit{background:var(--accent);color:#fff;border:none;font-family:var(--font-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:16px;cursor:none;font-weight:500;transition:background .2s;}
+    .form-submit:hover{background:#c62d3a;}
+    .form-note{font-family:var(--font-mono);font-size:10px;color:var(--muted);text-align:center;margin-top:8px;}
+    .form-note span{color:var(--green);}
 
-    /* FOOTER */
-    footer{background:#050e08;padding:60px 48px 36px;color:var(--white);}
-    .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;}
-    .footer-brand .footer-logo{font-family:var(--font-display);font-size:28px;letter-spacing:2px;color:var(--white);}
-    .footer-brand .footer-logo span{color:var(--accent);}
-    .footer-brand p{font-size:13px;color:rgba(255,255,255,.5);line-height:1.7;margin-top:12px;max-width:260px;}
-    .footer-col-title{font-family:var(--font-mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:16px;}
-    .footer-col-links{list-style:none;display:flex;flex-direction:column;gap:10px;}
-    .footer-col-links a{font-size:13px;color:rgba(255,255,255,.6);text-decoration:none;transition:color .2s;}
-    .footer-col-links a:hover{color:var(--accent);}
-    .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);}
-    .footer-copy{font-family:var(--font-mono);font-size:11px;color:rgba(255,255,255,.3);}
+    footer{background:#050e08;padding:48px 48px 28px;border-top:1px solid var(--border);}
+    .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px;}
+    .footer-logo{font-family:var(--font-display);font-size:26px;letter-spacing:2px;display:flex;align-items:baseline;gap:1px;margin-bottom:12px;}
+    .footer-logo .lg{color:var(--green);}
+    .footer-logo .lr{color:var(--accent);}
+    .footer-brand p{font-size:13px;color:var(--muted);line-height:1.7;max-width:240px;}
+    .footer-col-title{font-family:var(--font-mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;opacity:.6;}
+    .footer-col-links{list-style:none;display:flex;flex-direction:column;gap:9px;}
+    .footer-col-links a{font-size:13px;color:var(--mid);text-decoration:none;transition:color .2s;}
+    .footer-col-links a:hover{color:var(--green);}
+    .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:20px;border-top:1px solid var(--border);}
+    .footer-copy{font-family:var(--font-mono);font-size:11px;color:var(--muted);}
     .footer-social{display:flex;gap:14px;}
-    .footer-social a{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);text-decoration:none;transition:color .2s;}
-    .footer-social a:hover{color:var(--accent);}
+    .footer-social a{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s;}
+    .footer-social a:hover{color:var(--green);}
 
-    /* FLOATING BUTTONS */
-    #whatsapp-btn{position:fixed;bottom:24px;right:24px;width:54px;height:54px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:500;cursor:none;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:transform .2s,box-shadow .2s;}
-    #whatsapp-btn:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(37,211,102,.5);}
+    #whatsapp-btn{position:fixed;bottom:24px;right:24px;width:54px;height:54px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:500;cursor:none;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,.35);transition:transform .2s;}
+    #whatsapp-btn:hover{transform:scale(1.1);}
     #whatsapp-btn svg{width:28px;height:28px;fill:#fff;}
-    #back-top{position:fixed;bottom:90px;right:24px;width:44px;height:44px;background:var(--card);border:1px solid var(--border);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:20px;cursor:none;opacity:0;visibility:hidden;transition:opacity .3s,background .2s,visibility .3s;z-index:500;}
+    #back-top{position:fixed;bottom:90px;right:24px;width:44px;height:44px;background:var(--card);border:1px solid var(--border);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:18px;cursor:none;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s;z-index:500;}
     #back-top.visible{opacity:1;visibility:visible;}
-    #back-top:hover{background:var(--accent);color:#fff;border-color:var(--accent);}
+    #back-top:hover{background:var(--green);color:#fff;}
 
-    /* ANIMATIONS */
-    @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
     @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
     @keyframes scrollPulse{0%,100%{opacity:.4}50%{opacity:1}}
-    .reveal{opacity:0;transform:translateY(36px);transition:opacity .7s ease,transform .7s ease;}
+    .reveal{opacity:0;transform:translateY(32px);transition:opacity .7s ease,transform .7s ease;}
     .reveal.visible{opacity:1;transform:translateY(0);}
     .reveal-delay-1{transition-delay:.1s;}
     .reveal-delay-2{transition-delay:.2s;}
     .reveal-delay-3{transition-delay:.3s;}
 
-    /* MOBILE */
     @media(max-width:768px){
-      #announce{padding:9px 16px;}
       nav{padding:14px 20px;}
-      .nav-links{display:none;position:fixed;inset:0;top:56px;background:rgba(10,26,15,.99);flex-direction:column;align-items:center;justify-content:center;gap:36px;backdrop-filter:blur(20px);}
+      .nav-links{display:none;position:fixed;inset:0;top:56px;background:rgba(10,26,15,.99);flex-direction:column;align-items:center;justify-content:center;gap:32px;backdrop-filter:blur(20px);}
       .nav-links.open{display:flex;}
-      .nav-links a{font-size:14px;color:var(--light);}
-      .nav-cta,.nav-lang{display:none;}
+      .nav-cta{display:none;}
       .nav-hamburger{display:flex;}
-      .nav-hamburger span{background:var(--white);}
       #hero{padding:0 20px 60px;}
-      .hero-headline{font-size:clamp(52px,16vw,90px);}
+      .hero-headline{font-size:clamp(52px,16vw,88px);}
       .hero-sub-row{flex-direction:column;gap:24px;align-items:flex-start;}
-      .hero-sub{max-width:100%;font-size:15px;}
+      .hero-sub{max-width:100%;}
       .hero-actions{flex-direction:column;width:100%;}
-      .btn-primary,.btn-outline{width:100%;text-align:center;padding:14px 20px;}
+      .btn-primary,.btn-outline{width:100%;text-align:center;padding:14px;}
       .hero-scroll{display:none;}
-      .trust-bar{flex-direction:column;gap:16px;padding:16px 20px;}
-      .trust-items{flex-wrap:wrap;gap:20px;justify-content:flex-start;}
-      section{padding:72px 20px;}
-      .services-intro{grid-template-columns:1fr;gap:24px;margin-bottom:40px;}
-      .services-grid{grid-template-columns:1fr;}
-      .work-grid{grid-template-columns:1fr;grid-template-rows:auto;}
-      .work-item{min-height:260px;}
-      .work-item-wide{grid-column:span 1;min-height:320px;}
-      .stats-grid{grid-template-columns:repeat(2,1fr);}
-      .stat-num{font-size:52px;}
-      .awards-grid{grid-template-columns:repeat(2,1fr);}
-      .pricing-intro{grid-template-columns:1fr;gap:20px;}
+      section{padding:64px 20px;}
+      .about-grid,.services-intro,.pricing-intro,.contact-grid{grid-template-columns:1fr;gap:32px;}
+      .services-grid,.work-grid,.stats-grid,.lead-grid{grid-template-columns:1fr;}
       .pricing-grid{grid-template-columns:1fr;}
-      .pricing-band{flex-direction:column;gap:24px;}
-      .band-right{text-align:left;}
-      .testi-grid{grid-template-columns:1fr;}
       .process-steps{grid-template-columns:1fr;}
       .process-step{border-right:none;border-bottom:1px solid var(--border);}
       .process-step:last-child{border-bottom:none;}
-      .global-regions{gap:24px;}
-      .contact-grid{grid-template-columns:1fr;}
-      .form-row{grid-template-columns:1fr;}
-      footer{padding:40px 20px 28px;}
+      .pricing-band{flex-direction:column;gap:20px;}
       .footer-top{grid-template-columns:1fr;}
       .footer-bottom{flex-direction:column;gap:12px;text-align:center;}
-      .section-title{font-size:clamp(40px,10vw,64px);}
+      .section-title{font-size:clamp(40px,10vw,60px);}
+      .form-row{grid-template-columns:1fr;}
     }
   </style>
 </head>
 <body>
 
 <div id="loader">
-  <div class="loader-logo"><span style="color:var(--green);">DIGI</span><span style="color:var(--accent);">CREATIV</span><span style="color:var(--green);font-size:56px;">.</span></div>
+  <div class="loader-logo"><span class="lg">DIGI</span><span class="lr">CREATIV</span><span class="lg">.</span></div>
   <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
-  <div class="loader-text">Loading experience...</div>
+  <div class="loader-text">Loading...</div>
 </div>
 
 <div id="cursor"></div>
 <div id="cursor-ring"></div>
 
-<!-- ANNOUNCEMENT BAR -->
-<div id="announce">
-  <span class="announce-text">🌍 Now serving clients across Kenya, East Africa & globally</span>
-  <a href="#pricing" class="announce-link">View pricing →</a>
-  <button class="announce-close" onclick="document.getElementById('announce').style.display='none'">×</button>
-</div>
-
-<!-- NAV -->
 <nav id="navbar">
-  <a href="#" class="nav-logo" style="display:flex;align-items:baseline;gap:0;"><span style="color:var(--green);letter-spacing:3px;">DIGI</span><span style="color:var(--accent);letter-spacing:3px;">CREATIV</span><span style="color:var(--green);font-size:36px;line-height:0.8;">.</span></a>
+  <a href="#" class="nav-logo"><span class="lg">DIGI</span><span class="lr">CREATIV</span><span class="lg">.</span></a>
   <ul class="nav-links" id="nav-links">
+    <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#work">Work</a></li>
     <li><a href="#pricing">Pricing</a></li>
     <li><a href="#testimonials">Reviews</a></li>
-    <li><a href="#global">Global</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <div class="nav-right">
-    <button class="nav-lang" onclick="toggleCurrency()">KES / USD</button>
-    <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-    <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Start a project</button>
-  </div>
+  <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <button class="nav-cta" onclick="document.getElementById('lead-magnet').scrollIntoView({behavior:'smooth'})">Free audit 🎁</button>
 </nav>
 
-<!-- HERO -->
 <section id="hero">
   <div class="hero-grid"></div>
   <div class="hero-glow"></div>
-  <div class="hero-glow-2"></div>
-  <div class="hero-badge">
-    <div class="hero-badge-dot"></div>
-    <span class="hero-badge-text">Now accepting new clients — 2 spots left this month</span>
+  <div class="hero-glow2"></div>
+  <div class="hero-honest-badge">
+    <div class="badge-dot"></div>
+    <span class="badge-text">Available now · taking new clients</span>
   </div>
   <div class="hero-ticker">
-    <span>✦</span> Social Media &nbsp;<span>✦</span> Content Creation &nbsp;<span>✦</span> Branding &nbsp;<span>✦</span> Analytics &nbsp;<span>✦</span> Lead Generation
+    <span>✦</span> Social Media &nbsp;<span>✦</span> Content Creation &nbsp;<span>✦</span> Brand Identity &nbsp;<span>✦</span> Creative Design
   </div>
-  <h1 class="hero-headline">We Build<br><em>Brands</em>That Lead.</h1>
+  <h1 class="hero-headline">We Help Your<br><em>Business</em>Get Noticed.</h1>
   <div class="hero-sub-row">
-    <p class="hero-sub">DigiCreativ is an award-winning creative marketing agency helping businesses across Kenya and the globe dominate their market through bold branding, social content, and creative strategy.</p>
-    <div class="hero-actions">
-      <a href="#work" class="btn-primary">See our work</a>
-      <a href="#services" class="btn-outline">Our services</a>
+    <div>
+      <p class="hero-sub">DigiCreativ helps small and medium businesses in Nakuru and across Kenya build a strong online presence — through social media management, content creation, and brand identity design.</p>
+      <p class="hero-honest-note">Run by <span>Mark Mwenda</span> — digital marketer and content strategist based in Nakuru.</p>
+      <div class="hero-phone">
+        📞 <a href="tel:+254705996298">+254 705 996 298</a> &nbsp;·&nbsp;
+        <a href="mailto:iammarkmwenda12@gmail.com">iammarkmwenda12@gmail.com</a>
+      </div>
     </div>
-  </div>
-  <div class="hero-phone">
-    📞 <a href="tel:+254705996298">+254 705 996 298</a> &nbsp;·&nbsp;
-    <a href="mailto:iammarkmwenda12@gmail.com">iammarkmwenda12@gmail.com</a>
-  </div>
-  <div class="hero-clients">
-    <span class="hero-clients-label">Trusted by 64+ brands</span>
-    <div class="client-avatar">K</div>
-    <div class="client-avatar">V</div>
-    <div class="client-avatar">S</div>
-    <div class="client-avatar">M</div>
-    <div class="client-avatar">N</div>
-    <span class="hero-rating">★★★★★ 4.9/5</span>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Get free audit</a>
+      <a href="#services" class="btn-outline">See services</a>
+    </div>
   </div>
   <div class="hero-scroll"><div class="scroll-line"></div><span>Scroll</span></div>
 </section>
 
-<!-- TRUST BAR -->
-<div class="trust-bar">
-  <span class="trust-label">As seen in</span>
-  <div class="trust-items">
-    <span class="trust-item">Business Daily</span>
-    <span class="trust-item">Nairobi Business</span>
-    <span class="trust-item">Tech Africa</span>
-    <span class="trust-item">Creative Kenya</span>
-    <span class="trust-item">StartupBlink</span>
-  </div>
-</div>
-
-<!-- MARQUEE -->
 <div class="marquee-wrap">
   <div class="marquee-track">
-    <div class="marquee-item">Brand Identity</div>
     <div class="marquee-item">Social Media</div>
-    <div class="marquee-item">Content Strategy</div>
-    <div class="marquee-item">Analytics</div>
-    <div class="marquee-item">Lead Generation</div>
-    <div class="marquee-item">Visual Design</div>
+    <div class="marquee-item">Content Creation</div>
     <div class="marquee-item">Brand Identity</div>
+    <div class="marquee-item">Creative Design</div>
+    <div class="marquee-item">Nakuru Kenya</div>
     <div class="marquee-item">Social Media</div>
-    <div class="marquee-item">Content Strategy</div>
-    <div class="marquee-item">Analytics</div>
+    <div class="marquee-item">Content Creation</div>
+    <div class="marquee-item">Brand Identity</div>
+    <div class="marquee-item">Creative Design</div>
+    <div class="marquee-item">Nakuru Kenya</div>
   </div>
 </div>
 
-<!-- SERVICES -->
+<section id="about">
+  <div class="section-label reveal">The founder</div>
+  <div class="about-grid reveal">
+    <div class="about-photo-box">
+      <div class="about-avatar">MM</div>
+      <div class="about-name">Mark Mwenda</div>
+      <div class="about-role">Founder & Creative Director</div>
+      <div class="about-location">📍 Nakuru, Kenya</div>
+    </div>
+    <div>
+      <h2 class="section-title">People hire<br>people first.</h2>
+      <p class="about-story">
+        Hi — I'm <strong>Mark Mwenda</strong>, a digital marketer and content strategist based in Nakuru, Kenya. I started DigiCreativ because I kept seeing great local businesses with weak or non-existent online presence — and I knew I could fix that.
+      </p>
+      <br/>
+      <p class="about-story">
+        I help businesses build their brand, manage their social media, and create content that actually connects with their audience. My approach is <strong>honest, hands-on, and results-focused</strong> — I work directly with every client, no middlemen.
+      </p>
+      <br/>
+      <p class="about-story">
+        DigiCreativ is still growing — I am building real case studies and real results with every client I take on. I would rather show you what I can do than make claims I cannot back up.
+      </p>
+      <div class="about-skills">
+        <span class="skill-tag">Social media strategy</span>
+        <span class="skill-tag">Content creation</span>
+        <span class="skill-tag">Brand identity</span>
+        <span class="skill-tag">Copywriting</span>
+        <span class="skill-tag">Graphic design</span>
+        <span class="skill-tag">Digital marketing</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="services">
   <div class="services-intro">
     <div>
-      <div class="section-label reveal">What we do</div>
-      <h2 class="section-title reveal reveal-delay-1">Our<br>Services</h2>
+      <div class="section-label reveal">What I do</div>
+      <h2 class="section-title reveal reveal-delay-1">Four core<br>services</h2>
     </div>
-    <p class="reveal reveal-delay-2">We blend creative strategy with relentless execution. Every brand we touch gets treated like our own — because your growth is our obsession.</p>
+    <p class="reveal reveal-delay-2">Every service is delivered personally by me. You always know exactly who is working on your brand and what they are doing.</p>
   </div>
   <div class="services-grid reveal">
     <div class="service-card">
       <div class="service-num">01</div>
-      <svg class="service-icon" viewBox="0 0 44 44" fill="none"><rect x="3" y="7" width="38" height="30" rx="4" stroke="#7C3AED" stroke-width="1.5"/><path d="M3 19h38" stroke="#7C3AED" stroke-width="1.5"/><circle cx="11" cy="13" r="2" fill="#7C3AED"/><circle cx="18" cy="13" r="2" fill="#7C3AED" opacity=".4"/><path d="M11 29l5-5 4 4 5-7 5 5" stroke="#7C3AED" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <svg class="service-icon" viewBox="0 0 40 40" fill="none"><rect x="2" y="6" width="36" height="28" rx="4" stroke="#00A651" stroke-width="1.5"/><path d="M2 16h36" stroke="#00A651" stroke-width="1.5"/><circle cx="9" cy="11" r="2" fill="#00A651"/><path d="M8 28l5-5 3 3 5-6 5 5" stroke="#00A651" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       <h3>Social Media</h3>
-      <p>We manage your presence across every platform — crafting content that stops the scroll and builds real communities around your brand.</p>
-      <div class="service-tags"><span class="tag">Instagram</span><span class="tag">TikTok</span><span class="tag">LinkedIn</span><span class="tag">X</span><span class="tag">Community</span></div>
+      <p>I manage your Instagram, TikTok, LinkedIn or Facebook — creating and posting content consistently so your business stays visible and your audience keeps growing.</p>
+      <div class="service-tags"><span class="tag">Instagram</span><span class="tag">TikTok</span><span class="tag">LinkedIn</span><span class="tag">Facebook</span><span class="tag">Strategy</span></div>
     </div>
     <div class="service-card">
       <div class="service-num">02</div>
-      <svg class="service-icon" viewBox="0 0 44 44" fill="none"><path d="M22 5L5 17v22h34V17L22 5z" stroke="#7C3AED" stroke-width="1.5" stroke-linejoin="round"/><path d="M15 39V26h14v13" stroke="#7C3AED" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22" cy="19" r="4" stroke="#7C3AED" stroke-width="1.5"/></svg>
+      <svg class="service-icon" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="16" r="8" stroke="#00A651" stroke-width="1.5"/><path d="M6 36c0-7.732 6.268-14 14-14s14 6.268 14 14" stroke="#00A651" stroke-width="1.5" stroke-linecap="round"/></svg>
       <h3>Content Creation</h3>
-      <p>From scripting to shooting to editing — we produce thumb-stopping video, photo and copy that converts viewers into customers.</p>
-      <div class="service-tags"><span class="tag">Video</span><span class="tag">Photography</span><span class="tag">Copywriting</span><span class="tag">Reels</span></div>
+      <p>Photos, videos, reels, graphics and captions — I produce content that is relevant to your audience, consistent with your brand, and optimised for each platform.</p>
+      <div class="service-tags"><span class="tag">Video</span><span class="tag">Photography</span><span class="tag">Reels</span><span class="tag">Graphics</span><span class="tag">Captions</span></div>
     </div>
     <div class="service-card">
       <div class="service-num">03</div>
-      <svg class="service-icon" viewBox="0 0 44 44" fill="none"><circle cx="22" cy="22" r="9" stroke="#7C3AED" stroke-width="1.5"/><path d="M22 4v3M22 37v3M4 22h3M37 22h3" stroke="#7C3AED" stroke-width="1.5" stroke-linecap="round"/><circle cx="22" cy="22" r="3.5" fill="#7C3AED" opacity=".3"/></svg>
+      <svg class="service-icon" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="8" stroke="#00A651" stroke-width="1.5"/><path d="M20 4v3M20 33v3M4 20h3M33 20h3" stroke="#00A651" stroke-width="1.5" stroke-linecap="round"/><circle cx="20" cy="20" r="3" fill="#00A651" opacity=".3"/></svg>
       <h3>Brand Identity</h3>
-      <p>Logo, palette, typography, voice — we build brand systems that are unmistakably yours and instantly recognisable in any market.</p>
-      <div class="service-tags"><span class="tag">Logo Design</span><span class="tag">Style Guide</span><span class="tag">Brand Voice</span><span class="tag">Packaging</span></div>
+      <p>Logo, colours, typography, and brand guidelines — I build visual identity systems that make your business look professional and recognisable from day one.</p>
+      <div class="service-tags"><span class="tag">Logo design</span><span class="tag">Colour palette</span><span class="tag">Typography</span><span class="tag">Guidelines</span></div>
     </div>
     <div class="service-card">
       <div class="service-num">04</div>
-      <svg class="service-icon" viewBox="0 0 44 44" fill="none"><rect x="5" y="5" width="15" height="15" rx="2" stroke="#7C3AED" stroke-width="1.5"/><rect x="24" y="5" width="15" height="15" rx="2" stroke="#7C3AED" stroke-width="1.5"/><rect x="5" y="24" width="15" height="15" rx="2" stroke="#7C3AED" stroke-width="1.5"/><rect x="24" y="24" width="15" height="15" rx="2" stroke="#7C3AED" stroke-width="1.5" opacity=".4"/></svg>
+      <svg class="service-icon" viewBox="0 0 40 40" fill="none"><rect x="4" y="4" width="13" height="13" rx="2" stroke="#00A651" stroke-width="1.5"/><rect x="23" y="4" width="13" height="13" rx="2" stroke="#00A651" stroke-width="1.5"/><rect x="4" y="23" width="13" height="13" rx="2" stroke="#00A651" stroke-width="1.5"/><rect x="23" y="23" width="13" height="13" rx="2" stroke="#00A651" stroke-width="1.5" opacity=".4"/></svg>
       <h3>Creative Design</h3>
-      <p>Campaigns, decks, ads, print — whatever the canvas, we design visuals that communicate your edge and outperform the competition.</p>
-      <div class="service-tags"><span class="tag">Campaigns</span><span class="tag">Ad Creatives</span><span class="tag">Pitch Decks</span><span class="tag">Print</span></div>
+      <p>Flyers, posters, business cards, pitch decks, and ad creatives — designed to look sharp and communicate your message clearly across print and digital.</p>
+      <div class="service-tags"><span class="tag">Flyers</span><span class="tag">Pitch decks</span><span class="tag">Ad creatives</span><span class="tag">Print</span></div>
     </div>
   </div>
 </section>
 
-<!-- WORK -->
 <section id="work">
-  <div class="work-header">
-    <div>
-      <div class="section-label reveal">Portfolio</div>
-      <h2 class="section-title reveal reveal-delay-1">Selected<br>Work</h2>
-    </div>
-    <a href="#contact" class="btn-outline reveal reveal-delay-2">Start yours →</a>
+  <div class="section-label reveal">Portfolio</div>
+  <h2 class="section-title reveal reveal-delay-1">Real work.<br>Honest results.</h2>
+  <div class="work-honest-note reveal">
+    <div style="font-size:18px;flex-shrink:0;">💡</div>
+    <p><strong>A note on honesty:</strong> DigiCreativ is a growing agency. The case studies below reflect real work I have done. As I complete more client projects, this section will be updated with documented results, screenshots, and client approvals. I believe real proof — even when small — is worth more than inflated numbers.</p>
   </div>
   <div class="work-grid reveal">
-    <div class="work-item work-item-wide">
-      <div class="work-bg" style="background-image:url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&q=100&fit=crop&auto=format');background-position:center top;"></div>
-      <div class="work-overlay-dark"></div><div class="work-arrow">↗</div>
-      <div class="work-overlay">
-        <div class="work-cat">Analytics & Strategy · 2024</div>
-        <div class="work-title">Meridian Tech — Full digital analytics suite</div>
-        <div class="work-result">↑ 340% organic growth in 6 months</div>
-      </div>
+    <div class="work-item">
+      <div class="work-tag">Social media · Nakuru</div>
+      <div class="work-title">Local Restaurant</div>
+      <div class="work-desc">Managed Instagram and Facebook for a Nakuru-based restaurant. Created weekly content, responded to comments, and ran a promotional campaign for a new menu launch.</div>
+      <div class="work-result">Increased post engagement by 3x over 6 weeks</div>
     </div>
     <div class="work-item">
-      <div class="work-bg" style="background-image:url('https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=1200&q=100&fit=crop&auto=format');"></div>
-      <div class="work-overlay-dark"></div><div class="work-arrow">↗</div>
-      <div class="work-overlay">
-        <div class="work-cat">Social Media · 2024</div>
-        <div class="work-title">Vertx Apparel</div>
-        <div class="work-result">0 → 120k followers in 6 months</div>
-      </div>
+      <div class="work-tag">Brand identity · Kenya</div>
+      <div class="work-title">Freelance Brand Kit</div>
+      <div class="work-desc">Designed a complete brand identity for a freelance consultant — logo, colour palette, business card, and social media profile assets.</div>
+      <div class="work-result">Client launched with professional visual identity in 5 days</div>
     </div>
     <div class="work-item">
-      <div class="work-bg" style="background-image:url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=100&fit=crop&auto=format');background-position:top;"></div>
-      <div class="work-overlay-dark"></div><div class="work-arrow">↗</div>
-      <div class="work-overlay">
-        <div class="work-cat">Lead Generation · 2025</div>
-        <div class="work-title">Kova Spirits</div>
-        <div class="work-result">↑ 280% increase in qualified leads</div>
-      </div>
+      <div class="work-tag">Content creation · Nakuru</div>
+      <div class="work-title">Retail Shop Campaign</div>
+      <div class="work-desc">Created a 30-day content calendar and produced graphics and captions for a retail shop promoting their end-of-year sale across Instagram and WhatsApp.</div>
+      <div class="work-result">Generated consistent daily reach throughout the campaign</div>
     </div>
-    <div class="work-item">
-      <div class="work-bg" style="background-image:url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=100&fit=crop&auto=format');"></div>
-      <div class="work-overlay-dark"></div><div class="work-arrow">↗</div>
-      <div class="work-overlay">
-        <div class="work-cat">Digital Marketing · 2025</div>
-        <div class="work-title">Sola Brands</div>
-        <div class="work-result">↑ 4.2x return on ad spend</div>
-      </div>
-    </div>
-    <div class="work-item">
-      <div class="work-bg" style="background-image:url('https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1200&q=100&fit=crop&auto=format');"></div>
-      <div class="work-overlay-dark"></div><div class="work-arrow">↗</div>
-      <div class="work-overlay">
-        <div class="work-cat">Brand Identity · 2025</div>
-        <div class="work-title">NovaTech</div>
-        <div class="work-result">Complete rebrand — 2 industry awards</div>
-      </div>
+    <div class="work-soon">
+      <div style="font-size:28px;">📸</div>
+      <p><strong>More case studies coming.</strong></p>
+      <p>Currently working with clients to document results and gather approvals. Check back soon — or <a href="#contact" style="color:var(--green);text-decoration:none;">reach out to be our next case study.</a></p>
     </div>
   </div>
 </section>
 
-<!-- STATS -->
 <div id="stats">
   <div class="stats-grid">
-    <div class="stat-box reveal"><div class="stat-num" data-target="64">0</div><div class="stat-label">Brands Transformed</div></div>
-    <div class="stat-box reveal reveal-delay-1"><div class="stat-num" data-target="2">0</div><div class="stat-label">Years in Market</div></div>
-    <div class="stat-box reveal reveal-delay-2"><div class="stat-num" data-target="12">0</div><div class="stat-label">Industries Served</div></div>
-    <div class="stat-box reveal reveal-delay-3"><div class="stat-num" data-target="98">0</div><div class="stat-label">% Client Retention</div></div>
+    <div class="stat-box reveal">
+      <div class="stat-num" data-target="5">0</div>
+      <div class="stat-label">Clients served</div>
+      <div class="stat-note">real clients served</div>
+    </div>
+    <div class="stat-box reveal reveal-delay-1">
+      <div class="stat-num" data-target="2">0</div>
+      <div class="stat-label">Years experience</div>
+      <div class="stat-note">in digital marketing</div>
+    </div>
+    <div class="stat-box reveal reveal-delay-2">
+      <div class="stat-num" data-target="4">0</div>
+      <div class="stat-label">Services offered</div>
+      <div class="stat-note">all personally delivered</div>
+    </div>
+    <div class="stat-box reveal reveal-delay-3">
+      <div class="stat-num" data-target="1">0</div>
+      <div class="stat-label">Hour response time</div>
+      <div class="stat-note">Mon – Sat</div>
+    </div>
   </div>
 </div>
 
-<!-- AWARDS -->
-<section id="awards">
-  <div class="section-label reveal">Recognition</div>
-  <h2 class="section-title reveal reveal-delay-1">Awards &<br>Recognition</h2>
-  <div class="awards-grid reveal">
-    <div class="award-card">
-      <span class="award-icon">🏆</span>
-      <div class="award-title">Best Agency 2024</div>
-      <div class="award-body">Nairobi Business Awards — Marketing Agency of the Year</div>
+<section id="lead-magnet">
+  <div class="section-label reveal">Free offers</div>
+  <h2 class="section-title reveal reveal-delay-1">Start here —<br>no cost.</h2>
+  <div class="lead-grid reveal">
+    <div class="lead-card accent">
+      <div class="lead-title">Free social media audit</div>
+      <div class="lead-desc">I will review your current social media presence and give you a written report covering what is working, what is not, and exactly what I would improve.</div>
+      <ul class="lead-list">
+        <li>Profile review across all platforms</li>
+        <li>Content quality and consistency assessment</li>
+        <li>Audience engagement analysis</li>
+        <li>3 specific recommendations</li>
+        <li>Delivered within 48 hours — free, no commitment</li>
+      </ul>
+      <a href="#contact" class="lead-btn lead-btn-white">Claim free audit →</a>
     </div>
-    <div class="award-card">
-      <span class="award-icon">⭐</span>
-      <div class="award-title">Top Creative</div>
-      <div class="award-body">Creative Kenya — Outstanding Brand Identity Campaign</div>
-    </div>
-    <div class="award-card">
-      <span class="award-icon">🌍</span>
-      <div class="award-title">Africa Rising</div>
-      <div class="award-body">StartupBlink — Top Digital Agency East Africa 2025</div>
-    </div>
-    <div class="award-card">
-      <span class="award-icon">📈</span>
-      <div class="award-title">Growth Award</div>
-      <div class="award-body">Tech Africa — Fastest Growing Marketing Agency 2025</div>
+    <div class="lead-card">
+      <div class="lead-title">Free 15-min consultation</div>
+      <div class="lead-desc">Book a quick WhatsApp or phone call. Tell me about your business and what you want to achieve online. I will tell you honestly what would work best for you.</div>
+      <ul class="lead-list">
+        <li>No sales pitch — just honest advice</li>
+        <li>Discuss your goals and current challenges</li>
+        <li>Get a clear action plan for next steps</li>
+        <li>Available Monday to Saturday</li>
+        <li>Via WhatsApp call or phone</li>
+      </ul>
+      <a href="https://wa.me/254705996298?text=Hi%20Mark%2C%20I%20would%20like%20to%20book%20a%20free%20consultation" target="_blank" class="lead-btn lead-btn-outline">Book on WhatsApp →</a>
     </div>
   </div>
 </section>
 
-<!-- PRICING -->
 <section id="pricing">
-  <div class="pricing-glow"></div>
+  <div class="pricing-honest reveal">
+    <p><strong>Honest pricing:</strong> These are starting prices. Every project is different and I will always give you a personalised quote. No hidden fees, no lock-in contracts. 50% deposit to begin, balance on delivery.</p>
+  </div>
   <div class="pricing-intro">
     <div>
-      <div class="section-label reveal">Rate Card</div>
-      <h2 class="section-title reveal reveal-delay-1">Transparent<br>Pricing</h2>
-      <div class="pricing-currency-toggle reveal">
-        <button class="currency-btn active" onclick="setCurrency('KES',this)">KES</button>
-        <button class="currency-btn" onclick="setCurrency('USD',this)">USD</button>
-        <button class="currency-btn" onclick="setCurrency('GBP',this)">GBP</button>
-      </div>
+      <div class="section-label reveal">Rate card</div>
+      <h2 class="section-title reveal reveal-delay-1">Clear.<br>Fair. Simple.</h2>
     </div>
-    <p class="reveal reveal-delay-2">No hidden fees. No surprises. Clear honest pricing built around the results you need. Packages available in KES, USD, and GBP for international clients.</p>
+    <p class="reveal reveal-delay-2">All prices in Kenya Shillings. International clients welcome — quotes available in USD on request. Every package is negotiable based on your scope and budget.</p>
   </div>
   <div class="pricing-grid reveal">
     <div class="price-card">
       <div class="price-num">01</div>
-      <svg class="price-icon" viewBox="0 0 40 40" fill="none"><rect x="2" y="6" width="36" height="28" rx="4" stroke="#00A651" stroke-width="1.5"/><path d="M2 16h36" stroke="#00A651" stroke-width="1.5"/><circle cx="9" cy="11" r="2" fill="#00A651"/><path d="M10 26l5-5 3 3 5-6 5 5" stroke="#00A651" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       <div class="price-name">Social Media</div>
-      <div class="price-tag">Monthly Retainer</div>
-      <div class="price-amount" id="p1">15K</div>
-      <div class="price-period" id="p1-period">KES / month — starting from</div>
+      <div class="price-tag">Monthly retainer</div>
+      <div class="price-amount">15K</div>
+      <div class="price-period">KES / month — starting from</div>
       <div class="price-divider"></div>
-      <div class="price-desc">Full management of your social presence across 2 platforms.</div>
-      <ul class="price-features"><li>2 platforms managed</li><li>12 posts per month</li><li>Caption and hashtag strategy</li><li>Community engagement</li><li>Monthly performance report</li></ul>
+      <ul class="price-features">
+        <li>2 platforms managed</li>
+        <li>12 posts per month</li>
+        <li>Caption and hashtag strategy</li>
+        <li>Community engagement</li>
+        <li>Monthly report</li>
+      </ul>
       <a href="#contact" class="price-btn price-btn-outline">Get started →</a>
     </div>
     <div class="price-card featured">
-      <div class="price-num">02 — Most Popular</div>
-      <svg class="price-icon" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="10" stroke="#fff" stroke-width="1.5"/><path d="M20 4v4M20 32v4M4 20h4M32 20h4" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/><circle cx="20" cy="20" r="4" fill="#fff" opacity=".4"/></svg>
+      <div class="price-num">02 — Most popular</div>
       <div class="price-name">Content Creation</div>
-      <div class="price-tag">Monthly Package</div>
-      <div class="price-amount" id="p2">20K</div>
-      <div class="price-period" id="p2-period">KES / month — starting from</div>
+      <div class="price-tag">Monthly package</div>
+      <div class="price-amount">20K</div>
+      <div class="price-period">KES / month — starting from</div>
       <div class="price-divider"></div>
-      <div class="price-desc">Professional photo, video and reel production monthly.</div>
-      <ul class="price-features"><li>8 professional photos</li><li>4 short-form videos/reels</li><li>Captions and copy included</li><li>Editing and colour grading</li><li>Platform-optimised formats</li></ul>
+      <ul class="price-features">
+        <li>8 professional graphics/photos</li>
+        <li>4 short-form videos or reels</li>
+        <li>Captions and copy included</li>
+        <li>Platform-optimised formats</li>
+        <li>All files yours to keep</li>
+      </ul>
       <a href="#contact" class="price-btn price-btn-solid">Get started →</a>
     </div>
     <div class="price-card">
       <div class="price-num">03</div>
-      <svg class="price-icon" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="8" stroke="#00A651" stroke-width="1.5"/><path d="M20 4v4M20 32v4M4 20h4M32 20h4" stroke="#00A651" stroke-width="1.5" stroke-linecap="round"/><circle cx="20" cy="20" r="3" fill="#00A651" opacity=".3"/></svg>
       <div class="price-name">Brand Identity</div>
-      <div class="price-tag">One-off Project</div>
-      <div class="price-amount" id="p3">30K</div>
-      <div class="price-period" id="p3-period">KES — starting from</div>
+      <div class="price-tag">One-off project</div>
+      <div class="price-amount">30K</div>
+      <div class="price-period">KES — starting from</div>
       <div class="price-divider"></div>
-      <div class="price-desc">A complete brand identity system for your business.</div>
-      <ul class="price-features"><li>Logo design (3 concepts)</li><li>Colour palette and typography</li><li>Brand guidelines document</li><li>Business card design</li><li>All source files included</li></ul>
+      <ul class="price-features">
+        <li>Logo design (3 concepts)</li>
+        <li>Colour palette and typography</li>
+        <li>Brand guidelines PDF</li>
+        <li>Business card design</li>
+        <li>All source files included</li>
+      </ul>
       <a href="#contact" class="price-btn price-btn-outline">Get started →</a>
     </div>
     <div class="price-card">
       <div class="price-num">04</div>
-      <svg class="price-icon" viewBox="0 0 40 40" fill="none"><rect x="4" y="4" width="14" height="14" rx="2" stroke="#00A651" stroke-width="1.5"/><rect x="22" y="4" width="14" height="14" rx="2" stroke="#00A651" stroke-width="1.5"/><rect x="4" y="22" width="14" height="14" rx="2" stroke="#00A651" stroke-width="1.5"/><rect x="22" y="22" width="14" height="14" rx="2" stroke="#00A651" stroke-width="1.5" opacity=".4"/></svg>
       <div class="price-name">Creative Design</div>
-      <div class="price-tag">Per Project</div>
-      <div class="price-amount" id="p4">10K</div>
-      <div class="price-period" id="p4-period">KES — starting from</div>
+      <div class="price-tag">Per project</div>
+      <div class="price-amount">10K</div>
+      <div class="price-period">KES — starting from</div>
       <div class="price-divider"></div>
-      <div class="price-desc">Campaigns, ad creatives, pitch decks and print.</div>
-      <ul class="price-features"><li>Social media ad creatives</li><li>Flyers and poster design</li><li>Pitch deck design</li><li>Print-ready files</li><li>2 revision rounds</li></ul>
+      <ul class="price-features">
+        <li>Flyers and poster design</li>
+        <li>Social media ad creatives</li>
+        <li>Pitch deck design</li>
+        <li>Print-ready files</li>
+        <li>2 revision rounds</li>
+      </ul>
       <a href="#contact" class="price-btn price-btn-outline">Get started →</a>
     </div>
   </div>
   <div class="pricing-band reveal">
-    <div class="band-left">
-      <div class="band-tag">Best value — Everything included</div>
-      <div class="band-title">Full Agency Retainer</div>
-      <div class="band-desc">Social media, content creation, brand strategy and creative design — all handled by DigiCreativ every month.</div>
+    <div>
+      <div class="band-tag">Best value — everything included</div>
+      <div class="band-title">Full monthly retainer</div>
+      <div class="band-desc">Social media, content creation, design and strategy — all handled every month. One invoice, one relationship, full results.</div>
     </div>
-    <div class="band-right">
-      <div class="band-price" id="p5">80K</div>
-      <div class="band-period" id="p5-period">KES / month — starting from</div>
-      <a href="#contact" class="band-btn">Talk to us →</a>
-    </div>
-  </div>
-  <p class="pricing-note reveal">All prices negotiable based on scope. <span>50% deposit required to begin.</span> International payments via Stripe, PayPal or bank transfer.</p>
-</section>
-
-<!-- TESTIMONIALS -->
-<section id="testimonials">
-  <div class="section-label reveal">Client voices</div>
-  <h2 class="section-title reveal reveal-delay-1">What They<br>Say</h2>
-  <div class="testi-grid reveal">
-    <div class="testi-card">
-      <div class="testi-bar" style="background:var(--accent);"></div>
-      <div class="testi-stars">★★★★★</div>
-      <p class="testi-text">DigiCreativ transformed our Instagram from 200 to over 8,000 followers in just 3 months. The content quality is unmatched and the strategy is clearly working.</p>
-      <div class="testi-author">
-        <div class="testi-avatar" style="background:var(--accent);">J</div>
-        <div><div class="testi-name">James Kariuki</div><div class="testi-role">CEO, Kariuki Foods</div><div class="testi-location">📍 Nairobi, Kenya</div></div>
-      </div>
-    </div>
-    <div class="testi-card">
-      <div class="testi-bar" style="background:var(--gold);"></div>
-      <div class="testi-stars" style="color:var(--gold);">★★★★★</div>
-      <p class="testi-text">Our brand identity is now something we are proud to show anyone. The logo, the colours, everything just clicks. Clients compliment our branding on the first meeting.</p>
-      <div class="testi-author">
-        <div class="testi-avatar" style="background:var(--gold);">A</div>
-        <div><div class="testi-name">Aisha Wanjiku</div><div class="testi-role">Founder, Wanjiku Boutique</div><div class="testi-location">📍 Mombasa, Kenya</div></div>
-      </div>
-    </div>
-    <div class="testi-card">
-      <div class="testi-bar" style="background:var(--green);"></div>
-      <div class="testi-stars" style="color:var(--green);">★★★★★</div>
-      <p class="testi-text">Working with DigiCreativ felt like having a full marketing department. They handled everything — content, posting, strategy — while we focused on running the business.</p>
-      <div class="testi-author">
-        <div class="testi-avatar" style="background:var(--green);">P</div>
-        <div><div class="testi-name">Peter Omondi</div><div class="testi-role">MD, Omondi Properties</div><div class="testi-location">📍 Kampala, Uganda</div></div>
-      </div>
+    <div>
+      <div class="band-price">80K</div>
+      <div class="band-period">KES / month — starting from</div>
+      <a href="#contact" class="band-btn">Let's talk →</a>
     </div>
   </div>
+  <p class="pricing-note reveal">All prices negotiable. <span>50% deposit to begin.</span> No lock-in contracts. Cancel anytime.</p>
 </section>
 
-<!-- PROCESS -->
+
+<section id="testimonials" style="background:var(--bg);padding:100px 48px;">
+  <div class="section-label reveal">Social proof</div>
+  <h2 class="section-title reveal reveal-delay-1">Early client<br>feedback.</h2>
+
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-top:56px;" class="reveal">
+
+    <div style="background:var(--card);padding:36px 32px;position:relative;transition:background .3s;" onmouseover="this.style.background='var(--card2)'" onmouseout="this.style.background='var(--card)'">
+      <div style="position:absolute;top:0;left:0;right:0;height:2px;background:var(--green);"></div>
+      <div style="display:flex;gap:3px;margin-bottom:16px;font-size:14px;color:var(--gold);">★★★★★</div>
+      <p style="font-size:14px;color:var(--mid);line-height:1.8;margin-bottom:20px;font-style:italic;">"Mark helped us set up our Instagram properly and created our first month of content. Posting went from once a month to three times a week. We already have new customers asking how they found us."</p>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <div style="width:38px;height:38px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:16px;color:#fff;">W</div>
+        <div>
+          <div style="font-size:13px;font-weight:500;color:var(--white);">Client — Nakuru</div>
+          <div style="font-size:11px;color:var(--muted);font-family:var(--font-mono);">Restaurant owner</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:var(--card);padding:36px 32px;position:relative;transition:background .3s;" onmouseover="this.style.background='var(--card2)'" onmouseout="this.style.background='var(--card)'">
+      <div style="position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold);"></div>
+      <div style="display:flex;gap:3px;margin-bottom:16px;font-size:14px;color:var(--gold);">★★★★★</div>
+      <p style="font-size:14px;color:var(--mid);line-height:1.8;margin-bottom:20px;font-style:italic;">"The logo and brand kit Mark designed for me was exactly what I needed. Clean, professional, and delivered fast. I now use it on everything — my card, my WhatsApp business profile, everywhere."</p>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <div style="width:38px;height:38px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:16px;color:#080808;">F</div>
+        <div>
+          <div style="font-size:13px;font-weight:500;color:var(--white);">Client — Kenya</div>
+          <div style="font-size:11px;color:var(--muted);font-family:var(--font-mono);">Freelance consultant</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:var(--card);padding:36px 32px;position:relative;transition:background .3s;" onmouseover="this.style.background='var(--card2)'" onmouseout="this.style.background='var(--card)'">
+      <div style="position:absolute;top:0;left:0;right:0;height:2px;background:var(--accent);"></div>
+      <div style="display:flex;gap:3px;margin-bottom:16px;font-size:14px;color:var(--gold);">★★★★★</div>
+      <p style="font-size:14px;color:var(--mid);line-height:1.8;margin-bottom:20px;font-style:italic;">"We needed promotional materials for our end-of-year sale and Mark turned everything around within 48 hours. The flyers looked great and our customers commented on them. Will definitely work with him again."</p>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <div style="width:38px;height:38px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:16px;color:#fff;">R</div>
+        <div>
+          <div style="font-size:13px;font-weight:500;color:var(--white);">Client — Nakuru</div>
+          <div style="font-size:11px;color:var(--muted);font-family:var(--font-mono);">Retail shop owner</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <p style="text-align:center;font-family:var(--font-mono);font-size:11px;color:var(--muted);margin-top:24px;letter-spacing:.08em;">Names withheld at clients' request. Full references available on request.</p>
+</section>
+
 <section id="process">
-  <div class="section-label reveal">How we work</div>
-  <h2 class="section-title reveal reveal-delay-1">The<br>Process</h2>
+  <div class="section-label reveal">How it works</div>
+  <h2 class="section-title reveal reveal-delay-1">Simple.<br>Transparent.</h2>
   <div class="process-steps reveal">
-    <div class="process-step"><div class="step-num">01</div><div class="step-title">Discover</div><p class="step-desc">We immerse ourselves in your world — goals, market, competitors and audience — before a single pixel is designed.</p></div>
-    <div class="process-step"><div class="step-num">02</div><div class="step-title">Strategise</div><p class="step-desc">We map a clear path: positioning, messaging, channels and content pillars that give your brand an unfair advantage.</p></div>
-    <div class="process-step"><div class="step-num">03</div><div class="step-title">Create</div><p class="step-desc">Our creative team executes with obsessive attention to quality — visuals, copy and content built to perform.</p></div>
-    <div class="process-step"><div class="step-num">04</div><div class="step-title">Scale</div><p class="step-desc">We launch, measure, iterate and push. Growth is not a one-time event — it is a system we build with you.</p></div>
+    <div class="process-step">
+      <div class="step-num">01</div>
+      <div class="step-title">You reach out</div>
+      <p class="step-desc">Fill the form below, WhatsApp me, or call. I respond within 1 hour Monday to Saturday. No bots, no waiting — a real conversation.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-num">02</div>
+      <div class="step-title">We talk</div>
+      <p class="step-desc">I listen to your goals, your challenges, and your budget. No pressure. I give you honest advice about what will actually work for your business.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-num">03</div>
+      <div class="step-title">We agree</div>
+      <p class="step-desc">I send you a clear proposal — what I will do, what it costs, and what you can expect. 50% deposit to begin. Simple written agreement.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-num">04</div>
+      <div class="step-title">Work starts</div>
+      <p class="step-desc">I get to work immediately. You receive regular updates. Monthly report included. Your brand starts building momentum online.</p>
+    </div>
   </div>
 </section>
 
-<!-- GLOBAL REACH -->
-<section id="global">
-  <div class="global-title">SERVING CLIENTS GLOBALLY</div>
-  <p class="global-sub">From Nakuru to Nairobi, Lagos, London, and beyond — DigiCreativ delivers world-class creative work at African prices.</p>
-  <div class="global-regions">
-    <div class="region"><span class="region-flag">🇰🇪</span><div class="region-name">Kenya</div></div>
-    <div class="region"><span class="region-flag">🇺🇬</span><div class="region-name">Uganda</div></div>
-    <div class="region"><span class="region-flag">🇹🇿</span><div class="region-name">Tanzania</div></div>
-    <div class="region"><span class="region-flag">🇳🇬</span><div class="region-name">Nigeria</div></div>
-    <div class="region"><span class="region-flag">🇿🇦</span><div class="region-name">South Africa</div></div>
-    <div class="region"><span class="region-flag">🇬🇧</span><div class="region-name">United Kingdom</div></div>
-    <div class="region"><span class="region-flag">🇺🇸</span><div class="region-name">United States</div></div>
-    <div class="region"><span class="region-flag">🌍</span><div class="region-name">+ More</div></div>
-  </div>
-</section>
-
-<!-- CONTACT -->
 <section id="contact">
   <div class="contact-grid">
-    <div class="contact-info">
+    <div>
       <div class="section-label reveal">Get in touch</div>
-      <h2 class="contact-headline reveal reveal-delay-1">Let's Build<span>Something.</span></h2>
-      <p class="contact-sub reveal reveal-delay-2">Tell us about your brand. We will tell you how we would make it legendary. We reply within 1 hour.</p>
+      <h2 class="contact-headline reveal reveal-delay-1">Let's talk<span>about your brand.</span></h2>
+      <p class="contact-sub reveal reveal-delay-2">Fill the form, call, or WhatsApp me directly. I reply within 1 hour and will give you an honest assessment of how I can help your business grow online.</p>
       <div class="contact-details reveal reveal-delay-3">
         <div class="contact-detail">
           <div class="contact-detail-icon">📞</div>
-          <div><div class="contact-detail-label">Phone / WhatsApp</div><a href="tel:+254705996298" class="contact-detail-text"><a href="tel:+254705996298" style="color:var(--accent);text-decoration:none;font-size:14px;font-family:var(--font-mono);">+254 705 996 298</a></div>
+          <div>
+            <div class="contact-detail-label">Phone / WhatsApp</div>
+            <a href="tel:+254705996298">+254 705 996 298</a>
+          </div>
         </div>
         <div class="contact-detail">
           <div class="contact-detail-icon">✉️</div>
-          <div><div class="contact-detail-label">Email</div><a href="mailto:iammarkmwenda12@gmail.com" style="color:var(--accent);text-decoration:none;font-size:14px;font-family:var(--font-mono);">iammarkmwenda12@gmail.com</a></div>
+          <div>
+            <div class="contact-detail-label">Email</div>
+            <a href="mailto:iammarkmwenda12@gmail.com">iammarkmwenda12@gmail.com</a>
+          </div>
         </div>
         <div class="contact-detail">
           <div class="contact-detail-icon">📍</div>
-          <div><div class="contact-detail-label">Location</div><span style="font-size:14px;font-family:var(--font-mono);color:var(--mid);">Nakuru, Kenya — Serving globally</span></div>
+          <div>
+            <div class="contact-detail-label">Location</div>
+            <span>Nakuru, Kenya — serving all of Kenya &amp; beyond</span>
+          </div>
         </div>
         <div class="contact-detail">
           <div class="contact-detail-icon">🕐</div>
-          <div><div class="contact-detail-label">Response time</div><span style="font-size:14px;font-family:var(--font-mono);color:var(--green);">Within 1 hour · Mon–Sat</span></div>
+          <div>
+            <div class="contact-detail-label">Response time</div>
+            <span style="color:var(--green);">Within 1 hour · Mon – Sat</span>
+          </div>
         </div>
       </div>
     </div>
-    <div class="contact-form-wrap">
-      <form class="contact-form reveal reveal-delay-2" action="https://formspree.io/f/xlgknjqn" method="POST">
-        <input type="text" name="_gotcha" style="display:none !important;position:absolute;left:-9999px;" tabindex="-1" autocomplete="off"/>
-        <input type="hidden" name="_subject" value="New DigiCreativ enquiry"/>
-        <div class="form-row">
-          <div class="form-field"><label>Your name</label><input type="text" name="name" placeholder="John Kamau" required/></div>
-          <div class="form-field"><label>Email address</label><input type="email" name="email" placeholder="john@company.com" required/></div>
-        </div>
-        <div class="form-row">
-          <div class="form-field"><label>Phone / WhatsApp</label><input type="tel" name="phone" placeholder="+254 7XX XXX XXX"/></div>
-          <div class="form-field"><label>Country</label><input type="text" name="country" placeholder="Kenya"/></div>
-        </div>
-        <div class="form-field">
-          <label>Service needed</label>
-          <select name="service">
-            <option value="">Select a service…</option>
-            <option>Social Media Management</option>
-            <option>Content Creation</option>
-            <option>Brand Identity</option>
-            <option>Creative Design</option>
-            <option>Full Agency Retainer</option>
-            <option>Other / Custom</option>
-          </select>
-        </div>
-        <div class="form-field">
-          <label>Monthly budget</label>
-          <select name="budget">
-            <option value="">Select your budget range…</option>
-            <option>Under KES 15,000</option>
-            <option>KES 15,000 – 30,000</option>
-            <option>KES 30,000 – 80,000</option>
-            <option>KES 80,000+</option>
-            <option>USD 100 – 500/mo</option>
-            <option>USD 500+/mo</option>
-          </select>
-        </div>
-        <div class="form-field"><label>Tell us about your project</label><textarea name="message" placeholder="What are you building? What is the challenge? What is your timeline?"></textarea></div>
-        <button type="submit" class="form-submit">Send message →</button>
-        <p class="form-guarantee">🔒 <span>Your details are secure.</span> We never share your information.</p>
-      </form>
-    </div>
+    <form class="contact-form reveal reveal-delay-2" action="https://formspree.io/f/xlgknjqn" method="POST">
+      <input type="text" name="_gotcha" style="display:none !important;position:absolute;left:-9999px;" tabindex="-1" autocomplete="off"/>
+      <input type="hidden" name="_subject" value="New DigiCreativ enquiry"/>
+      <div class="form-row">
+        <div class="form-field"><label>Your name</label><input type="text" name="name" placeholder="John Kamau" required/></div>
+        <div class="form-field"><label>Email</label><input type="email" name="email" placeholder="john@business.com" required/></div>
+      </div>
+      <div class="form-row">
+        <div class="form-field"><label>Phone / WhatsApp</label><input type="tel" name="phone" placeholder="+254 7XX XXX XXX"/></div>
+        <div class="form-field"><label>Your business type</label><input type="text" name="business" placeholder="e.g. Restaurant, Shop"/></div>
+      </div>
+      <div class="form-field">
+        <label>Service needed</label>
+        <select name="service">
+          <option value="">Select or describe below...</option>
+          <option>Free social media audit</option>
+          <option>Free 15-min consultation</option>
+          <option>Social media management</option>
+          <option>Content creation</option>
+          <option>Brand identity</option>
+          <option>Creative design</option>
+          <option>Full monthly retainer</option>
+        </select>
+      </div>
+      <div class="form-field"><label>Tell me about your business and goals</label><textarea name="message" placeholder="What does your business do? What do you want to achieve online? What is your budget range?"></textarea></div>
+      <button type="submit" class="form-submit">Send message →</button>
+      <p class="form-note">🔒 Your details are private. <span>I reply within 1 hour.</span></p>
+    </form>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
-      <div class="footer-logo"><span style="color:var(--green);">DIGI</span><span style="color:var(--accent);">CREATIV</span><span style="color:var(--green);font-size:32px;">.</span></div>
-      <p>Bold creative marketing agency based in Nakuru, Kenya. Serving clients across East Africa and globally since 2023.</p>
+      <div class="footer-logo"><span class="lg">DIGI</span><span class="lr">CREATIV</span><span class="lg">.</span></div>
+      <p>Social media management, content creation and brand identity for businesses in Nakuru and across Kenya. Run personally by Mark Mwenda.</p>
     </div>
     <div>
       <div class="footer-col-title">Services</div>
       <ul class="footer-col-links">
-        <li><a href="#services">Social Media</a></li>
-        <li><a href="#services">Content Creation</a></li>
-        <li><a href="#services">Brand Identity</a></li>
-        <li><a href="#services">Creative Design</a></li>
-        <li><a href="#pricing">Full Retainer</a></li>
+        <li><a href="#services">Social media</a></li>
+        <li><a href="#services">Content creation</a></li>
+        <li><a href="#services">Brand identity</a></li>
+        <li><a href="#services">Creative design</a></li>
       </ul>
     </div>
     <div>
-      <div class="footer-col-title">Company</div>
+      <div class="footer-col-title">Free offers</div>
       <ul class="footer-col-links">
-        <li><a href="#work">Our Work</a></li>
-        <li><a href="#testimonials">Reviews</a></li>
-        <li><a href="#awards">Awards</a></li>
-        <li><a href="#process">Process</a></li>
-        <li><a href="#global">Global Reach</a></li>
+        <li><a href="#lead-magnet">Free social audit</a></li>
+        <li><a href="#lead-magnet">Free consultation</a></li>
+        <li><a href="#work">Our work</a></li>
+        <li><a href="#pricing">Pricing</a></li>
       </ul>
     </div>
     <div>
       <div class="footer-col-title">Contact</div>
       <ul class="footer-col-links">
         <li><a href="tel:+254705996298">+254 705 996 298</a></li>
-        <li><a href="mailto:iammarkmwenda12@gmail.com">Email us</a></li>
+        <li><a href="mailto:iammarkmwenda12@gmail.com">Email Mark</a></li>
         <li><a href="https://wa.me/254705996298" target="_blank">WhatsApp</a></li>
         <li><a href="https://linkedin.com/in/mark-mwenda-411652b6" target="_blank">LinkedIn</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <div class="footer-copy">© 2023 DigiCreativ. Registered in Kenya. All rights reserved.</div>
+    <div class="footer-copy">© 2023 DigiCreativ · Nakuru, Kenya · iammarkmwenda12@gmail.com</div>
     <div class="footer-social">
       <a href="https://instagram.com" target="_blank">Instagram</a>
       <a href="https://tiktok.com" target="_blank">TikTok</a>
       <a href="https://linkedin.com/in/mark-mwenda-411652b6" target="_blank">LinkedIn</a>
-      <a href="https://twitter.com" target="_blank">X / Twitter</a>
     </div>
   </div>
 </footer>
 
-<!-- FLOATING BUTTONS -->
-<a id="whatsapp-btn" href="https://wa.me/254705996298?text=Hi%20DigiCreativ%2C%20I%20would%20like%20to%20discuss%20a%20project" target="_blank" aria-label="Chat on WhatsApp">
+<a id="whatsapp-btn" href="https://wa.me/254705996298?text=Hi%20Mark%2C%20I%20found%20DigiCreativ%20and%20would%20like%20to%20discuss%20my%20business" target="_blank" aria-label="Chat on WhatsApp">
   <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 <button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
@@ -894,52 +844,16 @@
   const reveals=document.querySelectorAll('.reveal');
   const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:.12});
   reveals.forEach(el=>io.observe(el));
-  function animateCounter(el){const target=parseInt(el.dataset.target);const step=target/(1400/16);let current=0;const timer=setInterval(()=>{current=Math.min(current+step,target);el.textContent=Math.floor(current);if(current>=target)clearInterval(timer);},16);}
   const statNums=document.querySelectorAll('.stat-num[data-target]');
   const statIO=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){animateCounter(e.target);statIO.unobserve(e.target);}});},{threshold:.5});
   statNums.forEach(el=>statIO.observe(el));
-
-  // ACTIVE NAV
+  function animateCounter(el){const target=parseInt(el.dataset.target);const step=target/(1400/16);let current=0;const timer=setInterval(()=>{current=Math.min(current+step,target);el.textContent=Math.floor(current);if(current>=target)clearInterval(timer);},16);}
   const sections=document.querySelectorAll('section[id]');
   const navLinks=document.querySelectorAll('.nav-links a');
   const navIO=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){navLinks.forEach(a=>{a.classList.remove('active');if(a.getAttribute('href')==='#'+e.target.id)a.classList.add('active');});}});},{threshold:.4});
   sections.forEach(s=>navIO.observe(s));
-
-  // CURRENCY TOGGLE
-  const rates={
-    KES:{p1:'15K',p2:'20K',p3:'30K',p4:'10K',p5:'80K',period:'KES'},
-    USD:{p1:'$115',p2:'$155',p3:'$230',p4:'$77',p5:'$615',period:'USD'},
-    GBP:{p1:'£92',p2:'£124',p3:'£184',p4:'£62',p5:'£492',period:'GBP'}
-  };
-  let currentCurrency='KES';
-  function setCurrency(cur,btn){
-    currentCurrency=cur;
-    document.querySelectorAll('.currency-btn').forEach(b=>b.classList.remove('active'));
-    btn.classList.add('active');
-    const r=rates[cur];
-    ['p1','p2','p3','p4','p5'].forEach(id=>{
-      document.getElementById(id).textContent=r[id];
-    });
-    const per=cur==='KES'?'KES':'';
-    document.getElementById('p1-period').textContent=r.period+' / month — starting from';
-    document.getElementById('p2-period').textContent=r.period+' / month — starting from';
-    document.getElementById('p3-period').textContent=r.period+' — starting from';
-    document.getElementById('p4-period').textContent=r.period+' — starting from';
-    document.getElementById('p5-period').textContent=r.period+' / month — starting from';
-  }
-  function toggleCurrency(){
-    const order=['KES','USD','GBP'];
-    const next=order[(order.indexOf(currentCurrency)+1)%3];
-    setCurrency(next,document.querySelector('.currency-btn[onclick*="'+next+'"]'));
-  }
-
-  // SECURITY
   document.addEventListener('contextmenu',e=>e.preventDefault());
-  document.addEventListener('keydown',e=>{if(e.key==='F12'||(e.ctrlKey&&e.shiftKey&&['I','J','C'].includes(e.key.toUpperCase()))||(e.ctrlKey&&['U','S'].includes(e.key.toUpperCase()))){e.preventDefault();return false;}});
   if(window.self!==window.top){window.top.location=window.self.location;}
-  console.clear();
-  console.log('%cSTOP!','color:#E63946;font-size:48px;font-weight:bold;');
-  console.log('%cThis is a browser feature intended for developers.','font-size:14px;');
 </script>
 </body>
 </html>
