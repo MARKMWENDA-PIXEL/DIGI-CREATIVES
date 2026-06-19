@@ -27,20 +27,20 @@
     html{scroll-behavior:smooth;}
     body{background:var(--bg);color:var(--white);font-family:var(--font-body);font-size:16px;line-height:1.6;overflow-x:hidden;cursor:none;}
 
-    #cursor{position:fixed;top:0;left:0;width:12px;height:12px;background:var(--accent);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform .15s;}
-    #cursor-ring{position:fixed;top:0;left:0;width:36px;height:36px;border:1px solid rgba(230,57,70,.35);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:transform .35s ease,width .2s,height .2s;}
-    body:has(a:hover) #cursor,body:has(button:hover) #cursor{transform:translate(-50%,-50%) scale(2.4);}
-    body:has(a:hover) #cursor-ring,body:has(button:hover) #cursor-ring{width:58px;height:58px;}
+    #cursor{position:fixed;top:0;left:0;width:8px;height:8px;background:var(--accent);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform .1s ease;}
+    #cursor-ring{position:fixed;top:0;left:0;width:28px;height:28px;border:1px solid rgba(230,57,70,.3);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:transform .15s ease,width .15s ease,height .15s ease;}
+    body:has(a:hover) #cursor,body:has(button:hover) #cursor{transform:translate(-50%,-50%) scale(1.8);}
+    body:has(a:hover) #cursor-ring,body:has(button:hover) #cursor-ring{width:40px;height:40px;}
 
-    #loader{position:fixed;inset:0;background:var(--bg);z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;transition:opacity .5s ease,visibility .5s ease;}
+    #loader{position:fixed;inset:0;background:var(--bg);z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;transition:opacity .3s ease,visibility .3s ease;}
     #loader.hidden{opacity:0;visibility:hidden;}
     .loader-logo{font-family:var(--font-display);font-size:48px;letter-spacing:4px;}
     .loader-logo .lg{color:var(--green);}
     .loader-logo .lr{color:var(--accent);}
     .loader-bar-wrap{width:200px;height:2px;background:var(--border);border-radius:2px;overflow:hidden;}
-    .loader-bar{height:100%;width:0%;background:var(--green);animation:loadBar 1.6s ease forwards;}
+    .loader-bar{height:100%;width:0%;background:var(--green);animation:loadBar .7s ease forwards;}
     .loader-text{font-family:var(--font-mono);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);}
-    @keyframes loadBar{0%{width:0%}60%{width:75%}100%{width:100%}}
+    @keyframes loadBar{0%{width:0%}100%{width:100%}}
 
     nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 48px;background:rgba(10,26,15,.97);border-bottom:1px solid var(--border);backdrop-filter:blur(16px);}
     .nav-logo{font-family:var(--font-display);font-size:24px;letter-spacing:2px;text-decoration:none;display:flex;align-items:baseline;gap:1px;}
@@ -59,25 +59,25 @@
     .hero-glow{position:absolute;top:-200px;right:-100px;width:600px;height:600px;background:radial-gradient(circle,rgba(0,166,81,.08) 0%,transparent 65%);pointer-events:none;}
     .hero-glow2{position:absolute;bottom:-100px;left:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(230,57,70,.06) 0%,transparent 65%);pointer-events:none;}
 
-    .hero-ticker{font-family:var(--font-mono);font-size:11px;letter-spacing:.15em;color:var(--muted);text-transform:uppercase;margin-bottom:20px;display:flex;gap:28px;animation:fadeUp .8s .05s both;}
+    .hero-ticker{font-family:var(--font-mono);font-size:11px;letter-spacing:.15em;color:var(--muted);text-transform:uppercase;margin-bottom:20px;display:flex;gap:28px;animation:fadeUp .4s .05s both;}
     .hero-ticker span{color:var(--green);}
-    .hero-honest-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,166,81,.1);border:1px solid rgba(0,166,81,.3);padding:7px 16px;margin-bottom:24px;animation:fadeUp .8s .1s both;}
-    .badge-dot{width:7px;height:7px;background:var(--green);border-radius:50%;animation:pulse 2s infinite;}
+    .hero-honest-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,166,81,.1);border:1px solid rgba(0,166,81,.3);padding:7px 16px;margin-bottom:24px;animation:fadeUp .4s .08s both;}
+    .badge-dot{width:6px;height:6px;background:var(--green);border-radius:50%;animation:pulse 2.4s ease-in-out infinite;}
     .badge-text{font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--green);}
-    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+    @keyframes pulse{0%,100%{opacity:.9}50%{opacity:.4}}
 
-    .hero-headline{font-family:var(--font-display);font-size:clamp(64px,12vw,170px);line-height:.88;letter-spacing:-1px;color:var(--white);animation:fadeUp .9s .3s both;}
+    .hero-headline{font-family:var(--font-display);font-size:clamp(64px,12vw,170px);line-height:.88;letter-spacing:-1px;color:var(--white);animation:fadeUp .45s .12s both;}
     .hero-headline em{font-style:normal;color:var(--green);display:block;}
-    .hero-sub-row{display:flex;align-items:flex-end;justify-content:space-between;margin-top:40px;animation:fadeUp .9s .45s both;}
+    .hero-sub-row{display:flex;align-items:flex-end;justify-content:space-between;margin-top:40px;animation:fadeUp .45s .18s both;}
     .hero-sub{max-width:420px;font-size:17px;color:var(--mid);line-height:1.7;font-weight:300;}
     .hero-actions{display:flex;gap:14px;align-items:center;}
-    .hero-honest-note{font-family:var(--font-mono);font-size:11px;color:var(--muted);margin-top:14px;letter-spacing:.05em;animation:fadeUp .9s .6s both;}
+    .hero-honest-note{font-family:var(--font-mono);font-size:11px;color:var(--muted);margin-top:14px;letter-spacing:.05em;animation:fadeUp .4s .24s both;}
     .hero-honest-note span{color:var(--green);}
-    .hero-phone{font-family:var(--font-mono);font-size:12px;color:var(--muted);margin-top:12px;display:flex;align-items:center;gap:8px;animation:fadeUp .9s .65s both;}
+    .hero-phone{font-family:var(--font-mono);font-size:12px;color:var(--muted);margin-top:12px;display:flex;align-items:center;gap:8px;animation:fadeUp .4s .27s both;}
     .hero-phone a{color:var(--accent);text-decoration:none;}
 
-    .btn-primary{background:var(--accent);color:#fff;border:none;font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:15px 30px;cursor:none;font-weight:500;text-decoration:none;display:inline-block;transition:background .2s,transform .15s;}
-    .btn-primary:hover{background:#c62d3a;transform:translateY(-2px);}
+    .btn-primary{background:var(--accent);color:#fff;border:none;font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:15px 30px;cursor:none;font-weight:500;text-decoration:none;display:inline-block;transition:background .15s ease;}
+    .btn-primary:hover{background:#c62d3a;}
     .btn-outline{background:transparent;color:var(--white);border:1px solid var(--border);font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:15px 30px;cursor:none;text-decoration:none;display:inline-block;transition:border-color .2s,color .2s;}
     .btn-outline:hover{border-color:var(--green);color:var(--green);}
     .hero-scroll{position:absolute;right:48px;bottom:80px;display:flex;flex-direction:column;align-items:center;gap:10px;}
@@ -85,7 +85,7 @@
     .scroll-line{width:1px;height:60px;background:linear-gradient(to bottom,var(--green),transparent);animation:scrollPulse 2s infinite;}
 
     .marquee-wrap{overflow:hidden;padding:16px 0;background:var(--accent);border-top:1px solid rgba(255,255,255,.1);border-bottom:1px solid rgba(255,255,255,.1);}
-    .marquee-track{display:flex;animation:marquee 22s linear infinite;width:max-content;}
+    .marquee-track{display:flex;animation:marquee 28s linear infinite;width:max-content;}
     .marquee-item{font-family:var(--font-display);font-size:26px;letter-spacing:3px;color:rgba(255,255,255,.85);padding:0 44px;white-space:nowrap;display:flex;align-items:center;gap:44px;}
     .marquee-item::after{content:'✦';font-size:11px;color:rgba(255,255,255,.5);}
 
@@ -121,9 +121,9 @@
     .services-intro{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:end;margin-bottom:64px;}
     .services-intro p{font-size:16px;color:var(--mid);font-weight:300;line-height:1.8;}
     .services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
-    .service-card{background:var(--card);padding:40px;transition:background .3s;position:relative;overflow:hidden;}
-    .service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--green);transform:scaleX(0);transform-origin:left;transition:transform .4s ease;}
-    .service-card:hover{background:var(--card2);}
+    .service-card{background:var(--card);padding:40px;transition:background .15s ease;position:relative;overflow:hidden;}
+    .service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--green);transform:scaleX(0);transform-origin:left;transition:transform .25s ease;}
+    .service-card:hover{background:var(--card2);transition:background .15s ease;}
     .service-card:hover::before{transform:scaleX(1);}
     .service-num{font-family:var(--font-mono);font-size:11px;color:var(--gold);letter-spacing:.1em;margin-bottom:24px;opacity:.7;}
     .service-icon{width:40px;height:40px;margin-bottom:18px;}
@@ -182,6 +182,11 @@
     .pricing-honest p strong{color:var(--green);}
     .pricing-intro{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:end;margin-bottom:48px;}
     .pricing-intro p{font-size:16px;color:var(--mid);font-weight:300;line-height:1.8;}
+    .currency-toggle{display:flex;gap:8px;margin-top:18px;}
+    .currency-btn{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;background:none;border:1px solid var(--border);color:var(--muted);padding:6px 14px;cursor:none;transition:all .15s ease;}
+    .currency-btn.active{background:var(--green);border-color:var(--green);color:#fff;}
+    .currency-btn:hover{border-color:var(--green);color:var(--green);}
+    .currency-btn.active:hover{color:#fff;}
     .pricing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);}
     .price-card{background:var(--card);padding:32px 24px;position:relative;overflow:hidden;transition:background .3s;}
     .price-card:hover{background:var(--card2);}
@@ -280,14 +285,14 @@
     #back-top.visible{opacity:1;visibility:visible;}
     #back-top:hover{background:var(--green);color:#fff;}
 
-    @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
     @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-    @keyframes scrollPulse{0%,100%{opacity:.4}50%{opacity:1}}
-    .reveal{opacity:0;transform:translateY(32px);transition:opacity .7s ease,transform .7s ease;}
+    @keyframes scrollPulse{0%,100%{opacity:.3}50%{opacity:.8}}
+    .reveal{opacity:0;transform:translateY(12px);transition:opacity .35s ease,transform .35s ease;}
     .reveal.visible{opacity:1;transform:translateY(0);}
-    .reveal-delay-1{transition-delay:.1s;}
-    .reveal-delay-2{transition-delay:.2s;}
-    .reveal-delay-3{transition-delay:.3s;}
+    .reveal-delay-1{transition-delay:.05s;}
+    .reveal-delay-2{transition-delay:.1s;}
+    .reveal-delay-3{transition-delay:.15s;}
 
     @media(max-width:768px){
       nav{padding:14px 20px;}
@@ -336,6 +341,7 @@
     <li><a href="#work">Work</a></li>
     <li><a href="#pricing">Pricing</a></li>
     <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#global">Global</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
@@ -350,7 +356,7 @@
   <div class="hero-glow2"></div>
   <div class="hero-honest-badge">
     <div class="badge-dot"></div>
-    <span class="badge-text">Available now · taking new clients</span>
+    <span class="badge-text">Available now · serving clients in Kenya & worldwide</span>
   </div>
   <div class="hero-ticker">
     <span>✦</span> Social Media &nbsp;<span>✦</span> Content Creation &nbsp;<span>✦</span> Brand Identity &nbsp;<span>✦</span> Creative Design
@@ -358,7 +364,7 @@
   <h1 class="hero-headline">We Help Your<br><em>Business</em>Get Noticed.</h1>
   <div class="hero-sub-row">
     <div>
-      <p class="hero-sub">DigiCreativ helps small and medium businesses in Nakuru and across Kenya build a strong online presence — through social media management, content creation, and brand identity design.</p>
+      <p class="hero-sub">DigiCreativ helps small and medium businesses — in Kenya and worldwide — build a strong online presence through social media management, content creation, and brand identity design.</p>
       <p class="hero-honest-note">Run by <span>Mark Mwenda</span> — digital marketer and content strategist based in Nakuru.</p>
       <div class="hero-phone">
         📞 <a href="tel:+254705996298">+254 705 996 298</a> &nbsp;·&nbsp;
@@ -393,7 +399,7 @@
   <div class="about-grid reveal">
     <div class="about-photo-box">
       <div class="about-photo-img-wrap">
-        <img src="IMG_20240221_125354%20(2).jpg" alt="Mark Mwenda — Founder of DigiCreativ" class="about-photo-img"/>
+        <img src="IMG_20240221_125354.jpg" alt="Mark Mwenda — Founder of DigiCreativ" class="about-photo-img"/>
       </div>
       <div class="about-name">Mark Mwenda</div>
       <div class="about-role">Founder & Creative Director</div>
@@ -411,6 +417,10 @@
       <br/>
       <p class="about-story">
         DigiCreativ is still growing — I am building real case studies and real results with every client I take on. I would rather show you what I can do than make claims I cannot back up.
+      </p>
+      <br/>
+      <p class="about-story">
+        While I am based in Nakuru, all my work is delivered remotely — which means I can work with businesses anywhere in the world. Time zone differences are not a problem; I structure my schedule around client needs.
       </p>
       <div class="about-skills">
         <span class="skill-tag">Social media strategy</span>
@@ -562,16 +572,22 @@
     <div>
       <div class="section-label reveal">Rate card</div>
       <h2 class="section-title reveal reveal-delay-1">Clear.<br>Fair. Simple.</h2>
+      <div class="currency-toggle reveal">
+        <button class="currency-btn active" data-cur="KES" onclick="setCurrency('KES',this)">KES</button>
+        <button class="currency-btn" data-cur="USD" onclick="setCurrency('USD',this)">USD</button>
+        <button class="currency-btn" data-cur="GBP" onclick="setCurrency('GBP',this)">GBP</button>
+        <button class="currency-btn" data-cur="EUR" onclick="setCurrency('EUR',this)">EUR</button>
+      </div>
     </div>
-    <p class="reveal reveal-delay-2">All prices in Kenya Shillings. International clients welcome — quotes available in USD on request. Every package is negotiable based on your scope and budget.</p>
+    <p class="reveal reveal-delay-2">Working with clients in Kenya and internationally. Prices shown in your preferred currency — final invoice currency confirmed at booking. Every package is negotiable based on scope and budget.</p>
   </div>
   <div class="pricing-grid reveal">
     <div class="price-card">
       <div class="price-num">01</div>
       <div class="price-name">Social Media</div>
       <div class="price-tag">Monthly retainer</div>
-      <div class="price-amount">15K</div>
-      <div class="price-period">KES / month — starting from</div>
+      <div class="price-amount" id="amt-1">15K</div>
+      <div class="price-period" id="per-1">KES / month — starting from</div>
       <div class="price-divider"></div>
       <ul class="price-features">
         <li>2 platforms managed</li>
@@ -586,8 +602,8 @@
       <div class="price-num">02 — Most popular</div>
       <div class="price-name">Content Creation</div>
       <div class="price-tag">Monthly package</div>
-      <div class="price-amount">20K</div>
-      <div class="price-period">KES / month — starting from</div>
+      <div class="price-amount" id="amt-2">20K</div>
+      <div class="price-period" id="per-2">KES / month — starting from</div>
       <div class="price-divider"></div>
       <ul class="price-features">
         <li>8 professional graphics/photos</li>
@@ -602,8 +618,8 @@
       <div class="price-num">03</div>
       <div class="price-name">Brand Identity</div>
       <div class="price-tag">One-off project</div>
-      <div class="price-amount">30K</div>
-      <div class="price-period">KES — starting from</div>
+      <div class="price-amount" id="amt-3">30K</div>
+      <div class="price-period" id="per-3">KES — starting from</div>
       <div class="price-divider"></div>
       <ul class="price-features">
         <li>Logo design (3 concepts)</li>
@@ -618,8 +634,8 @@
       <div class="price-num">04</div>
       <div class="price-name">Creative Design</div>
       <div class="price-tag">Per project</div>
-      <div class="price-amount">10K</div>
-      <div class="price-period">KES — starting from</div>
+      <div class="price-amount" id="amt-4">10K</div>
+      <div class="price-period" id="per-4">KES — starting from</div>
       <div class="price-divider"></div>
       <ul class="price-features">
         <li>Flyers and poster design</li>
@@ -638,8 +654,8 @@
       <div class="band-desc">Social media, content creation, design and strategy — all handled every month. One invoice, one relationship, full results.</div>
     </div>
     <div>
-      <div class="band-price">80K</div>
-      <div class="band-period">KES / month — starting from</div>
+      <div class="band-price" id="amt-5">80K</div>
+      <div class="band-period" id="per-5">KES / month — starting from</div>
       <a href="#contact" class="band-btn">Let's talk →</a>
     </div>
   </div>
@@ -723,12 +739,36 @@
   </div>
 </section>
 
+
+<section id="global" style="background:var(--accent);padding:72px 48px;text-align:center;">
+  <div class="section-label reveal" style="justify-content:center;color:rgba(255,255,255,.7);"><span style="display:none"></span></div>
+  <h2 style="font-family:var(--font-display);font-size:clamp(36px,5.5vw,72px);letter-spacing:2px;color:#fff;margin-bottom:14px;" class="reveal">Working With Clients Worldwide</h2>
+  <p style="font-size:16px;color:rgba(255,255,255,.75);font-weight:300;max-width:520px;margin:0 auto 40px;line-height:1.7;" class="reveal reveal-delay-1">Based in Nakuru, Kenya — delivering remotely to businesses anywhere. Time zones, currencies, and distance are not a problem.</p>
+  <div style="display:flex;justify-content:center;gap:36px;flex-wrap:wrap;" class="reveal reveal-delay-2">
+    <div style="text-align:center;"><span style="font-size:26px;display:block;margin-bottom:6px;">🇰🇪</span><div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.7);">Kenya</div></div>
+    <div style="text-align:center;"><span style="font-size:26px;display:block;margin-bottom:6px;">🇺🇬</span><div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.7);">Uganda</div></div>
+    <div style="text-align:center;"><span style="font-size:26px;display:block;margin-bottom:6px;">🇹🇿</span><div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.7);">Tanzania</div></div>
+    <div style="text-align:center;"><span style="font-size:26px;display:block;margin-bottom:6px;">🇳🇬</span><div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.7);">Nigeria</div></div>
+    <div style="text-align:center;"><span style="font-size:26px;display:block;margin-bottom:6px;">🇿🇦</span><div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.7);">South Africa</div></div>
+    <div style="text-align:center;"><span style="font-size:26px;display:block;margin-bottom:6px;">🇬🇧</span><div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.7);">United Kingdom</div></div>
+    <div style="text-align:center;"><span style="font-size:26px;display:block;margin-bottom:6px;">🇺🇸</span><div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.7);">United States</div></div>
+    <div style="text-align:center;"><span style="font-size:26px;display:block;margin-bottom:6px;">🌍</span><div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.7);">+ Anywhere</div></div>
+  </div>
+  <div style="display:flex;justify-content:center;gap:10px;margin-top:36px;flex-wrap:wrap;" class="reveal reveal-delay-3">
+    <span style="font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.55);background:rgba(255,255,255,.1);padding:6px 14px;">M-Pesa</span>
+    <span style="font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.55);background:rgba(255,255,255,.1);padding:6px 14px;">Bank transfer</span>
+    <span style="font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.55);background:rgba(255,255,255,.1);padding:6px 14px;">PayPal</span>
+    <span style="font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.55);background:rgba(255,255,255,.1);padding:6px 14px;">Wise</span>
+    <span style="font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.55);background:rgba(255,255,255,.1);padding:6px 14px;">Card / Stripe</span>
+  </div>
+</section>
+
 <section id="contact">
   <div class="contact-grid">
     <div>
       <div class="section-label reveal">Get in touch</div>
       <h2 class="contact-headline reveal reveal-delay-1">Let's talk<span>about your brand.</span></h2>
-      <p class="contact-sub reveal reveal-delay-2">Fill the form, call, or WhatsApp me directly. I reply within 1 hour and will give you an honest assessment of how I can help your business grow online.</p>
+      <p class="contact-sub reveal reveal-delay-2">Fill the form, call, or WhatsApp me directly — wherever you are in the world. I reply within 1 hour during Kenya business hours and will give you an honest assessment of how I can help your business grow online.</p>
       <div class="contact-details reveal reveal-delay-3">
         <div class="contact-detail">
           <div class="contact-detail-icon">📞</div>
@@ -748,7 +788,7 @@
           <div class="contact-detail-icon">📍</div>
           <div>
             <div class="contact-detail-label">Location</div>
-            <span>Nakuru, Kenya — serving all of Kenya &amp; beyond</span>
+            <span>Nakuru, Kenya — serving clients worldwide remotely</span>
           </div>
         </div>
         <div class="contact-detail">
@@ -769,8 +809,9 @@
       </div>
       <div class="form-row">
         <div class="form-field"><label>Phone / WhatsApp</label><input type="tel" name="phone" placeholder="+254 7XX XXX XXX"/></div>
-        <div class="form-field"><label>Your business type</label><input type="text" name="business" placeholder="e.g. Restaurant, Shop"/></div>
+        <div class="form-field"><label>Country</label><input type="text" name="country" placeholder="Kenya, UK, USA, etc."/></div>
       </div>
+      <div class="form-field"><label>Your business type</label><input type="text" name="business" placeholder="e.g. Restaurant, Shop, Startup"/></div>
       <div class="form-field">
         <label>Service needed</label>
         <select name="service">
@@ -795,7 +836,7 @@
   <div class="footer-top">
     <div class="footer-brand">
       <div class="footer-logo"><span class="lg">DIGI</span><span class="lr">CREATIV</span><span class="lg">.</span></div>
-      <p>Social media management, content creation and brand identity for businesses in Nakuru and across Kenya. Run personally by Mark Mwenda.</p>
+      <p>Social media management, content creation and brand identity for businesses in Kenya and worldwide. Run personally by Mark Mwenda — remote-friendly, time zone flexible.</p>
     </div>
     <div>
       <div class="footer-col-title">Services</div>
@@ -841,8 +882,29 @@
 <button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
 
 <script>
-  window.addEventListener('load',()=>{setTimeout(()=>{document.getElementById('loader').classList.add('hidden');},1800);});
+  window.addEventListener('load',()=>{setTimeout(()=>{document.getElementById('loader').classList.add('hidden');},650);});
   function toggleMenu(){document.getElementById('nav-links').classList.toggle('open');}
+
+  // CURRENCY TOGGLE — converts displayed prices for international visitors
+  const priceData = {
+    1:{KES:'15K',USD:'$115',GBP:'£92', EUR:'€107', per:'month'},
+    2:{KES:'20K',USD:'$155',GBP:'£123',EUR:'€143', per:'month'},
+    3:{KES:'30K',USD:'$230',GBP:'£184',EUR:'€214', per:'project'},
+    4:{KES:'10K',USD:'$77', GBP:'£62', EUR:'€72',  per:'project'},
+    5:{KES:'80K',USD:'$615',GBP:'£492',EUR:'€572', per:'month'}
+  };
+  function setCurrency(cur, btn){
+    document.querySelectorAll('.currency-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    Object.keys(priceData).forEach(id=>{
+      const d = priceData[id];
+      const amtEl = document.getElementById('amt-'+id);
+      const perEl = document.getElementById('per-'+id);
+      if(amtEl) amtEl.textContent = d[cur];
+      if(perEl) perEl.textContent = cur + (d.per==='month' ? ' / month — starting from' : ' — starting from');
+    });
+  }
+
   document.querySelectorAll('.nav-links a').forEach(a=>{a.addEventListener('click',()=>{document.getElementById('nav-links').classList.remove('open');});});
   window.addEventListener('scroll',()=>{
     document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>60);
@@ -852,7 +914,7 @@
   const ring=document.getElementById('cursor-ring');
   document.addEventListener('mousemove',e=>{
     cursor.style.left=e.clientX+'px';cursor.style.top=e.clientY+'px';
-    setTimeout(()=>{ring.style.left=e.clientX+'px';ring.style.top=e.clientY+'px';},80);
+    ring.style.left=e.clientX+'px';ring.style.top=e.clientY+'px';
   });
   const reveals=document.querySelectorAll('.reveal');
   const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:.12});
@@ -860,7 +922,7 @@
   const statNums=document.querySelectorAll('.stat-num[data-target]');
   const statIO=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){animateCounter(e.target);statIO.unobserve(e.target);}});},{threshold:.5});
   statNums.forEach(el=>statIO.observe(el));
-  function animateCounter(el){const target=parseInt(el.dataset.target);const step=target/(1400/16);let current=0;const timer=setInterval(()=>{current=Math.min(current+step,target);el.textContent=Math.floor(current);if(current>=target)clearInterval(timer);},16);}
+  function animateCounter(el){const target=parseInt(el.dataset.target);const step=target/(600/16);let current=0;const timer=setInterval(()=>{current=Math.min(current+step,target);el.textContent=Math.floor(current);if(current>=target)clearInterval(timer);},16);}
   const sections=document.querySelectorAll('section[id]');
   const navLinks=document.querySelectorAll('.nav-links a');
   const navIO=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){navLinks.forEach(a=>{a.classList.remove('active');if(a.getAttribute('href')==='#'+e.target.id)a.classList.add('active');});}});},{threshold:.4});
