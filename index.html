@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>DigiCreativ — Social Media & Brand Marketing | Nakuru, Kenya</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
   <meta name="description" content="DigiCreativ — Social media management, content creation and brand identity for small businesses in Nakuru and across Kenya. Run by Mark Mwenda."/>
   <meta name="keywords" content="social media management Nakuru, brand identity Kenya, content creation, digital marketing Kenya, DigiCreativ"/>
   <meta property="og:title" content="DigiCreativ — We Help Your Business Get Noticed Online"/>
@@ -13,28 +13,29 @@
   <meta property="og:type" content="website"/>
   <meta http-equiv="X-Frame-Options" content="DENY"/>
   <meta http-equiv="X-Content-Type-Options" content="nosniff"/>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230a1a0f'/><text y='.9em' font-size='80' font-family='Arial Black' fill='%230066CC' x='10'>D</text></svg>"/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%230066CC'/><text x='50' y='67' text-anchor='middle' font-family='Georgia,serif' font-size='58' font-weight='700' fill='%23070707'>D</text></svg>"/>
   <style>
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
     :root{
-      --bg:#0a1428;--off:#0d1c33;--card:#11233f;--card2:#162c4d;
-      --border:#1e3a5c;--muted:#4a7ca8;--mid:#6aa3d8;--light:#a8cdf0;
+      --bg:#070707;--off:#0c0c0d;--card:#121214;--card2:#181819;
+      --border:#232325;--muted:#5588c4;--mid:#7aa8e0;--light:#b8d4f5;
       --white:#e8f0fb;--accent:#E63946;--green:#0066CC;--gold:#C9A84C;
       --font-display:'Bebas Neue',sans-serif;
       --font-body:'DM Sans',sans-serif;
       --font-mono:'DM Mono',monospace;
+      --font-serif:'Playfair Display',serif;
     }
     html{scroll-behavior:smooth;}
-    body{background:var(--bg);color:var(--white);font-family:var(--font-body);font-size:16px;line-height:1.6;overflow-x:hidden;cursor:none;}
+    body{background:radial-gradient(ellipse 120% 80% at 50% -10%,#0d1830 0%,#070707 45%),var(--bg);color:var(--white);font-family:var(--font-body);font-size:16px;line-height:1.6;overflow-x:hidden;cursor:none;}
 
     #cursor{position:fixed;top:0;left:0;width:8px;height:8px;background:var(--accent);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform .1s ease;}
     #cursor-ring{position:fixed;top:0;left:0;width:28px;height:28px;border:1px solid rgba(230,57,70,.3);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:transform .15s ease,width .15s ease,height .15s ease;}
     body:has(a:hover) #cursor,body:has(button:hover) #cursor{transform:translate(-50%,-50%) scale(1.8);}
     body:has(a:hover) #cursor-ring,body:has(button:hover) #cursor-ring{width:40px;height:40px;}
 
-    #loader{position:fixed;inset:0;background:var(--bg);z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;transition:opacity .3s ease,visibility .3s ease;}
+    #loader{position:fixed;inset:0;background:#070707;z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;transition:opacity .3s ease,visibility .3s ease;}
     #loader.hidden{opacity:0;visibility:hidden;}
-    .loader-logo{font-family:var(--font-display);font-size:48px;letter-spacing:4px;}
+    .loader-logo{font-family:var(--font-display);font-size:48px;letter-spacing:4px;display:flex;align-items:center;gap:18px;}
     .loader-logo .lg{color:var(--green);}
     .loader-logo .lr{color:var(--accent);}
     .loader-bar-wrap{width:200px;height:2px;background:var(--border);border-radius:2px;overflow:hidden;}
@@ -42,8 +43,31 @@
     .loader-text{font-family:var(--font-mono);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);}
     @keyframes loadBar{0%{width:0%}100%{width:100%}}
 
-    nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 48px;background:rgba(10,26,15,.97);border-bottom:1px solid var(--border);backdrop-filter:blur(16px);}
-    .nav-logo{font-family:var(--font-display);font-size:24px;letter-spacing:2px;text-decoration:none;display:flex;align-items:baseline;gap:1px;}
+    nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 48px;background:rgba(7,7,7,.97);border-bottom:1px solid var(--border);backdrop-filter:blur(16px);}
+
+    .brand-badge{
+      width:34px;height:34px;border-radius:50%;
+      background:linear-gradient(160deg,#0066CC 0%,#0050a0 100%);
+      display:flex;align-items:center;justify-content:center;
+      flex-shrink:0;
+      box-shadow:0 0 0 1px rgba(255,255,255,.08),0 4px 14px rgba(0,102,204,.35);
+      position:relative;
+      overflow:hidden;
+    }
+    .brand-badge::after{
+      content:'';position:absolute;top:-30%;left:-10%;width:70%;height:70%;
+      background:rgba(255,255,255,.18);border-radius:50%;filter:blur(2px);
+    }
+    .brand-badge span{
+      font-family:var(--font-serif);font-weight:700;font-size:18px;
+      color:#070707;position:relative;z-index:1;
+      letter-spacing:-1px;
+    }
+    .brand-badge-lg{width:64px;height:64px;}
+    .brand-badge-lg span{font-size:34px;}
+    .brand-badge-sm{width:28px;height:28px;}
+    .brand-badge-sm span{font-size:15px;}
+    .nav-logo{font-family:var(--font-display);font-size:24px;letter-spacing:2px;text-decoration:none;display:flex;align-items:center;gap:10px;}
     .nav-logo .lg{color:var(--green);}
     .nav-logo .lr{color:var(--accent);}
     .nav-links{display:flex;gap:28px;list-style:none;}
@@ -54,10 +78,10 @@
     .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:none;background:none;border:none;padding:4px;}
     .nav-hamburger span{display:block;width:24px;height:2px;background:var(--white);border-radius:2px;}
 
-    #hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 48px 80px;position:relative;overflow:hidden;}
+    #hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 48px 80px;position:relative;overflow:hidden;background:radial-gradient(ellipse 90% 70% at 75% 20%,rgba(0,102,204,.16) 0%,transparent 60%),#070707;}
     .hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:72px 72px;mask-image:radial-gradient(ellipse 100% 80% at 50% 50%,black 30%,transparent 100%);opacity:.35;}
-    .hero-glow{position:absolute;top:-200px;right:-100px;width:600px;height:600px;background:radial-gradient(circle,rgba(0,102,204,.08) 0%,transparent 65%);pointer-events:none;}
-    .hero-glow2{position:absolute;bottom:-100px;left:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(230,57,70,.06) 0%,transparent 65%);pointer-events:none;}
+    .hero-glow{position:absolute;top:-220px;right:-120px;width:680px;height:680px;background:radial-gradient(circle,rgba(0,102,204,.28) 0%,transparent 65%);pointer-events:none;}
+    .hero-glow2{position:absolute;bottom:-120px;left:-120px;width:560px;height:560px;background:radial-gradient(circle,rgba(230,57,70,.1) 0%,transparent 65%);pointer-events:none;}
 
     .hero-ticker{font-family:var(--font-mono);font-size:11px;letter-spacing:.15em;color:var(--muted);text-transform:uppercase;margin-bottom:20px;display:flex;gap:28px;animation:fadeUp .4s .05s both;}
     .hero-ticker span{color:var(--green);}
@@ -262,9 +286,9 @@
     .form-note{font-family:var(--font-mono);font-size:10px;color:var(--muted);text-align:center;margin-top:8px;}
     .form-note span{color:var(--green);}
 
-    footer{background:#050b18;padding:48px 48px 28px;border-top:1px solid var(--border);}
+    footer{background:#050505;padding:48px 48px 28px;border-top:1px solid var(--border);}
     .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px;}
-    .footer-logo{font-family:var(--font-display);font-size:26px;letter-spacing:2px;display:flex;align-items:baseline;gap:1px;margin-bottom:12px;}
+    .footer-logo{font-family:var(--font-display);font-size:26px;letter-spacing:2px;display:flex;align-items:center;gap:10px;margin-bottom:12px;}
     .footer-logo .lg{color:var(--green);}
     .footer-logo .lr{color:var(--accent);}
     .footer-brand p{font-size:13px;color:var(--muted);line-height:1.7;max-width:240px;}
@@ -325,7 +349,7 @@
 <body>
 
 <div id="loader">
-  <div class="loader-logo"><span class="lg">DIGI</span><span class="lr">CREATIV</span><span class="lg">.</span></div>
+  <div class="loader-logo"><div class="brand-badge brand-badge-lg"><span>D</span></div><span class="lg">DIGI</span><span class="lr">CREATIV</span><span class="lg">.</span></div>
   <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
   <div class="loader-text">Loading...</div>
 </div>
@@ -334,7 +358,7 @@
 <div id="cursor-ring"></div>
 
 <nav id="navbar">
-  <a href="#" class="nav-logo"><span class="lg">DIGI</span><span class="lr">CREATIV</span><span class="lg">.</span></a>
+  <a href="#" class="nav-logo"><div class="brand-badge"><span>D</span></div><span class="lg">DIGI</span><span class="lr">CREATIV</span><span class="lg">.</span></a>
   <ul class="nav-links" id="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
@@ -399,7 +423,7 @@
   <div class="about-grid reveal">
     <div class="about-photo-box">
       <div class="about-photo-img-wrap">
-     <img src="IMG_20240221_125354 (2).jpg" alt="Mark Mwenda — Founder of DigiCreativ" class="about-photo-img"/>
+        <img src="IMG_20240221_125354.jpg" alt="Mark Mwenda — Founder of DigiCreativ" class="about-photo-img"/>
       </div>
       <div class="about-name">Mark Mwenda</div>
       <div class="about-role">Founder & Creative Director</div>
@@ -838,7 +862,7 @@
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
-      <div class="footer-logo"><span class="lg">DIGI</span><span class="lr">CREATIV</span><span class="lg">.</span></div>
+      <div class="footer-logo"><div class="brand-badge brand-badge-sm"><span>D</span></div><span class="lg">DIGI</span><span class="lr">CREATIV</span><span class="lg">.</span></div>
       <p>Social media management, content creation and brand identity for businesses in Kenya and worldwide. Run personally by Mark Mwenda — remote-friendly, time zone flexible.</p>
     </div>
     <div>
